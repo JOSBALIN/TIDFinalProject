@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -13,26 +15,95 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+
+.moduletitle{
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  height:10%;
+  width:100%;
+  background-color: #3B917D;
+  border-radius: 1em 1em 0px 0px;
+}
+
+.moduletitle h2{
+  font-family: Montserrat, sans-serif;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
   color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+
+ /* The navigation bar */
+ .navbar {
+  overflow: hidden;
+  background-color: #505050;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  height:6%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar h1 {
+  font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+color: white;
+padding-left:4%;
+font-size:300%;
 }
+
+.canvas {
+  background: #EBEBEB;
+  padding-bottom:10%;
+margin-right: 20%;
+margin-top: 4%;
+  height: 100%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+
+}
+
+#filtersmodule{
+
+  
+}
+
+.module{
+  background-color: white;
+  margin: auto;
+  height: auto;
+  margin-top: 16px;
+  margin-left:16px;
+  margin-right:16px;
+  padding: 8px;
+  border-radius: 1em;
+}
+
+.module h3{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.Background {
+  background: white;
+}
+
+
+/* Main content */
+.main {
+  margin-top: 20px; /* Add a top margin to avoid content overlay */
+} 
