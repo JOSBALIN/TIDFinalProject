@@ -1,3 +1,27 @@
 .tablerow {
-    background-color: red;
+
+}
+table{
+    margin-bottom:100px;
+    background-color:blue;
+}
+
+row{
+    padding:10px;
+}
+
+.tablecell{
+    background-color:#EBEBEB;
+    padding:100px;
+}
+
+.tablecellleft{
+    background-color:#EBEBEB;
+    border-radius: 2em 0em 0em 2em;
+}
+
+.tablecellright{
+    background-color:#EBEBEB;
+    border-radius: 0em 2em 2em 0em;
+    padding:100px;
 }

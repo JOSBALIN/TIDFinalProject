@@ -31,7 +31,7 @@ export default function BasicTable() {
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
-          <TableRow className="tablerow">
+          <TableRow id="tableHeader">
             <TableCell>Dessert (100g serving)</TableCell>
             <TableCell align="right">Calories</TableCell>
             <TableCell align="right">Fat&nbsp;(g)</TableCell>
@@ -39,19 +39,19 @@ export default function BasicTable() {
             <TableCell align="right">Protein&nbsp;(g)</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody className="body">
           {rows.map((row) => (
-            <TableRow
+            <TableRow className="tablerow"
               key={row.icename}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell component="th" scope="row" className="tablecellleft">
                 {row.icename}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right" className="tablecell">{row.calories}</TableCell>
+              <TableCell align="right" className="tablecell">{row.fat}</TableCell>
+              <TableCell align="right" className="tablecell">{row.carbs}</TableCell>
+              <TableCell align="right" className="tablecellright">{row.protein}</TableCell>
             </TableRow>
           ))}
         </TableBody>
