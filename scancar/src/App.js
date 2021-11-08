@@ -2,28 +2,76 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const data = [
+    { BookingID: "146", Name: "video 1 text", PhoneNum: "10304050", Group: "A", Pickup: "01/11/2010", return: "20/11/2010", status: "picked up" },
+    { BookingID: "147", Name: "video 2 text", PhoneNum: "10304050", Group: "A", Pickup: "01/11/2010", return: "20/11/2010", status: "picked up" },
+    { BookingID: "148", Name: "video 3 text", PhoneNum: "10304050", Group: "A", Pickup: "01/11/2010", return: "20/11/2010", status: "picked up" },
+  ];
+
   return (
     <div className="Background">
       <div class="navbar">
         <h1>ScanCar</h1>
       </div>
 
-      <div class="canvas">
-        <div class="moduletitle" id="bookingOverview">
-          <h2>Booking Overview</h2>
-        </div>
-        <div class="module" id="filtersmodule">
-          <h3>This is where the filters go</h3>
+      <div>
+        <div class="canvas">
+          <div class="moduletitle" id="bookingOverview">
+            <h2>Booking Overview</h2>
+          </div>
+          <div class="module" id="filtersmodule">
+            <h3>Filter bookings</h3>
+            <div>
+              <form>
+                <label>
+                  Booking ID
+                  <input type="text" name="Booking ID" />
+                </label>
+                <label>
+                  Phone Number
+                  <input type="text" name="Phone Number" />
+                </label>
+                <label>
+                  Name
+                  <input type="text" name="Name" />
+                </label>
+                <label>
+                  Address
+                  <input type="text" name="Address" />
+                </label>
+              </form>
+            </div>
+            <button id="advfilters">Advanced Filters</button>
 
+          </div>
+          <div class="module" id="advfiltersmodule">
           <form>
-  <label>
-    Name:
-    <input type="text" name="name" />
-  </label>
-</form>
-        </div>
-        <div class="module" id="listmodule">
-          <h3>Lists are to be here</h3>
+                <label>
+                  License Plate
+                  <input type="text" name="License Plate" />
+                </label>
+                <label>
+                  Customer ID
+                  <input type="text" name="Customer ID" />
+                </label>
+                <label>
+                  Driver's License
+                  <input type="text" name="Driver's License" />
+                </label>
+                </form>
+          </div>
+          <div class="module" id="listmodule">
+            <h3>Lists are to be here</h3>
+
+            <table>
+              {data.map((el) => (
+                <tr>
+                  <td>{el.BookingID}</td>
+                  <td>{el.Name}</td>
+                </tr>
+              ))}
+            </table>
+          </div>
         </div>
       </div>
     </div>

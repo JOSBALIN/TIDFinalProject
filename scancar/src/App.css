@@ -74,10 +74,27 @@ margin-top: 4%;
 
 }
 
-#filtersmodule{
+#filtersmodule input{
+  width: 112px;
+height: 16px;
+outline:none;
+background: #D6D6D6;
+border-radius: 20px;
+border-style:solid;
 
-  
 }
+
+
+#advfiltersmodule input{
+  width: 112px;
+height: 16px;
+outline:none;
+background: #D6D6D6;
+border-radius: 20px;
+border-style:solid;
+
+}
+
 
 .module{
   background-color: white;
@@ -86,16 +103,30 @@ margin-top: 4%;
   margin-top: 16px;
   margin-left:16px;
   margin-right:16px;
-  padding: 8px;
+  padding: 8px 8px 16px 16px;
   border-radius: 1em;
+  font-family: Lato;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .module h3{
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 22px;
+}
+
+#advfilters{
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 14px;
+  line-height: 12px;
+  background:none; 
+  border:none; 
 }
 
 .Background {
