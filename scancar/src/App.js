@@ -59,6 +59,13 @@ function App() {
                   <input type="text" name="Driver's License" />
                 </label>
                 </form>
+                <input type="checkbox" id="checkboxA"></input> <label>A</label>
+                <input type="checkbox" id="checkboxB"></input> <label>B</label>
+                <input type="checkbox" id="checkboxC"></input> <label>C</label>
+                <br></br>
+                <input type="checkbox" id="checkboxD"></input> <label>D</label>
+                <input type="checkbox" id="checkboxE"></input> <label>E</label>
+                <input type="checkbox" id="checkboxF"></input> <label>F</label>
           </div>
           <div class="module" id="listmodule">
             <h3>Lists are to be here</h3>
