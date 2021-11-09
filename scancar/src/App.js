@@ -47,23 +47,31 @@ function App() {
           <div class="module" id="filtersmodule">
             <h3>Filter bookings</h3>
             <div>
-              <form>
-                <label>
-                  Booking ID
-                </label>
-                  <input type="text" name="Booking ID" />
-                <label>
-                  Phone Number
-                </label>
-                  <input type="text" name="Phone Number" />
-                <label>
-                  Name
+              <form id = "filterform">
+                <p>
+                  <label>
+                    Booking ID
                   </label>
-                  <input type="text" name="Name" />
-                <label>
-                  Address
+                    <input type="text" name="Booking ID" />
+                </p>
+                <p>
+                  <label>
+                    Phone Number
                   </label>
-                  <input type="text" name="Address" />
+                    <input type="text" name="Phone Number" />
+                </p>
+                <p>
+                  <label>
+                    Name
+                    </label>
+                    <input type="text" name="Name" />
+                </p>
+                <p>
+                  <label>
+                    Address
+                    </label>
+                    <input type="text" name="Address" />
+                </p>
               </form>
             </div>
             <button id="advfilters">Advanced Filters</button>

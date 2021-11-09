@@ -76,15 +76,21 @@ font-size:300%;
 
 }
 
+#filterform {
+  display: grid;
+  grid-template-columns: 112px 112px 112px 112px;
+  grid-gap: 16px;
+}
+
+
 #filtersmodule input{
   width: 112px;
-height: 16px;
-outline:none;
-background: #D6D6D6;
-border-radius: 20px;
-border-style:solid;
-border-color:white
-
+  height: 16px;
+  outline:none;
+  background: #D6D6D6;
+  border-radius: 20px;
+  border-style:solid;
+  border-color:white
 }
 
 
