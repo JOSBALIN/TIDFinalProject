@@ -52,52 +52,71 @@ function App() {
                   <label>
                     Booking ID
                   </label>
-                    <input type="text" name="Booking ID" />
+                  <input type="text" name="Booking ID" />
                 </p>
                 <p>
                   <label>
                     Phone Number
                   </label>
-                    <input type="text" name="Phone Number" />
+                  <input type="text" name="Phone Number" />
                 </p>
                 <p>
                   <label>
                     Name
-                    </label>
-                    <input type="text" name="Name" />
+                  </label>
+                  <input type="text" name="Name" />
                 </p>
                 <p>
                   <label>
                     Address
-                    </label>
-                    <input type="text" name="Address" />
+                  </label>
+                  <input type="text" name="Address" />
                 </p>
               </form>
             </div>
             <button id="advfilters">Advanced Filters</button>
           </div>
           <div class="module" id="advfiltersmodule">
-            <form>
-              <label>
-                License Plate
-                <input type="text" name="License Plate" />
-              </label>
-              <label>
-                Customer ID
+            <form id="advfilterform">
+              <p>
+                <label>
+                  License Plate
+                  </label>
+                  <input type="text" name="License Plate" />
+              </p>
+              <p>
+                <label>
+                  Customer ID
+                </label>
                 <input type="text" name="Customer ID" />
-              </label>
+              </p>
+              <p>
               <label>
                 Driver's License
+                </label>
                 <input type="text" name="Driver's License" />
-              </label>
+              </p>
             </form>
-            <input type="checkbox" id="checkboxA"></input> <label>A</label>
-            <input type="checkbox" id="checkboxB"></input> <label>B</label>
-            <input type="checkbox" id="checkboxC"></input> <label>C</label>
-            <br></br>
-            <input type="checkbox" id="checkboxD"></input> <label>D</label>
-            <input type="checkbox" id="checkboxE"></input> <label>E</label>
-            <input type="checkbox" id="checkboxF"></input> <label>F</label>
+            <div id="checkboxes">
+              <p>
+                <input type="checkbox" id="checkboxA"></input> <label>A</label>
+              </p>
+              <p>
+                <input type="checkbox" id="checkboxB"></input> <label>B</label>
+              </p>
+              <p>
+                <input type="checkbox" id="checkboxC"></input> <label>C</label>
+              </p>
+              <p>
+                <input type="checkbox" id="checkboxD"></input> <label>D</label>
+              </p>
+              <p>
+                <input type="checkbox" id="checkboxE"></input> <label>E</label>
+              </p>
+              <p>
+                <input type="checkbox" id="checkboxF"></input> <label>F</label>
+              </p>
+            </div>
           </div>
           <div class="module" id="listmodule">
             <h3>Lists are to be here</h3>

@@ -93,6 +93,17 @@ font-size:300%;
   border-color:white
 }
 
+#advfilterform {
+  display: grid;
+  grid-template-columns: 112px 112px 112px 112px;
+  grid-gap: 16px;
+}
+
+#advfiltermodule{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
 
 #advfiltersmodule input{
   width: 112px;
@@ -137,6 +148,12 @@ border-color:white
   line-height: 12px;
   background:none; 
   border:none; 
+}
+
+#checkboxes{
+  display: grid;
+  grid-template-columns: 112px 112px;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .Background {
