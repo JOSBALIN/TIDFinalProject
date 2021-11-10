@@ -1,31 +1,13 @@
-
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-
+/* Big title at top of "module page" */
 .moduletitle{
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   height:10%;
-  width:100%;
   background-color: #3B917D;
   border-radius: 1em 1em 0px 0px;
 }
 
+/* Sub-title for modules */
 .moduletitle h2{
   font-family: Montserrat, sans-serif;
   font-size: 2em;
@@ -35,14 +17,23 @@
   letter-spacing: 0em;
   text-align: center;
   color: white;
-  
 }
 
+/* Sub-sub-title for modules */
+.module h3{
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+/* What's the purpose of this?? */
 .canvas label, input{
   display:block;
 }
 
- /* The navigation bar */
+ /* Top bar */
  .navbar {
   overflow: hidden;
   background-color: #505050;
@@ -55,14 +46,17 @@
   align-items: center;
 }
 
+/* ScanCar topbar headline styling*/
 .navbar h1 {
   font-family: 'Montserrat', sans-serif;
-font-weight: bold;
-color: white;
-padding-left:4%;
-font-size:300%;
+  font-weight: bold;
+  color: white;
+  padding-left:4%;
+  font-size:300%;
 }
 
+
+/* Styling "canvas", gray background upon which modules are hosted */
 .canvas {
   background: #EBEBEB;
   padding-bottom:10%;
@@ -72,17 +66,17 @@ font-size:300%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1em;
-
 }
 
-#filterform {
+/* establish "line by line" layout for input fields */
+#filterform, #advfilterform {
   display: grid;
   grid-template-columns: 112px 112px 112px 112px;
   grid-gap: 16px;
 }
 
-
-#filtersmodule input{
+/* input field styles for basic and advanced filters */
+#filtersmodule input, #advfiltersmodule input{
   width: 112px;
   height: 16px;
   outline:none;
@@ -92,30 +86,11 @@ font-size:300%;
   border-color:white
 }
 
-#advfilterform {
-  display: grid;
-  grid-template-columns: 112px 112px 112px 112px;
-  grid-gap: 16px;
-}
-
-#advfiltermodule{
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-
-#advfiltersmodule input{
-  width: 112px;
-height: 16px;
-outline:none;
-background: #D6D6D6;
-border-radius: 20px;
-border-style:solid;
-border-color:white
-
-}
 
 
+
+
+/* modules, styling rules for each "box of content", based on design guide */
 .module{
   background-color: white;
   margin: auto;
@@ -131,14 +106,7 @@ border-color:white
   line-height: 22px;
 }
 
-.module h3{
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 22px;
-  line-height: 22px;
-}
-
+/* The advanced filters button/clickable text */
 #advfilters{
   font-family: Lato;
   font-style: normal;
@@ -148,27 +116,3 @@ border-color:white
   background:none; 
   border:none; 
 }
-
-.checkboxes{
-  display: grid;
-  grid-template-columns: 112px;
-}
-
-.checkboxes label{
-  padding-right: 20px;
-}
-
-.checkboxes p{
-  display: flex;
-  justify-content: space-between;
-}
-
-.Background {
-  background: white;
-}
-
-
-/* Main content */
-.main {
-  margin-top: 20px; /* Add a top margin to avoid content overlay */
-} 

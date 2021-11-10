@@ -1,13 +1,16 @@
 .checkboxes{
     display: grid;
-    grid-template-columns: 112px;
+    grid-template-columns: 100px; /* How does this code actually work? Seems it's necessary but what it do? */
   }
   
   .checkboxes label{
+    /* Padding to make nice spacing. Absolute or relative? */
     padding-right: 20px;
+    padding-left: 10px
   }
   
   .checkboxes p{
+    /* Establishes 3x2 "grid" layout */
     display: flex;
     justify-content: space-between;
   }
