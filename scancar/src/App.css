@@ -150,10 +150,19 @@ border-color:white
   border:none; 
 }
 
-#checkboxes{
+.checkboxes{
+  background-color: red;
   display: grid;
-  grid-template-columns: 112px 112px;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 112px;
+}
+
+.checkboxes label{
+  padding-right: 20px;
+}
+
+.checkboxes p{
+  display: flex;
+  justify-content: space-between;
 }
 
 .Background {

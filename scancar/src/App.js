@@ -47,29 +47,21 @@ function App() {
           <div class="module" id="filtersmodule">
             <h3>Filter bookings</h3>
             <div>
-              <form id = "filterform">
+              <form id="filterform">
                 <p>
-                  <label>
-                    Booking ID
-                  </label>
+                  <label>Booking ID</label>
                   <input type="text" name="Booking ID" />
                 </p>
                 <p>
-                  <label>
-                    Phone Number
-                  </label>
+                  <label>Phone Number</label>
                   <input type="text" name="Phone Number" />
                 </p>
                 <p>
-                  <label>
-                    Name
-                  </label>
+                  <label>Name</label>
                   <input type="text" name="Name" />
                 </p>
                 <p>
-                  <label>
-                    Address
-                  </label>
+                  <label>Address</label>
                   <input type="text" name="Address" />
                 </p>
               </form>
@@ -79,58 +71,37 @@ function App() {
           <div class="module" id="advfiltersmodule">
             <form id="advfilterform">
               <p>
-                <label>
-                  License Plate
-                  </label>
-                  <input type="text" name="License Plate" />
+                <label>License Plate</label>
+                <input type="text" name="License Plate" />
               </p>
               <p>
-                <label>
-                  Customer ID
-                </label>
+                <label>Customer ID</label>
                 <input type="text" name="Customer ID" />
               </p>
               <p>
-              <label>
-                Driver's License
-                </label>
+                <label>Driver's License</label>
                 <input type="text" name="Driver's License" />
               </p>
             </form>
-            <div id="checkboxes">
+            <div className="checkboxes">
               <p>
                 <input type="checkbox" id="checkboxA"></input> <label>A</label>
-              </p>
-              <p>
+                <input type="checkbox" id="checkboxD"></input> <label>D</label>
                 <input type="checkbox" id="checkboxB"></input> <label>B</label>
               </p>
+            </div>
+            <div className="checkboxes">
               <p>
                 <input type="checkbox" id="checkboxC"></input> <label>C</label>
-              </p>
-              <p>
-                <input type="checkbox" id="checkboxD"></input> <label>D</label>
-              </p>
-              <p>
-                <input type="checkbox" id="checkboxE"></input> <label>E</label>
-              </p>
-              <p>
                 <input type="checkbox" id="checkboxF"></input> <label>F</label>
+                <input type="checkbox" id="checkboxE"></input> <label>E</label>
               </p>
             </div>
           </div>
           <div class="module" id="listmodule">
             <h3>Lists are to be here</h3>
 
-            <BasicTable/>
-
-            <table>
-              {data.map((el) => (
-                <tr>
-                  <td>{el.BookingID}</td>
-                  <td>{el.Name}</td>
-                </tr>
-              ))}
-            </table>
+            <BasicTable />
           </div>
         </div>
       </div>
