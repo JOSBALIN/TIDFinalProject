@@ -1,37 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import BasicTable from "./components/table.tsx";
+import CheckBoxes from "./components/checkboxes.tsx";
 
 function App() {
-  const data = [
-    {
-      BookingID: "146",
-      Name: "video 1 text",
-      PhoneNum: "10304050",
-      Group: "A",
-      Pickup: "01/11/2010",
-      return: "20/11/2010",
-      status: "picked up",
-    },
-    {
-      BookingID: "147",
-      Name: "video 2 text",
-      PhoneNum: "10304050",
-      Group: "A",
-      Pickup: "01/11/2010",
-      return: "20/11/2010",
-      status: "picked up",
-    },
-    {
-      BookingID: "148",
-      Name: "video 3 text",
-      PhoneNum: "10304050",
-      Group: "A",
-      Pickup: "01/11/2010",
-      return: "20/11/2010",
-      status: "picked up",
-    },
-  ];
 
   return (
     <div className="Background">
@@ -83,20 +55,9 @@ function App() {
                 <input type="text" name="Driver's License" />
               </p>
             </form>
-            <div className="checkboxes">
-              <p>
-                <input type="checkbox" id="checkboxA"></input> <label>A</label>
-                <input type="checkbox" id="checkboxD"></input> <label>D</label>
-                <input type="checkbox" id="checkboxB"></input> <label>B</label>
-              </p>
-            </div>
-            <div className="checkboxes">
-              <p>
-                <input type="checkbox" id="checkboxC"></input> <label>C</label>
-                <input type="checkbox" id="checkboxF"></input> <label>F</label>
-                <input type="checkbox" id="checkboxE"></input> <label>E</label>
-              </p>
-            </div>
+            
+            <CheckBoxes/>
+          
           </div>
           <div class="module" id="listmodule">
             <h3>Lists are to be here</h3>
