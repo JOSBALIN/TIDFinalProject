@@ -1,9 +1,12 @@
+import * as React from 'react';
 import logo from "./logo.svg";
 import "./App.css";
 import BasicTable from "./components/table.tsx";
 import CheckBoxes from "./components/checkboxes.tsx";
 
 function App() {
+
+  const [visible, setVisible] = React.useState(false);
 
   return (
     <div className="Background">
@@ -38,30 +41,31 @@ function App() {
                 </p>
               </form>
             </div>
-            <button id="advfilters">Advanced Filters</button>
+            <button onClick={() => setVisible(!visible)} id="advfilters">
+              {visible ? "v   Advanced Filters" : ">   Advanced Filters"}
+            </button>
           </div>
-          <div class="module" id="advfiltersmodule">
-            <form id="advfilterform">
-              <p>
-                <label>License Plate</label>
-                <input type="text" name="License Plate" />
-              </p>
-              <p>
-                <label>Customer ID</label>
-                <input type="text" name="Customer ID" />
-              </p>
-              <p>
-                <label>Driver's License</label>
-                <input type="text" name="Driver's License" />
-              </p>
-            </form>
-            
-            <CheckBoxes/>
-          
-          </div>
-          <div class="module" id="listmodule">
-            <h3>Lists are to be here</h3>
+          {visible && (
+            <div class="module" id="advfiltersmodule">
+              <form id="advfilterform">
+                <p>
+                  <label>License Plate</label>
+                  <input type="text" name="License Plate" />
+                </p>
+                <p>
+                  <label>Customer ID</label>
+                  <input type="text" name="Customer ID" />
+                </p>
+                <p>
+                  <label>Driver's License</label>
+                  <input type="text" name="Driver's License" />
+                </p>
+              </form>
 
+              <CheckBoxes />
+            </div>
+          )}
+          <div class="module" id="listmodule">
             <BasicTable />
           </div>
         </div>

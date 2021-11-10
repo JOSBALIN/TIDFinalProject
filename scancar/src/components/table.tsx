@@ -6,52 +6,59 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+
 import "./table.css"
 
 function createData(
-  icename: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
+  bookingid: number,
+  name: string,
+  phone: string,
+  group: string,
+  pickuptime: string,
+  returntime: string,
+  carstatus: string,
 ) {
-  return { icename, calories, fat, carbs, protein };
+  return { bookingid, name, phone, group, pickuptime, returntime, carstatus };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData(150, "Johan Larsen", "+45 3140 1103", "A", "30/10/2021\n20:00", "05/11/2021\n10:00", "Returned"),
+  createData(150, "Johan Larsen", "+45 3140 1103", "A", "30/10/2021\n20:00", "05/11/2021\n10:00", "Returned"),
+  createData(150, "Johan Larsen", "+45 3140 1103", "A", "30/10/2021\n20:00", "05/11/2021\n10:00", "Returned"),
+  createData(150, "Johan Larsen", "+45 3140 1103", "A", "30/10/2021\n20:00", "05/11/2021\n10:00", "Returned"),
+  createData(150, "Johan Larsen", "+45 3140 1103", "A", "30/10/2021\n20:00", "05/11/2021\n10:00", "Returned"),
+  createData(150, "Johan Larsen", "+45 3140 1103", "A", "30/10/2021\n20:00", "05/11/2021\n10:00", "Returned")
 ];
 
 export default function BasicTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableContainer>
+      <Table sx={{ minWidth: 450 }} aria-label="simple table">
         <TableHead>
           <TableRow id="tableHeader">
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell style={{borderBottom:"none"}} >Booking ID</TableCell>
+            <TableCell style={{borderBottom:"none"}} align="right">Name</TableCell>
+            <TableCell style={{borderBottom:"none"}} align="right">Phone</TableCell>
+            <TableCell style={{borderBottom:"none"}} align="right">Group</TableCell>
+            <TableCell style={{borderBottom:"none"}} align="right">Pick-up</TableCell>
+            <TableCell style={{borderBottom:"none"}} align="right">Return</TableCell>
+            <TableCell style={{borderBottom:"none"}} align="right">Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody className="body">
           {rows.map((row) => (
             <TableRow className="tablerow"
-              key={row.icename}
+              key={row.bookingid}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row" className="tablecellleft">
-                {row.icename}
-              </TableCell>
-              <TableCell align="right" className="tablecell">{row.calories}</TableCell>
-              <TableCell align="right" className="tablecell">{row.fat}</TableCell>
-              <TableCell align="right" className="tablecell">{row.carbs}</TableCell>
-              <TableCell align="right" className="tablecellright">{row.protein}</TableCell>
+              <TableCell style={{borderBottom:"none"}}component="th" scope="row" className="tablecellleft">{row.bookingid}</TableCell>
+              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.name}</TableCell>
+              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.phone}</TableCell>
+              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.group}</TableCell>
+              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.pickuptime}</TableCell>
+              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.returntime}</TableCell>
+              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.carstatus}</TableCell>
+              <TableCell style={{borderBottom:"none"}}align="right" className="tablecellright"><button className="editbutton">EDIT</button></TableCell>
             </TableRow>
           ))}
         </TableBody>

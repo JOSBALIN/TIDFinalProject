@@ -1,9 +1,10 @@
-.tablerow {
-
+#tablerow {
+    background-color: red;
 }
-table{
-    margin-bottom:100px;
-    background-color:blue;
+
+
+cell{
+    border-collapse: collapse;
 }
 
 row{
@@ -13,11 +14,35 @@ row{
 .tablecell{
     background-color:#EBEBEB;
     padding:100px;
+    margin-bottom: 100px;
+    border-collapse: collapse;
+    border: none;
+    box-shadow: none;
+}
+
+
+.editbutton{
+    background: #60BEA8;
+border-radius: 15px;
+border:none;
+font-family: Lato;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+font-weight:bolder;
+line-height: 12px;
+height:30px;
+width:50px;
+color:white;
+
+/* identical to box height */
+text-align: center;
 }
 
 .tablecellleft{
     background-color:#EBEBEB;
     border-radius: 2em 0em 0em 2em;
+    border: none;
 }
 
 .tablecellright{
