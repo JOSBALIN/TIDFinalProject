@@ -1,59 +1,33 @@
-#tablerow {
-    background-color: red;
-}
-
-
-cell{
-    border-collapse: collapse;
-}
-
-row{
-    padding:10px;
-}
-
-.tablecell{
-    background-color:#EBEBEB;
-    padding-bottom:20px!important;
-    border-collapse: collapse;
-    border: none;
-    box-shadow: none;
-}
-
-table{
-    border-spacing: 200px;
-}
-
-.rowspace{
-    margin-bottom:200px;
-}
-
-
+/* Edit button style, partially taken from Figma */
 .editbutton{
     background: #60BEA8;
-border-radius: 15px;
-border:none;
-font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 10px;
-font-weight:bolder;
-line-height: 12px;
-height:30px;
-width:50px;
-color:white;
+    color:white;
+    
+    border-radius: 15px;
+    border:none;
 
-/* identical to box height */
-text-align: center;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    font-weight:bolder;
+    text-align: center;
+
+    height:30px;
+    width:50px;
 }
 
-.tablecellleft{
+/* cell colorings */
+.tablecell, .tablecellleft, .tablecellright{
     background-color:#EBEBEB;
+}
+
+/* end-table-cell roundings */
+.tablecellleft{
     border-radius: 2em 0em 0em 2em;
-    border: none;
 }
 
 .tablecellright{
-    background-color:#EBEBEB;
     border-radius: 0em 2em 2em 0em;
-    padding:100px;
 }
+

@@ -33,7 +33,7 @@ const rows = [
 export default function BasicTable() {
   return (
     <TableContainer>
-      <Table sx={{ minWidth: 650, borderCollapse: 'separate', borderSpacing: '0px 8px'}} aria-label="simple table">
+      <Table aria-label="simple table" sx={{ minWidth: 650, borderCollapse: 'separate', borderSpacing: '0px 8px'}}>
         <TableHead>
           <TableRow id="tableHeader">
             <TableCell style={{borderBottom:"none"}} >Booking ID</TableCell>
@@ -45,20 +45,20 @@ export default function BasicTable() {
             <TableCell style={{borderBottom:"none"}} align="right">Status</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody className="body">
+        <TableBody className="body" >
           {rows.map((row) => (
             <TableRow className="tablerow"
               key={row.bookingid}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell style={{borderBottom:"none"}}component="th" scope="row" className="tablecellleft">{row.bookingid}</TableCell>
-              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.name}</TableCell>
-              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.phone}</TableCell>
-              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.group}</TableCell>
-              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.pickuptime}</TableCell>
-              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.returntime}</TableCell>
-              <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.carstatus}</TableCell>
-              <TableCell style={{borderBottom:"none"}}align="right" className="tablecellright"><button className="editbutton">EDIT</button></TableCell>           
+              <TableCell style={{borderBottom:"none"}} component="th" scope="row" className="tablecellleft">{row.bookingid}</TableCell>
+              <TableCell style={{borderBottom:"none"}} align="right" className="tablecell">{row.name}</TableCell>
+              <TableCell style={{borderBottom:"none"}} align="right" className="tablecell">{row.phone}</TableCell>
+              <TableCell style={{borderBottom:"none"}} align="right" className="tablecell">{row.group}</TableCell>
+              <TableCell style={{borderBottom:"none"}} align="right" className="tablecell">{row.pickuptime}</TableCell>
+              <TableCell style={{borderBottom:"none"}} align="right" className="tablecell">{row.returntime}</TableCell>
+              <TableCell style={{borderBottom:"none"}} align="right" className="tablecell">{row.carstatus}</TableCell>
+              <TableCell style={{borderBottom:"none"}} align="right" className="tablecellright"><button className="editbutton">EDIT</button></TableCell>           
             </TableRow>
           ))}
         </TableBody>
