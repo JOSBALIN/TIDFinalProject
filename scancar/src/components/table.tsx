@@ -33,7 +33,7 @@ const rows = [
 export default function BasicTable() {
   return (
     <TableContainer>
-      <Table sx={{ minWidth: 450 }} aria-label="simple table">
+      <Table sx={{ minWidth: 650, borderCollapse: 'separate', borderSpacing: '0px 8px'}} aria-label="simple table">
         <TableHead>
           <TableRow id="tableHeader">
             <TableCell style={{borderBottom:"none"}} >Booking ID</TableCell>
@@ -58,7 +58,7 @@ export default function BasicTable() {
               <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.pickuptime}</TableCell>
               <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.returntime}</TableCell>
               <TableCell style={{borderBottom:"none"}}align="right" className="tablecell">{row.carstatus}</TableCell>
-              <TableCell style={{borderBottom:"none"}}align="right" className="tablecellright"><button className="editbutton">EDIT</button></TableCell>
+              <TableCell style={{borderBottom:"none"}}align="right" className="tablecellright"><button className="editbutton">EDIT</button></TableCell>           
             </TableRow>
           ))}
         </TableBody>

@@ -13,11 +13,18 @@ row{
 
 .tablecell{
     background-color:#EBEBEB;
-    padding:100px;
-    margin-bottom: 100px;
+    padding-bottom:20px!important;
     border-collapse: collapse;
     border: none;
     box-shadow: none;
+}
+
+table{
+    border-spacing: 200px;
+}
+
+.rowspace{
+    margin-bottom:200px;
 }
 
 
