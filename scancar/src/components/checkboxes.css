@@ -1,0 +1,14 @@
+.checkboxes{
+    background-color: red;
+    display: grid;
+    grid-template-columns: 112px;
+  }
+  
+  .checkboxes label{
+    padding-right: 20px;
+  }
+  
+  .checkboxes p{
+    display: flex;
+    justify-content: space-between;
+  }
