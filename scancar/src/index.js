@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Router, browserHistory as history } from 'react-router';
+import routes from './routes';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router routes={routes} history={history} />,
+  
+
+ // <React.StrictMode>
+  //  <App />
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

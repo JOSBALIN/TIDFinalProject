@@ -12,6 +12,7 @@ function App() {
     <div className="Background">
       <div class="navbar">
         <h1>ScanCar</h1>
+        <button></button>
       </div>
 
       <div>
