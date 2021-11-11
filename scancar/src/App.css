@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+
+
 /* Big title at top of "module page" */
 .moduletitle {
   padding-top: 0.1em;
@@ -27,6 +32,8 @@
   font-size: 22px;
   line-height: 22px;
 }
+
+
 
 /* What's the purpose of this?? */
 .canvas label,
@@ -86,6 +93,7 @@ input {
   border-radius: 20px;
   border-style: solid;
   border-color: white;
+
 }
 
 /* modules, styling rules for each "box of content", based on design guide */
