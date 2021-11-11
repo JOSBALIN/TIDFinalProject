@@ -1,8 +1,5 @@
 import * as React from 'react';
 import "./App.css";
-import BasicTable from "./components/table.tsx";
-import CheckBoxes from "./components/checkboxes.tsx";
-import Main from './Main.js';
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
@@ -10,17 +7,36 @@ import Home from './pages/Home.js';
 import Management from './pages/Management.js';
 import CarPrem from './pages/CarPrem.js';
 
-const App = () => {
+export default function App() {
     return (
-      <>
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to='/'>Bookings</Link>
+            </li>
+            <li>
+              <Link to='/management'>>Management</Link>
+            </li>
+            <li>
+              <Link to='/carprem'>CarPrem</Link>
+            </li>
+          </ul>
         <Routes>
-            <Route exact path='/' element={Home}></Route>
-            <Route exact path='/Management' element={Management}></Route>
-            <Route exact path='/CarPrem' element={CarPrem}></Route>
+            <Route exact path='/' element={<Home/>}></Route>
+            <Route path='/management' element={<Management/>}></Route>
+            <Route path='/carprem' element={<CarPrem/>}></Route>
         </Routes>
-      </>
-    )
+        </div>
+        
+      </Router>
+    );
 }
+
+
+
+
+
 
 
 //     <div className="Background">
@@ -110,4 +126,3 @@ const App = () => {
 //   );
 // }
 
-export default App;

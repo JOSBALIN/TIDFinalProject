@@ -8,9 +8,7 @@ import routes from './routes';
 import Home from './pages/Home.js';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+    <App />,
   
 
  // <React.StrictMode>

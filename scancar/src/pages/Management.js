@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 function Management() {
 
     return (
-    <h1>Hej</h1>
+    <h1>This is Management</h1>
   );
 }
 
