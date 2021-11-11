@@ -1,14 +1,14 @@
 /* Big title at top of "module page" */
-.moduletitle{
+.moduletitle {
   padding-top: 0.1em;
   padding-bottom: 0.1em;
-  height:10%;
-  background-color: #3B917D;
+  height: 10%;
+  background-color: #3b917d;
   border-radius: 1em 1em 0px 0px;
 }
 
 /* Sub-title for modules */
-.moduletitle h2{
+.moduletitle h2 {
   font-family: Montserrat, sans-serif;
   font-size: 2em;
   font-style: normal;
@@ -20,8 +20,8 @@
 }
 
 /* Sub-sub-title for modules */
-.module h3{
-  font-family: 'Montserrat', sans-serif;
+.module h3 {
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
@@ -29,18 +29,19 @@
 }
 
 /* What's the purpose of this?? */
-.canvas label, input{
-  display:block;
+.canvas label,
+input {
+  display: block;
 }
 
- /* Top bar */
- .navbar {
+/* Top bar */
+.navbar {
   overflow: hidden;
   background-color: #505050;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  height:60px;
+  height: 60px;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -48,18 +49,17 @@
 
 /* ScanCar topbar headline styling*/
 .navbar h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: white;
-  padding-left:4%;
-  font-size:300%;
+  padding-left: 4%;
+  font-size: 300%;
 }
-
 
 /* Styling "canvas", gray background upon which modules are hosted */
 .canvas {
-  background: #EBEBEB;
-  padding-bottom:10%;
+  background: #ebebeb;
+  padding-bottom: 10%;
   margin-top: 75px;
   height: 100%;
   width: 60%;
@@ -69,35 +69,33 @@
 }
 
 /* establish "line by line" layout for input fields */
-#filterform, #advfilterform {
+#filterform,
+#advfilterform {
   display: grid;
   grid-template-columns: 112px 112px 112px 112px;
   grid-gap: 16px;
 }
 
 /* input field styles for basic and advanced filters */
-#filtersmodule input, #advfiltersmodule input{
+#filtersmodule input,
+#advfiltersmodule input {
   width: 112px;
   height: 16px;
-  outline:none;
-  background: #D6D6D6;
+  outline: none;
+  background: #d6d6d6;
   border-radius: 20px;
-  border-style:solid;
-  border-color:white
+  border-style: solid;
+  border-color: white;
 }
 
-
-
-
-
 /* modules, styling rules for each "box of content", based on design guide */
-.module{
+.module {
   background-color: white;
   margin: auto;
   height: auto;
   margin-top: 16px;
-  margin-left:16px;
-  margin-right:16px;
+  margin-left: 16px;
+  margin-right: 16px;
   padding: 8px 8px 16px 16px;
   border-radius: 1em;
   font-family: Lato;
@@ -107,12 +105,12 @@
 }
 
 /* The advanced filters button/clickable text */
-#advfilters{
+#advfilters {
   font-family: Lato;
   font-style: normal;
   font-weight: bolder;
   font-size: 14px;
   line-height: 12px;
-  background:none; 
-  border:none; 
+  background: none;
+  border: none;
 }
