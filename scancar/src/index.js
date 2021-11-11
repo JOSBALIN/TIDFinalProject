@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import routes from './routes';
+import Home from './pages/Home.js';
 
 ReactDOM.render(
   <BrowserRouter>

@@ -8,6 +8,7 @@ import CheckBoxes from "../components/checkboxes.tsx";
 import { Link } from 'react-router-dom';
 
 
+
 function Home() {
     const [visible, setVisible] = React.useState(false);
 

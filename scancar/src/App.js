@@ -6,18 +6,19 @@ import Main from './Main.js';
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-
 import Home from './pages/Home.js';
 import Management from './pages/Management.js';
 import CarPrem from './pages/CarPrem.js';
 
 const App = () => {
     return (
+      <>
         <Routes>
             <Route exact path='/' element={Home}></Route>
             <Route exact path='/Management' element={Management}></Route>
             <Route exact path='/CarPrem' element={CarPrem}></Route>
         </Routes>
+      </>
     )
 }
 
