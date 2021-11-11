@@ -16,7 +16,7 @@ export default function App() {
               <Link to='/'>Bookings</Link>
             </li>
             <li>
-              <Link to='/management'>>Management</Link>
+              <Link to='/management'>Management</Link>
             </li>
             <li>
               <Link to='/carprem'>CarPrem</Link>
