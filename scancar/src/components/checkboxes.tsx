@@ -17,7 +17,7 @@ export default function CheckBoxes() {
                     <input type="checkbox" id="checkboxF"></input> <label>F</label>
                     <input type="checkbox" id="checkboxE"></input> <label>E</label>
                 </p>
-            </div></>
+          </div></>
     );
 
 }
