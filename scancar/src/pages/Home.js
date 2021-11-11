@@ -15,13 +15,9 @@ function Home() {
     <div className="Background">
       <div class="navbar">
         <h1>ScanCar</h1>
-        <Link to='/Management'>
-            <button variant='outlined'>
-                Management
-            </button>
-        </Link>
       </div>
 
+    
       <div>
         <div class="canvas">
           <div class="moduletitle" id="bookingOverview">

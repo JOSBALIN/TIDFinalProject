@@ -6,22 +6,14 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home.js';
 import Management from './pages/Management.js';
 import CarPrem from './pages/CarPrem.js';
+import Sidebar from "./components/sidebar.tsx";
 
 export default function App() {
     return (
+      
       <Router>
         <div>
-          <ul>
-            <li>
-              <Link to='/'>Bookings</Link>
-            </li>
-            <li>
-              <Link to='/management'>Management</Link>
-            </li>
-            <li>
-              <Link to='/carprem'>CarPrem</Link>
-            </li>
-          </ul>
+        <Sidebar/>
         <Routes>
             <Route exact path='/' element={<Home/>}></Route>
             <Route path='/management' element={<Management/>}></Route>
