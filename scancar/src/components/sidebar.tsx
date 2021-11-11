@@ -13,7 +13,7 @@ export default function Sidebar() {
               <Link to='/management'>Management</Link>
         </li>
         <li>
-              <Link to='/carprem'>CarPrem</Link>
+              <Link to='/carprem'>Cars on Prem</Link>
         </li>
       </div>
 
