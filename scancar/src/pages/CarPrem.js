@@ -1,7 +1,7 @@
 import * as React from 'react';
 //import logo from "../logo.svg";
 import "./CarPrem.css"
-import BasicTable from "../components/table.tsx";
+import CarOverview from "../components/caroverview.tsx";
 
 import { Link } from 'react-router-dom';
 import { render } from '@testing-library/react';
@@ -23,7 +23,7 @@ function Home() {
           </div>
           <div class="module" id="overviewmodule">
             <h3>Overview</h3>
-            <BasicTable></BasicTable>
+            <CarOverview></CarOverview>
           </div>
           <div class="module" id="parkingmodule">
           </div>
