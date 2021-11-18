@@ -3,6 +3,7 @@ import * as React from 'react';
 import "../App.css";
 import BasicTable from "../components/table.tsx";
 import CheckBoxes from "../components/checkboxes.tsx";
+import GridTable from "../components/gridtable.tsx";
 
 
 import { Link } from 'react-router-dom';
@@ -71,6 +72,7 @@ function Home() {
           )}
           <div class="module" id="listmodule">
             <BasicTable />
+            <GridTable />
           </div>
         </div>
       </div>
