@@ -7,12 +7,14 @@ import Home from './pages/Home.js';
 import Management from './pages/Management.js';
 import CarPrem from './pages/CarPrem.js';
 import Sidebar from "./components/sidebar.tsx";
+import NavBar from "./components/navbar.tsx";
 
 export default function App() {
     return (
       
       <Router>
         <div>
+        <NavBar/>
         <Sidebar/>
         <Routes>
             <Route exact path='/' element={<Home/>}></Route>
