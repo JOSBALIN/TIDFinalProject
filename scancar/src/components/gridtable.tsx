@@ -2,9 +2,11 @@ import * as React from "react";
 import { DataGrid, GridRowsProp, GridColDef, GridCellParams, MuiEvent, GridApi, GridCellValue } from "@mui/x-data-grid";
 import type {} from '@mui/x-data-grid/themeAugmentation';
 import { Button } from "@mui/material";
+import SimpleModal from "./SimpleModal";
+import "./SimpleModal.css"
 
 const rows: GridRowsProp = [
-  { id: 1, col1: "Hello", col2: "World", col3:     <label>Booking ID</label> },
+  { id: 1, col1: "Hello", col2: "World", col3: "test" },
   { id: 2, col1: "XGrid", col2: "is Awesome", col3: "test" },
   { id: 3, col1: "Material-UI", col2: "is Amazing", col3: "test" },
   { id: 4, col1: "Hello", col2: "World", col3: "test" },
@@ -14,12 +16,19 @@ const rows: GridRowsProp = [
 
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 70 },
+  { field: "id",  headerName: "Booking ID", width: 120 },
+  { field: "name",  headerName: "Full Name", width: 120 },
+  { field: "phoneNum",  headerName: "Phone", width: 120 },
+  { field: "carGroup",  headerName: "Group", width: 90 },
+  { field: "pick-up",  headerName: "Pick-up", width: 100 },
+  { field: "return",  headerName: "Return", width: 100 },
+  { field: "status",  headerName: "Status", width: 90 },
+
   
   // Button in grid adapted from https://stackoverflow.com/questions/64331095/how-to-add-a-button-to-every-row-in-mui-datagrid
   {
-    field: "action",
-    headerName: "Action",
+    field: "edit",
+    headerName: "",
     sortable: false,
     renderCell: (params) => {
       const onClick = (e: { stopPropagation: () => void; }) => {
@@ -35,10 +44,10 @@ const columns: GridColDef[] = [
             (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
           );
 
-        return <p>TEEEST</p>
+          return alert(JSON.stringify(thisRow, null, 4));
       };
 
-      return <Button onClick={onClick}>Click</Button>;
+      return <div><SimpleModal/></div>;
     }
   },
 ];
@@ -62,17 +71,12 @@ const columns: GridColDef[] = [
 export default function GridTable() {
   return (
     <div style={{ height: 300, width: "100%" }}>
-      <DataGrid rows={rows} columns={columns} 
+      <DataGrid disableSelectionOnClick rows={rows} columns={columns} 
       onCellClick={(params: GridCellParams, event: MuiEvent<React.MouseEvent>) => {
         event.defaultMuiPrevented = true;
       }}
       />
-    
-    <div>
-    <label>Booking ID</label>
-    <input type="text" name="Booking ID" />
-    <button> submit</button>
-    </div>
+          <div></div>
     </div>
   );
 }

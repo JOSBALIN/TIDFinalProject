@@ -4,8 +4,6 @@ import "../App.css";
 import BasicTable from "../components/table";
 import CheckBoxes from "../components/checkboxes";
 import GridTable from "../components/gridtable";
-import "../components/popup.tsx";
-import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
 import { Link } from "react-router-dom";
@@ -75,9 +73,7 @@ function Home() {
           )}
           <div className="module" id="listmodule">
             <BasicTable />
-            {/* <GridTable /> 
-            Experimental table using datagrid from MUI. To be developed for editing and displaying data. Commented out for visuals.
-            */}
+             <GridTable /> 
           </div>
         </div>
       </div>
