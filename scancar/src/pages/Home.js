@@ -45,8 +45,6 @@ function Home() {
         <h1>ScanCar</h1>
       </div>
 
-
-    
       <div>
         <div class="canvas">
           <div class="moduletitle" id="bookingOverview">
