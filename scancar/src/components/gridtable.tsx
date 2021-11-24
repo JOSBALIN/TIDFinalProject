@@ -16,7 +16,7 @@ const rows: GridRowsProp = [
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 70 },
   
-  // Button in grid taken from https://stackoverflow.com/questions/64331095/how-to-add-a-button-to-every-row-in-mui-datagrid
+  // Button in grid adapted from https://stackoverflow.com/questions/64331095/how-to-add-a-button-to-every-row-in-mui-datagrid
   {
     field: "action",
     headerName: "Action",
@@ -35,7 +35,7 @@ const columns: GridColDef[] = [
             (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
           );
 
-        return alert(JSON.stringify(thisRow, null, 4));
+        return <p>TEEEST</p>
       };
 
       return <Button onClick={onClick}>Click</Button>;

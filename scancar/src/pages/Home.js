@@ -4,19 +4,47 @@ import "../App.css";
 import BasicTable from "../components/table.tsx";
 import CheckBoxes from "../components/checkboxes.tsx";
 import GridTable from "../components/gridtable.tsx";
-
+import "../components/popup.tsx";
+import Popup from "reactjs-popup";
+import 'reactjs-popup/dist/index.css';
 
 import { Link } from 'react-router-dom';
 import { render } from '@testing-library/react';
 
+
+
+
+
 function Home() {
+    const [isOpen, setIsOpen] = React.useState(false);
     const [visible, setVisible] = React.useState(false);
+
+    const PopupExample = () => (
+      <Popup trigger={<button>Trigger</button>} position="top left">
+        {" "}
+        {(close) => (
+          <div>
+            {" "}
+            Content here{" "}
+            <a className="close" onClick={close}>
+              {" "}
+              &times;{" "}
+            </a>{" "}
+          </div>
+        )}{" "}
+      </Popup>
+    );
+
+    const togglePopup = () => {
+      setIsOpen(!isOpen);
+    }
 
     return (
     <div className="Background">
       <div class="navbar">
         <h1>ScanCar</h1>
       </div>
+
 
     
       <div>
@@ -73,11 +101,31 @@ function Home() {
           <div class="module" id="listmodule">
             <BasicTable />
             <GridTable />
+
+            <PopupExample/>
+            <Popup trigger={<button>Trigger</button>} position="top left">
+        {" "}
+        {(close) => (
+          <div>
+            {" "}
+            Content here{" "}
+            <a className="close" onClick={close}>
+              {" "}
+              &times;{" "}
+            </a>{" "}
+          </div>
+        )}{" "}
+      </Popup>
+
           </div>
         </div>
       </div>
+
+
     </div>
-  );
+
+
+);
 }
 
 export default Home;
