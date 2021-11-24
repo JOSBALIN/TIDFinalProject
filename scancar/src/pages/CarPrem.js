@@ -1,10 +1,11 @@
 import * as React from 'react';
 //import logo from "../logo.svg";
-import "./CarPrem.css"
+import "../components/CarPrem.css"
 import CarOverview from "../components/caroverview.tsx";
 
 import { Link } from 'react-router-dom';
 import { render } from '@testing-library/react';
+import BasicTableOverview from '../components/caroverview';
 
 function Home() {
     const [visible, setVisible] = React.useState(false);
@@ -21,12 +22,35 @@ function Home() {
           <div class="moduletitle" id="carprem">
             <h2>Cars on Premises</h2>
           </div>
+          
           <div class="module" id="overviewmodule">
-            <h3>Overview</h3>
-            <CarOverview></CarOverview>
+            <h1>Overview</h1>
+              <div class="module" id="filtersmodule">
+                <form id="filterform">
+                  <p>
+                    <label className="label">Group</label>
+                    <input type="text" name="Group"></input>
+                  </p>
+                  <p>
+                    <label className="label">Car</label>
+                    <input type="text" name="Car"></input>
+                  </p>
+                </form>
+              </div>
+            
+            <CarOverview/>
           </div>
-          <div class="module" id="parkingmodule">
+          <div class="module" id="overviewmodule">
+          
           </div>
+          <div class="module" id="listmodule">
+            
+            </div>
+
+
+          
+          {/* <div class="module" id="parkingmodule">
+          </div> */}
         </div>
       </div>
     </div>

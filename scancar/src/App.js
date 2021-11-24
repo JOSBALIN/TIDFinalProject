@@ -10,7 +10,6 @@ import Sidebar from "./components/sidebar.tsx";
 
 export default function App() {
     return (
-      
       <Router>
         <div>
         <Sidebar/>
@@ -20,7 +19,6 @@ export default function App() {
             <Route path='/carprem' element={<CarPrem/>}></Route>
         </Routes>
         </div>
-        
       </Router>
     );
 }
