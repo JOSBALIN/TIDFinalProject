@@ -44,10 +44,14 @@ const columns: GridColDef[] = [
             (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
           );
 
-          return alert(JSON.stringify(thisRow, null, 4));
+          const rowValues = thisRow; // ThisRow contains all data on current row
+          console.log(rowValues);
+          params.value = 2;
+          thisRow.id = 5;
+          return <SimpleModal/>
       };
 
-      return <div><SimpleModal/></div>;
+      return <Button onClick={onClick}>Click</Button>; <div></div>;
     }
   },
 ];
