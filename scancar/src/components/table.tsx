@@ -9,6 +9,8 @@ import Paper from '@mui/material/Paper';
 
 import "./table.css"
 
+// Table is from MUI, edited by jbal
+
 function createData(
   bookingid: number,
   name: string,
@@ -20,6 +22,8 @@ function createData(
 ) {
   return { bookingid, name, phone, group, pickuptime, returntime, carstatus };
 }
+
+
 
 const rows = [
   createData(150, "Johan Larsen", "+45 3140 1103", "A", "30/10/2021\n20:00", "05/11/2021\n10:00", "Returned"),

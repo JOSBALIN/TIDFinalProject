@@ -3,11 +3,11 @@ import "./App.css";
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-import Home from './pages/Home.js';
-import Management from './pages/Management.js';
-import CarPrem from './pages/CarPrem.js';
-import Sidebar from "./components/sidebar.tsx";
-import NavBar from "./components/navbar.tsx";
+import Home from './pages/Home';
+import Management from './pages/Management';
+import CarPrem from './pages/CarPrem';
+import Sidebar from "./components/sidebar";
+import NavBar from "./components/navbar";
 
 export default function App() {
     return (

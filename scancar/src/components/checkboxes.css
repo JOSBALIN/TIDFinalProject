@@ -19,7 +19,6 @@
 input[type=checkbox]:before {
     content: "";
     display: block;
-    position: absolute;
     width: 16px;
     height: 16px;
     border: 2px solid #555555;
@@ -37,9 +36,6 @@ input[type=checkbox]:checked:after {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    position: absolute;
-    top: 2px;
-    left: 6px;
 }
   
   .checkboxes p{
