@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Modal from "@material-ui/core/Modal";
 import "./SimpleModal.css";
+import { GridCellValue } from "@mui/x-data-grid";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -32,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleModal() {
+export default function SimpleModal(props: {o: Record<string, GridCellValue>, isOpen: boolean}) {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState<boolean>(props.isOpen);
 
   const handleOpen = () => {
     setOpen(true);

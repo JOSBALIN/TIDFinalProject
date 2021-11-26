@@ -31,6 +31,7 @@ const columns: GridColDef[] = [
     headerName: "",
     sortable: false,
     renderCell: (params) => {
+      const thisRow: Record<string, GridCellValue> = {};
       const onClick = (e: { stopPropagation: () => void; }) => {
         e.stopPropagation(); // don't select this row after clicking
 
@@ -48,10 +49,9 @@ const columns: GridColDef[] = [
           console.log(rowValues);
           params.value = 2;
           thisRow.id = 5;
-          return <SimpleModal/>
+          return <SimpleModal o={thisRow} isOpen={true}/>
       };
-
-      return <Button onClick={onClick}>Click</Button>; <div></div>;
+      return <SimpleModal o={thisRow} isOpen={false}/>
     }
   },
 ];
