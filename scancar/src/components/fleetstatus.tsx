@@ -1,8 +1,6 @@
 import * as React from "react";
 import "./managementmodules.css";
-import "https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js";
-import "https://cdn.anychart.com/releases/8.10.0/js/anychart-pie.min.js";
-import DonutChart from "react-donut-chart";
+//import DonutChart from "react-donut-chart";
 // import * as ReactDOM from "react-dom";
 // import {
 //   Chart,
@@ -71,7 +69,7 @@ export default function FleetStatus() {
           <h3>Fleet status</h3>
         </div>
         <div id="donut">
-          <DonutChart
+          {/* <DonutChart
             data={[{
               label: 'Give you up',
               value: 25
@@ -81,7 +79,7 @@ export default function FleetStatus() {
               value: 75,
               isEmpty: true
             }]} 
-          />
+          /> */}
         </div>
       </div>
     
