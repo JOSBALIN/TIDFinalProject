@@ -1,14 +1,11 @@
 import * as React from 'react';
 //import logo from "../logo.svg";
 import "../App.css";
-<<<<<<< HEAD:scancar/src/pages/Management.js
-import FleetStatus from "../components/fleetstatus.tsx";
+import FleetStatus from "../components/fleetstatus";
 import Request from '../components/mrequest';
 import Release from '../components/mrelease';
-=======
 import BasicTable from "../components/table";
 import CheckBoxes from "../components/checkboxes";
->>>>>>> 4e9fdb8fab05751898ab5e258a06ff0b1ccd0716:scancar/src/pages/Management.tsx
 
 
 import { Link } from 'react-router-dom';
@@ -22,18 +19,18 @@ export default function Management() {
 
     <div className="Background">
       <div>
-        <div class="canvas">
-          <div class="moduletitle" id="management">
+        <div className="canvas">
+          <div className="moduletitle" id="management">
             <h2>Management</h2> 
           </div> 
           <div>
             <FleetStatus/>
           </div>
-          <div class="row">
-            <div class="column">
+          <div className="row">
+            <div className="column">
               <Request/>
             </div>
-            <div class="column">
+            <div className="column">
               <Release/>
             </div>
           </div>
