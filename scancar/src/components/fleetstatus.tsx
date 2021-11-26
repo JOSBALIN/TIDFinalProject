@@ -1,5 +1,8 @@
 import * as React from "react";
-import "./managementmodules.css"
+import "./managementmodules.css";
+import "https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js";
+import "https://cdn.anychart.com/releases/8.10.0/js/anychart-pie.min.js";
+import DonutChart from "react-donut-chart";
 // import * as ReactDOM from "react-dom";
 // import {
 //   Chart,
@@ -62,12 +65,27 @@ import "./managementmodules.css"
 export default function FleetStatus() {
 
   return(
-    <div className="module" id="fleetstatusmodule">
-      <div className="moduletitle" id="fleetstatus">
-        <h3>Fleet status</h3>
+    <div>
+      <div className="module" id="fleetstatusmodule">
+        <div className="moduletitle" id="fleetstatus">
+          <h3>Fleet status</h3>
+        </div>
+        <div id="donut">
+          <DonutChart
+            data={[{
+              label: 'Give you up',
+              value: 25
+            },
+            {
+              label: '',
+              value: 75,
+              isEmpty: true
+            }]} 
+          />
+        </div>
       </div>
-    </div>
     
+    </div>
   );
 
     //return(
@@ -96,6 +114,35 @@ export default function FleetStatus() {
         //     </div>   
         // </div>
       //);
+
+      // anychart.onDocumentReady(function () {
+  
+      //   // add data
+      //   var data = anychart.data.set([
+      //     ['Spotify', 34],
+      //     ['Apple Music', 21],
+      //     ['Amazon Music', 15],
+      //     ['Tencent apps', 11],
+      //     ['YouTube Music', 6],
+      //     ['Others', 13]
+      //   ]);
+        
+      //   // create a pie chart with the data
+      //   var chart = anychart.pie(data)
+        
+      //   // set the chart radius making a donut chart
+      //   chart.innerRadius('55%');
+        
+      //   // set the chart title
+      //   chart.title('Music Streaming Apps Global Market Share')
+      
+      //   // set container id for the chart
+      //   chart.container('container');
+        
+      //   // initiate chart drawing
+      //   chart.draw();
+      
+      // });
 
 }
 
