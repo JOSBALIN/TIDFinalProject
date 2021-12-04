@@ -21,7 +21,7 @@
   line-height: 29px;
   letter-spacing: 0em;
   text-align: center;
-  color: white;
+  color: red;
 }
 
 /* Sub-sub-title for modules */
@@ -55,27 +55,6 @@ input {
   border-radius: 1em;
 }
 
-/* establish "line by line" layout for input fields */
-#filterform,
-#advfilterform {
-  display: grid;
-  grid-template-columns: 112px 112px 112px 112px;
-  grid-gap: 16px;
-}
-
-/* input field styles for basic and advanced filters */
-#filtersmodule input,
-#advfiltersmodule input {
-  width: 112px;
-  height: 16px;
-  outline: none;
-  background: #d6d6d6;
-  border-radius: 20px;
-  border-style: solid;
-  border-color: white;
-
-}
-
 /* modules, styling rules for each "box of content", based on design guide */
 .module {
   background-color: white;
@@ -90,15 +69,4 @@ input {
   font-style: normal;
   font-size: 14px;
   line-height: 22px;
-}
-
-/* The advanced filters button/clickable text */
-#advfilters {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bolder;
-  font-size: 14px;
-  line-height: 12px;
-  background: none;
-  border: none;
 }

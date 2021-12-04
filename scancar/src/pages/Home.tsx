@@ -1,18 +1,24 @@
 import * as React from "react";
 //import logo from "../logo.svg";
+import "./Home.css";
 import "../App.css";
 import BasicTable from "../components/table";
 import CheckBoxes from "../components/checkboxes";
 import GridTable from "../components/gridtable";
 import "reactjs-popup/dist/index.css";
+import SimpleModal from "../components/SimpleModal";
+import DatePicker from "react-datepicker";
 
 import { Link } from "react-router-dom";
 import { render } from "@testing-library/react";
+import { GridCellValue } from "@mui/x-data-grid";
 
 function Home() {
   const [visible, setVisible] = React.useState(false);
 
-
+  const emptyRecord: Record<string, GridCellValue> = {
+    0: {id: 0}
+  };
 
   return (
     <div className="Background">
@@ -45,6 +51,7 @@ function Home() {
                   <label>Address</label>
                   <input type="text" name="Address" />
                 </p>
+                <SimpleModal o={emptyRecord} isNew={true} isOpen={false}/>
               </form>
             </div>
             <button onClick={() => setVisible(!visible)} id="advfilters">
@@ -66,6 +73,7 @@ function Home() {
                   <label>Driver's License</label>
                   <input type="text" name="Driver's License" />
                 </p>
+              
               </form>
 
               <CheckBoxes />

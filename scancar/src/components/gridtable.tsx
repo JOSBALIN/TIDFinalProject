@@ -70,9 +70,11 @@ const columns: GridColDef[] = [
       };
      
 
-      return <SimpleModal o={onClick()} isOpen={false}/>
+      return <SimpleModal o={onClick()} isNew={false} isOpen={false}/>
     }
   },
+
+  { field: "delete",  headerName: "", width: 90, sortable: false, align: "center", },
 ];
 
 // const columns: GridColDef[] = [
