@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import Modal from "@material-ui/core/Modal";
 import "./SimpleModal.css";
 import { GridCellValue } from "@mui/x-data-grid";
+import EditIcon from "@mui/icons-material/Edit";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -33,25 +34,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleModal(props: {o: Record<string, GridCellValue>, isOpen: boolean}) {
+export default function SimpleModal(props: {o: Record<string, GridCellValue>, isNew: boolean, isOpen: boolean}) {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState<boolean>(props.isOpen);
+  
+  const isNew = props.isNew;
 
   const handleOpen = () => {
     setOpen(true);
   };
-  const test = props.o.name?.toString;
 
   const handleClose = () => {
     setOpen(false);
   };
 
+
+
+  function ModalButton() {
+    if (isNew) {
+      return (
+        <Button id="newBooking" onClick={handleOpen}>
+          + NEW BOOKING
+        </Button>
+      );
+    } else {
+      return (
+        <Button onClick={handleOpen}>
+          <EditIcon/>
+        </Button>
+      );
+    }
+  }
+
+
   return (
     <div className="backgroundDiv">
-      <Button variant="contained" color="primary" onClick={handleOpen}>
-        EDIT
-      </Button>
+      <ModalButton/>
 
       <Modal
         aria-labelledby="simple-modal-title"
@@ -63,7 +82,7 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
         <div className={classes.paper} id="modalDiv">
           <div className="modalTitle">
             {" "}
-            <h2> Edit Booking {props.o.id}</h2>
+            <h3>{isNew ? "New Booking" : "Edit Booking"}</h3>
           </div>
           <div className="module">
             <div id="customerInformationTop">
@@ -90,6 +109,7 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
                   <input type="text" name="Address" />
                 </p>
               </form>
+
             </div>
           </div>
         </div>
