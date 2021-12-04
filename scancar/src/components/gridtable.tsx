@@ -12,6 +12,10 @@ import { ClassNames } from "@emotion/react";
 import { borderBottom } from "@mui/system";
 import { nodeModuleNameResolver } from "typescript";
 
+function myFunction() {
+  window.confirm("Are you sure you want to delete this entry?\nThis cannot be undone");
+}
+
 const useStyles = makeStyles({
   root: {
   "& .styledrows": {
@@ -31,11 +35,10 @@ const rows: GridRowsProp = [
 ];
 
 
-
 const columns: GridColDef[] = [
   { field: "id",  headerName: "Booking ID", minWidth: 110, align: "center" },
   { field: "name",  headerName: "Full Name", minWidth: 140,  },
-  { field: "phoneNum",  headerName: "Phone", width: 120 },
+  { field: "phoneNum",  headerName: "Phone", width: 110, sortable:false },
   { field: "carGroup",  headerName: "Group", width: 90, align: "center" },
   { field: "pickup",  headerName: "Pick-up", width: 100, align: "center" },
   { field: "return",  headerName: "Return", width: 100, align: "center" },
@@ -52,7 +55,6 @@ const columns: GridColDef[] = [
     renderCell: (params) => {
 
       const onClick = () => {
-        //e.stopPropagation(); // don't select this row after clicking
 
         const api: GridApi = params.api;
         const thisRow: Record<string, GridCellValue> = {};
@@ -64,9 +66,6 @@ const columns: GridColDef[] = [
             (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
           );
 
-          const rowValues = thisRow; // ThisRow contains all data on current row
-          console.log(rowValues);
-          params.value = 2;
           return thisRow
       };
      
@@ -84,11 +83,10 @@ const columns: GridColDef[] = [
     renderCell: (params) => {
 
       const onClick = () => {
+        alert("Are you sure you want to delete this entry?");
 
       };
-     
-
-      return <DeleteIcon/>
+      return <button onClick={myFunction}  ><DeleteIcon/></button>
     }
   },
 
@@ -123,7 +121,7 @@ export default function GridTable() {
         disableColumnMenu={true}
         scrollbarSize={100}
         disableColumnSelector={true}
-        rowHeight={70}
+        rowHeight={60}
         pageSize={5}
         showColumnRightBorder={true}
         disableSelectionOnClick
