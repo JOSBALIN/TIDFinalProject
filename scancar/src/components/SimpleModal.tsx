@@ -41,6 +41,7 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
   const handleOpen = () => {
     setOpen(true);
   };
+  const test = props.o.name?.toString;
 
   const handleClose = () => {
     setOpen(false);
@@ -62,19 +63,19 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
         <div className={classes.paper} id="modalDiv">
           <div className="modalTitle">
             {" "}
-            <h2> Edit Booking</h2>
+            <h2> Edit Booking {props.o.id}</h2>
           </div>
           <div className="module">
             <div id="customerInformationTop">
               {" "}
-              <h4>Customer information</h4> <h5>BookingID: 001</h5>
+              <h4>Customer information</h4> <h5>BookingID: {props.o.id}</h5>
             </div>
             <div></div>
             <div>
               <form id="editbooking">
                 <p>
-                  <label>Booking ID</label>
-                  <input type="text" name="Booking ID" value="Tester" />
+                  <label>Booking ID {props.o.name}</label>
+                  <input type="text" name="Booking ID" value="aa" />
                 </p>
                 <p>
                   <label>Phone Number</label>

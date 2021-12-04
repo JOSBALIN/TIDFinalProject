@@ -72,7 +72,6 @@ function Home() {
             </div>
           )}
           <div className="module" id="listmodule">
-            <BasicTable />
              <GridTable /> 
           </div>
         </div>
