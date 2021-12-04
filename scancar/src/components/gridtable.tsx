@@ -4,6 +4,7 @@ import type {} from '@mui/x-data-grid/themeAugmentation';
 import { Button } from "@mui/material";
 import SimpleModal from "./SimpleModal";
 import { makeStyles } from "@mui/styles";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import "./SimpleModal.css"
 import "./gridtable.css"
@@ -47,7 +48,7 @@ const columns: GridColDef[] = [
     headerName: "",
     sortable: false,
     align: "center",
-    minWidth: 50,
+    width: 20,
     renderCell: (params) => {
 
       const onClick = () => {
@@ -74,7 +75,24 @@ const columns: GridColDef[] = [
     }
   },
 
-  { field: "delete",  headerName: "", width: 90, sortable: false, align: "center", },
+  {
+    field: "delete",
+    headerName: "",
+    sortable: false,
+    align: "center",
+    width: 20,
+    renderCell: (params) => {
+
+      const onClick = () => {
+
+      };
+     
+
+      return <DeleteIcon/>
+    }
+  },
+
+
 ];
 
 // const columns: GridColDef[] = [
