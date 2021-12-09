@@ -1,51 +1,55 @@
 import * as React from 'react';
-//import logo from "../logo.svg";
 import "../components/CarPrem.css"
-import CarOverview from "../components/caroverview.tsx";
-
+import { getAllCars } from "../api";
 import { Link } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import BasicTableOverview from '../components/caroverview';
+import LotOverview from '../components/caroverview';
+import BasicTableOverview from '../components/tableoverview';
+
 
 function Home() {
-    const [visible, setVisible] = React.useState(false);
+    const [listOfCars, setListOfCars] = React.useState([]); 
+    
+
+    React.useEffect(async() => { 
+      const allCars = await getAllCars();
+      console.log(allCars);
+      setListOfCars(allCars); 
+    }, [])
 
     return (
     <div className="Background">
       <div class="navbar">
         <h1>ScanCar</h1>
       </div>
-
-    
-      <div>
-        <div class="canvas">
-          <div class="moduletitle" id="carprem">
-            <h2>Cars on Premises</h2>
-          </div>
-          
-          <div class="module" id="overviewmodule">
-            <h1>Overview</h1>
-              <div class="module" id="filtersmodule">
+        <div>
+          <div class="canvas">
+            <div class="moduletitle" id="carprem">
+              <h2>Cars on Premises</h2>
+            </div>
+          <div className="flexbox-container">
+            <div class="module" id="filtersmodule">
+              <h1>Overview</h1>
                 <form id="filterform">
-                  <p>
+                  <h4>
                     <label className="label">Group</label>
                     <input type="text" name="Group"></input>
-                  </p>
-                  <p>
+                  </h4>
+                  <h4>
                     <label className="label">Car</label>
                     <input type="text" name="Car"></input>
-                  </p>
+                  </h4>
                 </form>
-              </div>
-            
-            <CarOverview/>
+              <BasicTableOverview listOfCars={listOfCars} /> 
           </div>
-          <div class="module" id="overviewmodule">
+            <form>
+              <div class="module" id="overviewmodule">
+                <LotOverview/>
+              </div>  
+            </form>
+          </div>
+
           
-          </div>
-          <div class="module" id="listmodule">
-            
-            </div>
 
 
           

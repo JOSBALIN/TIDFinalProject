@@ -1,6 +1,8 @@
 import * as React from 'react';
 import "./App.css";
 
+
+
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import Home from './pages/Home.js';
@@ -9,6 +11,8 @@ import CarPrem from './pages/CarPrem.js';
 import Sidebar from "./components/sidebar.tsx";
 
 export default function App() {
+  
+
     return (
       <Router>
         <div>
