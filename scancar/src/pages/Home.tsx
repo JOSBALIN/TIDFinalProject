@@ -85,12 +85,27 @@ function Home() {
                     <div className="row">
                       <div className="column">
                         Date
+                        {/* Insert SimpleModal here to open calendar */}
                       </div>
                       <div className="column">
                         Time
                       </div>
                       <div className="column">
                         Location
+                        <div id="location1">
+                          <select name="location" id="location">
+                              <option value="Nordhavn">Nordhavn</option>
+                            <option value="Sydhavn">Sydhavn</option>
+                            <option value="Amager">Amager</option>
+                          </select>
+                        </div>
+                        <div id="location2">
+                          <select name="location" id="location">
+                              <option value="Nordhavn">Nordhavn</option>
+                            <option value="Sydhavn">Sydhavn</option>
+                            <option value="Amager">Amager</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
