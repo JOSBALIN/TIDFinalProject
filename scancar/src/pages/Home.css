@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+
+/* establish "line by line" layout for input fields */
+#filterform,
+#advfilterform {
+  display: grid;
+  grid-template-columns: 112px 112px 112px 112px 112px;
+  grid-gap: 16px;
+}
+
+/* input field styles for basic and advanced filters */
+#filtersmodule input,
+#advfiltersmodule input {
+  width: 112px;
+  height: 16px;
+  outline: none;
+  background: #d6d6d6;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: white;
+}
+
+/* "Filter bookings" styling */
+#filtersmodule h3{
+    color:black;
+    text-align: left;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+/* The advanced filters button/clickable text */
+#advfilters {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 14px;
+    line-height: 12px;
+    background: none;
+    border: none;
+}
+
+#newBooking{
+    background: #3B917D;
+    border-radius: 20px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    height: fit-content;
+    width:fit-content;
+    text-align: center;
+    white-space: nowrap;
+    color:white;
+    padding: 4px 8px 4px 8px;
+
+}

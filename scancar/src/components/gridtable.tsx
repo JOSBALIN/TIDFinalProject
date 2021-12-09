@@ -2,28 +2,59 @@ import * as React from "react";
 import { DataGrid, GridRowsProp, GridColDef, GridCellParams, MuiEvent, GridApi, GridCellValue } from "@mui/x-data-grid";
 import type {} from '@mui/x-data-grid/themeAugmentation';
 import { Button } from "@mui/material";
+import SimpleModal from "./SimpleModal";
+import { makeStyles } from "@mui/styles";
+import DeleteIcon from '@mui/icons-material/Delete';
+
+import "./SimpleModal.css"
+import "./gridtable.css"
+import { ClassNames } from "@emotion/react";
+import { borderBottom } from "@mui/system";
+import { nodeModuleNameResolver } from "typescript";
+
+function myFunction() {
+  window.confirm("Are you sure you want to delete this entry?\nThis cannot be undone");
+}
+
+const useStyles = makeStyles({
+  root: {
+  "& .styledrows": {
+  backgroundColor: "#EBEBEB",  
+  }
+  }
+  });
+
 
 const rows: GridRowsProp = [
-  { id: 1, col1: "Hello", col2: "World", col3:     <label>Booking ID</label> },
-  { id: 2, col1: "XGrid", col2: "is Awesome", col3: "test" },
-  { id: 3, col1: "Material-UI", col2: "is Amazing", col3: "test" },
-  { id: 4, col1: "Hello", col2: "World", col3: "test" },
-  { id: 5, col1: "XGrid", col2: "is Awesome", col3: "test" },
-  { id: 6, col1: "Material-UI",  col2: "is Amazing", col3: "test" }
+  { id: 1, name: "Johan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 2, name: "Stine Frederiksen", phoneNum: "24543796", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 3, name: "Lars Bohn", phoneNum: "10593768", carGroup: "B", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 4, name: "Lisette Markussen", phoneNum: "19504837", carGroup: "C", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 5, name: "Frederik Fabricius", phoneNum: "21894567", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 6, name: "Simone Seier", phoneNum: "15702498", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
 ];
 
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 70 },
+  { field: "id",  headerName: "Booking ID", minWidth: 110, align: "center" },
+  { field: "name",  headerName: "Full Name", minWidth: 140,  },
+  { field: "phoneNum",  headerName: "Phone", width: 110, sortable:false },
+  { field: "carGroup",  headerName: "Group", width: 90, align: "center" },
+  { field: "pickup",  headerName: "Pick-up", width: 100, align: "center" },
+  { field: "return",  headerName: "Return", width: 100, align: "center" },
+  { field: "carStatus",  headerName: "Status", width: 90 },
+
   
   // Button in grid adapted from https://stackoverflow.com/questions/64331095/how-to-add-a-button-to-every-row-in-mui-datagrid
   {
-    field: "action",
-    headerName: "Action",
+    field: "edit",
+    headerName: "",
     sortable: false,
+    align: "center",
+    width: 20,
     renderCell: (params) => {
-      const onClick = (e: { stopPropagation: () => void; }) => {
-        e.stopPropagation(); // don't select this row after clicking
+
+      const onClick = () => {
 
         const api: GridApi = params.api;
         const thisRow: Record<string, GridCellValue> = {};
@@ -35,12 +66,31 @@ const columns: GridColDef[] = [
             (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
           );
 
-        return <p>TEEEST</p>
+          return thisRow
       };
+     
 
-      return <Button onClick={onClick}>Click</Button>;
+      return <SimpleModal o={onClick()} isNew={false} isOpen={false}/>
     }
   },
+
+  {
+    field: "delete",
+    headerName: "",
+    sortable: false,
+    align: "center",
+    width: 20,
+    renderCell: (params) => {
+
+      const onClick = () => {
+        alert("Are you sure you want to delete this entry?");
+
+      };
+      return <button onClick={myFunction}  ><DeleteIcon/></button>
+    }
+  },
+
+
 ];
 
 // const columns: GridColDef[] = [
@@ -59,20 +109,30 @@ const columns: GridColDef[] = [
   */
 
 
+
+
 export default function GridTable() {
+
+  const classes = useStyles();
+
   return (
-    <div style={{ height: 300, width: "100%" }}>
-      <DataGrid rows={rows} columns={columns} 
-      onCellClick={(params: GridCellParams, event: MuiEvent<React.MouseEvent>) => {
-        event.defaultMuiPrevented = true;
-      }}
+    <div className={classes.root} style={{height: 500, outlineColor: 'white', borderColor: 'white', outline: 0}}>
+      <DataGrid
+        disableColumnMenu={true}
+        scrollbarSize={100}
+        disableColumnSelector={true}
+        rowHeight={60}
+        pageSize={5}
+        showColumnRightBorder={true}
+        disableSelectionOnClick
+        rows={rows}
+        columns={columns}
+        headerHeight={50}
+        getRowClassName={(params) => "styledrows"}
+
       />
-    
-    <div>
-    <label>Booking ID</label>
-    <input type="text" name="Booking ID" />
-    <button> submit</button>
+      <div></div>
     </div>
-    </div>
+
   );
 }

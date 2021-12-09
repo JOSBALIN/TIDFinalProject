@@ -9,6 +9,7 @@
     display: flex;
     justify-content: left;
     align-items: center;
+    z-index: 1000; /* Set the navbar to be in front of other elements */
   }
   
   /* ScanCar topbar headline styling*/
