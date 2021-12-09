@@ -23,7 +23,7 @@ function Home() {
           </div>
           <div className="module" id="overviewmodule">
             <h3>Overview</h3>
-            <BasicTable></BasicTable>
+            
           </div>
           <div className="module" id="parkingmodule">
           </div>

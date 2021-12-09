@@ -9,7 +9,7 @@ const rows: GridRowsProp = [
   { id: 3, col1: "Material-UI", col2: "is Amazing", col3: "test" },
   { id: 4, col1: "Hello", col2: "World", col3: "test" },
   { id: 5, col1: "XGrid", col2: "is Awesome", col3: "test" },
-  { id: 6, col1: "Material-UI", col2: "is Amazing", col3: "test" }
+  { id: 6, col1: "Material-UI",  col2: "is Amazing", col3: "test" }
 ];
 
 

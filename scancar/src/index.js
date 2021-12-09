@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import routes from './routes';
-import Home from './pages/Home.tsx';
+import Home from './pages/Home.js';
+
+// import { useState } from 'react';
+
+// const Parse = require('parse/react-native');
+
+
 
 ReactDOM.render(
-    <App />,
-  
-
- // <React.StrictMode>
-  //  <App />
-  // </React.StrictMode>,
+  <React.StrictMode>
+   <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
