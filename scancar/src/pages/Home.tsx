@@ -51,7 +51,9 @@ function Home() {
                   <label>Address</label>
                   <input type="text" name="Address" />
                 </p>
-                <SimpleModal o={emptyRecord} isNew={true} isOpen={false}/>
+                <p>
+                  <SimpleModal o={emptyRecord} isNew={true} isOpen={false}/>
+                </p>
               </form>
             </div>
             <button onClick={() => setVisible(!visible)} id="advfilters">
