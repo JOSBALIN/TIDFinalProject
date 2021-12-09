@@ -1,64 +1,45 @@
 import * as React from "react";
 import "./managementmodules.css";
-//import DonutChart from "react-donut-chart";
-// import * as ReactDOM from "react-dom";
-// import {
-//   Chart,
-//   ChartLegend,
-//   ChartSeries,
-//   ChartSeriesItem,
-//   ChartTitle,
-// } from "@progress/kendo-react-charts";
-// import "hammerjs";
-// const series = [
-//   {
-//     category: "0-14",
-//     value: 0.2545,
-//   },
-//   {
-//     category: "15-24",
-//     value: 0.1552,
-//   },
-//   {
-//     category: "25-54",
-//     value: 0.4059,
-//   },
-//   {
-//     category: "55-64",
-//     value: 0.0911,
-//   },
-//   {
-//     category: "65+",
-//     value: 0.0933,
-//   },
-// ];
+import Chart from 'chart.js/auto';
 
-// const labelContent = (props: { dataItem: { value: any; category: any; }; }) => {
-//   let formatedNumber = Number(props.dataItem.value).toLocaleString(undefined, {
-//     style: "percent",
-//     minimumFractionDigits: 2,
-//   });
-//   return `${props.dataItem.category} years old: ${formatedNumber}`;
-// };
-
-// const ChartContainer = () => (
-//   <Chart>
-//     <ChartTitle text="World Population by Broad Age Groups" />
-//     <ChartLegend position="bottom" />
-//     <ChartSeries>
-//       <ChartSeriesItem
-//         type="pie"
-//         data={series}
-//         field="value"
-//         categoryField="category"
-//         labels={{
-//           visible: true,
-//           content: labelContent,
-//         }}
-//       />
-//     </ChartSeries>
-//   </Chart>
-// );
+// const ctx = 'myChart';
+// const myChart = new Chart(ctx, {
+//   type: 'doughnut',
+//   data: {
+//       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//       datasets: [{
+//           label: '# of Votes',
+//           data: [12, 19, 3, 5, 2, 3],
+//           backgroundColor: [
+//               'rgba(255, 99, 132, 0.2)',
+//               'rgba(54, 162, 235, 0.2)',
+//               'rgba(255, 206, 86, 0.2)',
+//               'rgba(75, 192, 192, 0.2)',
+//               'rgba(153, 102, 255, 0.2)',
+//               'rgba(255, 159, 64, 0.2)'
+//           ],
+//           borderColor: [
+//               'rgba(255, 99, 132, 1)',
+//               'rgba(54, 162, 235, 1)',
+//               'rgba(255, 206, 86, 1)',
+//               'rgba(75, 192, 192, 1)',
+//               'rgba(153, 102, 255, 1)',
+//               'rgba(255, 159, 64, 1)'
+//           ],
+//           borderWidth: 1
+//       }]
+//   },
+//   options: {
+//       scales: {
+//           y: {
+//               beginAtZero: true
+//           }
+//       }
+//   }
+// });
+// function getChart() {
+//   return myChart;
+// }
 
 export default function FleetStatus() {
 
@@ -68,22 +49,12 @@ export default function FleetStatus() {
         <div className="moduletitle" id="fleetstatus">
           <h3>Fleet status</h3>
         </div>
-        <div id="donut">
-          {/* <DonutChart
-            data={[{
-              label: 'Give you up',
-              value: 25
-            },
-            {
-              label: '',
-              value: 75,
-              isEmpty: true
-            }]} 
-          /> */}
+        <div id="myChart">
+          {/* {myChart} */}
         </div>
       </div>
-    
     </div>
+    
   );
 
     //return(

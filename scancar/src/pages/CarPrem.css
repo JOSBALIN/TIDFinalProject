@@ -59,7 +59,6 @@ input {
   background: #ebebeb;
   padding-bottom: 10%;
   margin-top: 75px;
-  height: 100%;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
@@ -92,4 +91,5 @@ input {
     background-color: red;
     margin-left: 350px;
     height: 500%;
+    width: auto;
 }
