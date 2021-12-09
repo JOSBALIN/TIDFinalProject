@@ -62,23 +62,39 @@ function Home() {
           </div>
           {visible && (
             <div className="module" id="advfiltersmodule">
-              <form id="advfilterform">
-                <p>
-                  <label>License Plate</label>
-                  <input type="text" name="License Plate" />
-                </p>
-                <p>
-                  <label>Customer ID</label>
-                  <input type="text" name="Customer ID" />
-                </p>
-                <p>
-                  <label>Driver's License</label>
-                  <input type="text" name="Driver's License" />
-                </p>
-              
-              </form>
-
-              <CheckBoxes />
+                <div className="row">
+                  <div className="column">
+                      <form id="advfilterform">
+                        <p>
+                          <label>License Plate</label>
+                          <input type="text" name="License Plate" />
+                        </p>
+                        <p>
+                          <label>Customer ID</label>
+                          <input type="text" name="Customer ID" />
+                        </p>
+                        <p>
+                          <label>Driver's License</label>
+                          <input type="text" name="Driver's License" />
+                        </p>
+                      </form>
+                      <CheckBoxes />
+                  </div>
+                  <div className="column">
+                    <h2>Pick-up & Return</h2>
+                    <div className="row">
+                      <div className="column">
+                        Date
+                      </div>
+                      <div className="column">
+                        Time
+                      </div>
+                      <div className="column">
+                        Location
+                      </div>
+                    </div>
+                  </div>
+                </div>  
             </div>
           )}
           <div className="module" id="listmodule">
