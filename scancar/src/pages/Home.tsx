@@ -86,8 +86,11 @@ function Home() {
                       <div className="column">
                         Date
                         {/* Insert SimpleModal here to open calendar */}
+                        Date
+                        {/* Insert SimpleModal here to open calendar */}
                       </div>
                       <div className="column">
+                        Time
                         Time
                       </div>
                       <div className="column">
@@ -99,6 +102,7 @@ function Home() {
                             <option value="Amager">Amager</option>
                           </select>
                         </div>
+                        Location
                         <div id="location2">
                           <select name="location" id="location">
                               <option value="Nordhavn">Nordhavn</option>
