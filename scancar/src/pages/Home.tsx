@@ -36,7 +36,7 @@ function Home() {
             <div>
               <form id="filterform">
                 <p>
-                  <label>Booking I.D</label>
+                  <label>Booking ID</label>
                   <input type="text" name="Booking ID" />
                 </p>
                 <p>
