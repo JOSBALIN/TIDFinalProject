@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./managementmodules.css";
-import Chart from 'chart.js/auto';
+
 
 // const ctx = 'myChart';
 // const myChart = new Chart(ctx, {
