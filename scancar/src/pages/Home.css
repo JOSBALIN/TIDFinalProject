@@ -3,11 +3,34 @@
 
 
 /* establish "line by line" layout for input fields */
-#filterform,
-#advfilterform {
+#filterform {
   display: grid;
   grid-template-columns: 112px 112px 112px 112px 112px;
   grid-gap: 16px;
+}
+
+#advfilterform {
+  display: grid;
+  grid-template-columns: 112px 112px 112px;
+  grid-gap: 16px;
+}
+
+#timepickform {
+  display: grid;
+  grid-template-rows: max-content;
+  grid-gap: 16px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* input field styles for basic and advanced filters */
