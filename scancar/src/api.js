@@ -24,7 +24,7 @@ import Parse from 'parse'
         console.log(error);   
     }
   }
-
+  
   /**
  * @param 
  * @returns list of all persons 
