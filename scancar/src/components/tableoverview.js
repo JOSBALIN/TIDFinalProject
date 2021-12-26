@@ -19,10 +19,8 @@ export default function BasicTableOverview(props) {
           <TableHead>
             <TableRow id="tableHeader">
               <TableCell style={{borderBottom:"none"}} align="left"> <p className="headings"> Group </p> </TableCell>
-              <TableCell style={{borderBottom:"none"}} align="left"> <p className="headings"> Make </p> </TableCell>
+              <TableCell style={{borderBottom:"none"}} align="left"> <p className="headings"> Car </p> </TableCell>
               <TableCell style={{borderBottom:"none"}} align="left"> <p className="headings"> lot no. </p> </TableCell>
-              <TableCell style={{borderBottom:"none"}} align=
-              "left"> <p className="headings"> License plate no. </p> </TableCell>
               <TableCell style={{borderBottom:"none"}} align="left"> <p className="headings"> Status </p> </TableCell>
             </TableRow>
           </TableHead>
@@ -30,11 +28,9 @@ export default function BasicTableOverview(props) {
               {props.listOfCars.map((car) => (
                 <TableRow className="tablerow" key={car.carLicenseplateno} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                   <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carGroup}</TableCell>
-                  <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carMake}</TableCell>
-                  <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carModel}</TableCell>
-                  <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carLicenseplateno}</TableCell>
+                  <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carMake + " " + car.carModel}</TableCell>
+                  <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carLicenseplateno}</TableCell>      
                   <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carStatus}</TableCell>
-                  <TableCell style={{borderBottom:"none"}} align="left" className="tablecellright"/>           
                 </TableRow>
               ))}
             </TableBody>
