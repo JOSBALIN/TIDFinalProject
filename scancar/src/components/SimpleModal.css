@@ -43,10 +43,6 @@
       display: inline-block;
   }
 
-  #customerInformationTop h4{
-    padding-right: 450px;
-  }
-
 #bookinginformation{
   display: grid;
   grid-template-columns: 112px 112px 112px 112px;
@@ -78,7 +74,6 @@ select{
   #customerInformationTop h3, h4{
     font-family: "Lato";
     font-style: normal;
-    padding-right: 450px;
   }
 
   
@@ -88,9 +83,13 @@ select{
 
   #confirmButton{
     background: #3B917D;
+    right:0;
+    margin-right:7%;
+    position:absolute;
+    display:inline
   }
 
-  .button{
+  .modalButton{
     font-family: "Lato";
     font-style: bolder;
     color:white;
@@ -101,8 +100,9 @@ select{
     width:120px;
   }
 
-  .button:hover{
-    filter: brightness(93%);
+  .modalButton:hover{
+    filter: brightness(110%);
+    cursor: pointer;
   }
 
   #buttonDiv{
@@ -117,4 +117,18 @@ select{
       font-style: normal;
       font-size: 14px;
       line-height: 22px;
+  }
+
+  #deleteButton{
+    font-family: "Lato";
+    display:inline;
+    color:black;
+    margin-left:5%
+    
+
+  }
+
+  #deleteButton:hover{
+    cursor:pointer;
+    filter:invert(20%)
   }

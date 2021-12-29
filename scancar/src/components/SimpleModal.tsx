@@ -5,7 +5,7 @@ import Modal from "@material-ui/core/Modal";
 import "./SimpleModal.css";
 import { GridCellValue } from "@mui/x-data-grid";
 import EditIcon from "@mui/icons-material/Edit";
-import DateRangeIcon from '@mui/icons-material/DateRange';
+import DateRangeIcon from "@mui/icons-material/DateRange";
 import dateButton from "./date-button";
 
 function rand() {
@@ -36,11 +36,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleModal(props: {o: Record<string, GridCellValue>, isNew: boolean, isOpen: boolean}) {
+export default function SimpleModal(props: {
+  o: Record<string, GridCellValue>;
+  isNew: boolean;
+  isOpen: boolean;
+}) {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState<boolean>(props.isOpen);
-  
+
   const isNew = props.isNew;
 
   const handleOpen = () => {
@@ -51,7 +55,11 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
     setOpen(false);
   };
 
-
+  function alertDelete() {
+    window.confirm(
+      "Are you sure you want to delete this entry?\nThis cannot be undone"
+    );
+  }
 
   function ModalButton() {
     if (isNew) {
@@ -63,19 +71,21 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
     } else {
       return (
         <Button id="editButton" onClick={handleOpen}>
-          <EditIcon/>
+          <EditIcon />
         </Button>
       );
     }
   }
 
   const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+  const date = `${current.getDate()}/${
+    current.getMonth() + 1
+  }/${current.getFullYear()}`;
 
-  const test2 = props.o.name
-  const test = <p>test2</p>
+  const test2 = props.o.name;
+  const test = <p>test2</p>;
   console.log(test2);
-  console.log(typeof(test));
+  console.log(typeof test);
   console.log(date);
 
   return (
@@ -124,7 +134,7 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
           <div className="module">
             <div id="customerInformationTop">
               {" "}
-              <h4>Pick-up & return</h4> <h5>Car type</h5>
+              <h4>Pick-up & return</h4> <h4>Car type</h4>
             </div>
             <div>
               <form id="bookinginformation">
@@ -161,13 +171,15 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
           </div>
 
           <div id="buttonDiv">
-            <button id="cancelButton" className="button">
-              Cancel
-            </button>
-            {isNew ? "" : <button>Delete booking</button>}
-            <button id="confirmButton" className="button">
-            {isNew ? "Confirm" : "Edit"}
-            </button>
+            <button className = "modalButton" id="cancelButton">Cancel</button>
+            {isNew ? (
+              ""
+            ) : (
+              <p onClick={alertDelete} id="deleteButton">
+                Delete booking
+              </p>
+            )}
+            <button className = "modalButton" id="confirmButton">{isNew ? "Confirm" : "Edit"}</button>
           </div>
         </div>
       </Modal>

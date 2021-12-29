@@ -12,6 +12,7 @@
 .deleteButton{
     border:none;
     background-color: inherit;
+    color:black;
 }
 
 .deleteButton:hover{

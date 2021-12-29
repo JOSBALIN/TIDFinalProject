@@ -38,13 +38,15 @@
 /* input field styles for basic and advanced filters */
 #filtersmodule input,
 #advfiltersmodule input {
-  width: 112px;
-  height: 16px;
+  width: 92px;
+  height: 20px;
   outline: none;
   background: #d6d6d6;
   border-radius: 20px;
   border-style: solid;
   border-color: white;
+  padding-left:10px;
+  padding-right:10px;
 }
 
 /* "Filter bookings" styling */
@@ -71,6 +73,7 @@ h1:hover, h2:hover, h3:hover, h4:hover{
     line-height: 12px;
     background: none;
     border: none;
+    color:black
 }
 
 #advfilters:hover {

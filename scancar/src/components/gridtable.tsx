@@ -8,7 +8,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import "./SimpleModal.css"
 import "./gridtable.css"
 
-function myFunction() {
+function alertDelete() {
   window.confirm("Are you sure you want to delete this entry?\nThis cannot be undone");
 }
 
@@ -78,11 +78,8 @@ const columns: GridColDef[] = [
     width: 20,
     renderCell: (params) => {
 
-      const onClick = () => {
-        alert("Are you sure you want to delete this entry?");
 
-      };
-      return <button className="deleteButton" onClick={myFunction}  ><DeleteIcon/></button>
+      return <button className="deleteButton" onClick={alertDelete}  ><DeleteIcon/></button>
     }
   },
 
