@@ -58,6 +58,10 @@
     line-height: 22px;
 }
 
+h1:hover, h2:hover, h3:hover, h4:hover{
+  cursor:default;
+}
+
 /* The advanced filters button/clickable text */
 #advfilters {
     font-family: Lato;

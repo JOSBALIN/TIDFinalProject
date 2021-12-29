@@ -16,8 +16,7 @@
     display: block;
     
   }
-  
-  
+
   
   .sidenav li {
     font-family: Montserrat;
@@ -30,6 +29,9 @@
     border-radius: 3px;
     margin-top: 16px;
     margin-bottom: 16px;
-    list-style-type: none;
+    list-style-type: none;  
+  }
   
+  .sidenav li:hover{
+    background-color: #265c4f;
   }

@@ -19,11 +19,6 @@
     cursor:pointer;
 }
 
-.muiDataGrid-root:focus{
-    outline:none;
-    color:white
-
-}
 
 .muiDataGrid-cell:focus{
     outline:none;

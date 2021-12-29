@@ -3,43 +3,9 @@
 
 
 
-/* Big title at top of "module page" */
-.moduletitle {
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  height: 10%;
-  background-color: #3b917d;
-  border-radius: 1em 1em 0px 0px;
-}
-
-/* Sub-title for modules */
-.moduletitle h2 {
-  font-family: Montserrat, sans-serif;
-  font-size: 2em;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: red;
-}
-
-/* Sub-sub-title for modules */
-.module h3 {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 22px;
-  line-height: 22px;
-}
 
 
 
-/* What's the purpose of this?? */
-.canvas label,
-input {
-  display: block;
-}
 
 /* Top bar */
 .navbar {
