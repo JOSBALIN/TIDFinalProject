@@ -69,6 +69,11 @@
     border: none;
 }
 
+#advfilters:hover {
+  cursor:pointer;
+  filter:invert(20%)
+}
+
 #newBooking{
     background: #3B917D;
     border-radius: 20px;

@@ -53,14 +53,25 @@
   grid-gap: 16px;
 }
 
+select{
+  width: 112px;
+  height: 20px;
+  background: #d6d6d6;
+  border-radius: 20px;
+  border:none;
+}
+
+#editButton:hover{
+  background-color: inherit;
+}
+
 #bookinginformation input {
   width: 112px;
-  height: 16px;
+  height: 20px;
   outline: none;
   background: #d6d6d6;
   border-radius: 20px;
-  border-style: solid;
-  border-color: white;
+  border:none;
 
 }
 
@@ -71,4 +82,39 @@
   }
 
   
-  
+  #cancelButton{
+    background: #F9A010;
+  }
+
+  #confirmButton{
+    background: #3B917D;
+  }
+
+  .button{
+    font-family: "Lato";
+    font-style: bolder;
+    color:white;
+    box-shadow: none;
+    border:none;
+    border-radius: 20px;
+    height:40px;
+    width:120px;
+  }
+
+  .button:hover{
+    filter: brightness(93%);
+  }
+
+  #buttonDiv{
+      margin: auto;
+      height: auto;
+      margin-top: 16px;
+      margin-left: 16px;
+      margin-right: 16px;
+      padding: 8px 8px 16px 16px;
+      border-radius: 1em;
+      font-family: Lato;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 22px;
+  }

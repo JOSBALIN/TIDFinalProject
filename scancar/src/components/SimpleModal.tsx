@@ -5,6 +5,8 @@ import Modal from "@material-ui/core/Modal";
 import "./SimpleModal.css";
 import { GridCellValue } from "@mui/x-data-grid";
 import EditIcon from "@mui/icons-material/Edit";
+import DateRangeIcon from '@mui/icons-material/DateRange';
+import dateButton from "./date-button";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -55,22 +57,30 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
     if (isNew) {
       return (
         <Button id="newBooking" onClick={handleOpen}>
-          + NEW BOOKING
+          + New Booking
         </Button>
       );
     } else {
       return (
-        <Button onClick={handleOpen}>
+        <Button id="editButton" onClick={handleOpen}>
           <EditIcon/>
         </Button>
       );
     }
   }
 
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
+  const test2 = props.o.name
+  const test = <p>test2</p>
+  console.log(test2);
+  console.log(typeof(test));
+  console.log(date);
 
   return (
     <div className="backgroundDiv">
-      <ModalButton/>
+      <ModalButton />
 
       <Modal
         aria-labelledby="simple-modal-title"
@@ -93,45 +103,72 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
             <div>
               <form id="bookinginformation">
                 <p>
-                  <label>Booking ID {props.o.name}</label>
-                  <input type="text" name="Booking ID" value="aa" />
+                  <label>Name</label>
+                  <input type="text" name="Name" />
                 </p>
                 <p>
                   <label>Phone Number</label>
                   <input type="text" name="Phone Number" />
                 </p>
                 <p>
-                  <label>Name</label>
-                  <input type="text" name="Name" />
-                </p>
-                <p>
                   <label>Address</label>
                   <input type="text" name="Address" />
                 </p>
+                <p>
+                  <label>License ID</label>
+                  <input type="text" name="Phone Number" />
+                </p>
               </form>
-
             </div>
           </div>
           <div className="module">
-            <form id="bookinginformation">
+            <div id="customerInformationTop">
+              {" "}
+              <h4>Pick-up & return</h4> <h5>Car type</h5>
+            </div>
+            <div>
+              <form id="bookinginformation">
                 <p>
-                  <label>Booking ID {props.o.name}</label>
-                  <input type="text" name="Booking ID" value="aa" />
+                  <label>Date</label>
+                  <DateRangeIcon></DateRangeIcon>
+                  <input type="date" name="date" defaultValue="10-10-2021" />
                 </p>
                 <p>
-                  <label>Phone Number</label>
-                  <input type="text" name="Phone Number" />
+                  <label>Time</label>
+                  <input type="number" name="hour" />
                 </p>
                 <p>
-                  <label>Name</label>
-                  <input type="text" name="Name" />
+                  <label>Location</label>
+                  <select name="location" id="location">
+                    <option value="Nordhavn">Nordhavn</option>
+                    <option value="Sydhavn">Sydhavn</option>
+                    <option value="Amager">Amager</option>
+                  </select>
                 </p>
                 <p>
-                  <label>Address</label>
-                  <input type="text" name="Address" />
+                  <label>Group</label>
+                  <select name="location" id="location">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                  </select>
                 </p>
               </form>
             </div>
+          </div>
+
+          <div id="buttonDiv">
+            <button id="cancelButton" className="button">
+              Cancel
+            </button>
+            {isNew ? "" : <button>Delete booking</button>}
+            <button id="confirmButton" className="button">
+            {isNew ? "Confirm" : "Edit"}
+            </button>
+          </div>
         </div>
       </Modal>
     </div>
