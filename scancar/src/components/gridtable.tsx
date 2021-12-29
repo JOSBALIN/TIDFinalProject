@@ -1,16 +1,12 @@
 import * as React from "react";
 import { DataGrid, GridRowsProp, GridColDef, GridCellParams, MuiEvent, GridApi, GridCellValue } from "@mui/x-data-grid";
 import type {} from '@mui/x-data-grid/themeAugmentation';
-import { Button } from "@mui/material";
 import SimpleModal from "./SimpleModal";
 import { makeStyles } from "@mui/styles";
 import DeleteIcon from '@mui/icons-material/Delete';
 
 import "./SimpleModal.css"
 import "./gridtable.css"
-import { ClassNames } from "@emotion/react";
-import { borderBottom } from "@mui/system";
-import { nodeModuleNameResolver } from "typescript";
 
 function myFunction() {
   window.confirm("Are you sure you want to delete this entry?\nThis cannot be undone");
@@ -86,7 +82,7 @@ const columns: GridColDef[] = [
         alert("Are you sure you want to delete this entry?");
 
       };
-      return <button onClick={myFunction}  ><DeleteIcon/></button>
+      return <button className="deleteButton" onClick={myFunction}  ><DeleteIcon/></button>
     }
   },
 
@@ -111,13 +107,17 @@ const columns: GridColDef[] = [
 
 
 
+
+
+
 export default function GridTable() {
 
   const classes = useStyles();
 
   return (
-    <div className={classes.root} style={{height: 500, outlineColor: 'white', borderColor: 'white', outline: 0}}>
+    <div className={classes.root} style={{outlineColor: 'white', borderColor: 'white', outline: 0, border: 0}}>
       <DataGrid
+        autoHeight
         disableColumnMenu={true}
         scrollbarSize={100}
         disableColumnSelector={true}

@@ -9,13 +9,38 @@
     
 }
 
+.deleteButton{
+    border:none;
+}
 
+.deleteButton:hover, .editbutton:hover{
+    background-color: inherit;
+}
+
+.muiDataGrid-root:focus{
+    outline:none;
+    color:white
+
+}
+
+.muiDataGrid-cell:focus{
+    outline:none;
+}
+
+.css-1z4p5c-MuiDataGrid-root .MuiDataGrid-columnHeader:focus, .css-1z4p5c-MuiDataGrid-root .MuiDataGrid-cell:focus{
+    outline:none;
+    outline:white;
+    background-color: red;
+    border:none;
+    box-shadow: 100;
+}
 
 .MuiDataGrid-main{
     border: none;
     border-bottom: none;
     grid: none;
     border-color: white;
+    box-shadow: 100;
 
 }
 

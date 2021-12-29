@@ -11,6 +11,7 @@
 #modalDiv{
     background-color: #EBEBEB;
     position:absolute;
+    width:auto;
     top: 50%;
     left: 50%;
     margin-right: -50%;
@@ -46,13 +47,13 @@
     padding-right: 450px;
   }
 
-#editbooking {
+#bookinginformation{
   display: grid;
   grid-template-columns: 112px 112px 112px 112px;
   grid-gap: 16px;
 }
 
-#editbooking input {
+#bookinginformation input {
   width: 112px;
   height: 16px;
   outline: none;

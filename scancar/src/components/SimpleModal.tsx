@@ -91,7 +91,7 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
             </div>
             <div></div>
             <div>
-              <form id="editbooking">
+              <form id="bookinginformation">
                 <p>
                   <label>Booking ID {props.o.name}</label>
                   <input type="text" name="Booking ID" value="aa" />
@@ -112,6 +112,26 @@ export default function SimpleModal(props: {o: Record<string, GridCellValue>, is
 
             </div>
           </div>
+          <div className="module">
+            <form id="bookinginformation">
+                <p>
+                  <label>Booking ID {props.o.name}</label>
+                  <input type="text" name="Booking ID" value="aa" />
+                </p>
+                <p>
+                  <label>Phone Number</label>
+                  <input type="text" name="Phone Number" />
+                </p>
+                <p>
+                  <label>Name</label>
+                  <input type="text" name="Name" />
+                </p>
+                <p>
+                  <label>Address</label>
+                  <input type="text" name="Address" />
+                </p>
+              </form>
+            </div>
         </div>
       </Modal>
     </div>
