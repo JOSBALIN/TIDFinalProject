@@ -23,9 +23,10 @@ class CounterButton extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.DecreaseItem}>Click to decrease by 1</button>
-        { this.state.show ? <h2>{ this.state.clicks }</h2> : '' }
-        <button onClick={this.IncrementItem}>Click to increment by 1</button>
+        <h2 id="carGroup">A</h2>
+        <h2 id="decrementButton" onClick={this.DecreaseItem}>-</h2>
+        { this.state.show ? <h2 id="counter">{ this.state.clicks }</h2> : '' }
+        <h2 id="incrementButton" onClick={this.IncrementItem}>+</h2>
       </div>
     );
   }
