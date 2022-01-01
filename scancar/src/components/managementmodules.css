@@ -52,6 +52,18 @@
     flex: 50%;
   }
 
+#barChart{
+  display:inline-block;
+  height:40%;
+  width: 40%;
+}
+
+#chartDiv{
+  display:inline-block;
+  height:40%;
+  width:20%;
+}
+
   /* For calendar */
   .sdp {
     --font: inherit, -apple-system, 'Segoe UI', Ubuntu, 'Helvetica Neue',
