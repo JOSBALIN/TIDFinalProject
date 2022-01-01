@@ -7,7 +7,7 @@ import CheckBoxes from "../components/checkboxes";
 import GridTable from "../components/gridtable";
 import "reactjs-popup/dist/index.css";
 import SimpleModal from "../components/SimpleModal";
-import DatePicker from "react-datepicker";
+import DatePicker from '../components/date-picker';
 
 import { Link } from "react-router-dom";
 import { render } from "@testing-library/react";
@@ -84,11 +84,17 @@ function Home() {
                     <h2>Pick-up & Return</h2>
                     <div className="row">
                       <div className="column">
-                        Date
-                        {/* Insert SimpleModal here to open calendar */}
+                      <label htmlFor="pickupDate">Pick-up date:</label>
+
+                      <input type="date" id="pickupDate" name="rent-pickup"
+                            value="2022-01-01"
+                            min="2022-01-01" max="2023-12-31"/>
                       </div>
                       <div className="column">
-                        Time
+                      <label htmlFor="pickupTime">Pick-up time:</label>
+
+                      <input type="time" id="pickupTime" name="appt"
+                            min="08:00" max="18:00" required/>
                       </div>
                       <div className="column">
                         Location
@@ -103,11 +109,17 @@ function Home() {
                     </div>
                     <div className="row">
                       <div className="column">
-                        Date
-                        {/* Insert SimpleModal here to open calendar */}
+                      <label htmlFor="return">Return date:</label>
+
+                      <input type="date" id="return" name="rent-return"
+                            value="2022-01-01"
+                            min="2022-01-01" max="2023-12-31"/>
                       </div>
                       <div className="column">
-                        Time
+                         <label htmlFor="returnTime">Return time:</label>
+
+                        <input type="time" id="returnTime" name="appt"
+                              min="08:00" max="18:00" required/>
                       </div>
                       <div className="column">
                         Location
