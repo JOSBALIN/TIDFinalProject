@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
 /* modules, styling rules for each "box of content", based on design guide */
 .module {
     background-color: white;
-    
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -13,17 +15,10 @@
     line-height: 22px;
   }
 
-  /* Big title at top of "module page" */
-.moduletitle {
-    padding: 0px 0px 16px 0px;
-    
-    background-color: #3b917d;
-    /* border-radius: 1em 1em 0px 0px; */
-  }
   
   /* Sub-title for modules */
   .moduletitle h2 {
-    font-family: Montserrat, sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 2em;
     font-style: normal;
     font-weight: 700;
@@ -34,7 +29,7 @@
   }
   
   /* Sub-sub-title for modules */
-  .module h3 {
+  .moduletitle h3 {
     font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -66,8 +61,7 @@
 
   /* For calendar */
   .sdp {
-    --font: inherit, -apple-system, 'Segoe UI', Ubuntu, 'Helvetica Neue',
-      sans-serif;
+    --font: "Lato", sans-serif;
     --shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
       rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     --shadow-md: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
@@ -75,20 +69,15 @@
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     --theme-color: #60a5fa;
     --selected-date-color: #ffffff;
-    width: 16rem;
+    width: 14rem;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     box-shadow: var(--shadow);
     background-color: #ffffff;
     padding: 0.75rem;
   }
   
-  .sdp:focus,
-  .sdp--month-name:focus,
-  .sdp--square-btn:focus {
-    outline: none;
-    box-shadow: 0px 0px 0px 2px #60a5fab3;
-  }
+
   
   .sdp--month-name {
     padding: 0.5rem;
@@ -99,7 +88,7 @@
   .sdp--text {
     font-weight: 500;
     margin: 0;
-    font-family: var(--font);
+    font-family: Lato;
   }
   
   .sdp--text__inactive {
@@ -134,9 +123,10 @@
   }
   
   .sdp--date-btn__selected {
-    background-color: var(--theme-color);
+    background-color: #60BEA8;
     color: var(--selected-date-color);
     box-shadow: var(--shadow);
+    border-radius: 100%;
   }
   
   .sdp--date-btn__selected.sdp--square-btn:focus {
