@@ -12,7 +12,7 @@ export default function Request() {
             <h3>Request</h3>
           </div>
           <div>
-            <CounterButton/>
+            <CounterButton A/>
             <DatePicker/>
           </div>
         </div>

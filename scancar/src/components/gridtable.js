@@ -6,27 +6,39 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import "./SimpleModal.css"
 import "./gridtable.css"
+import { NoEncryption } from "@mui/icons-material";
 
 function alertDelete() {
   window.confirm("Are you sure you want to delete this entry?\nThis cannot be undone");
 }
 
+const oldRows = [
+  { id: 1, name: "Jonathan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 2, name: "Stine Frederiksen", phoneNum: "24543796", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 3, name: "Lars Bohn", phoneNum: "10593768", carGroup: "B", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 4, name: "Lisette Markussen", phoneNum: "19504837", carGroup: "C", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 5, name: "Frederik Fabricius", phoneNum: "21894567", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  { id: 6, name: "Simone Seier", phoneNum: "15702498", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+];
+
 const useStyles = makeStyles({
   root: {
-  "& .styledrows": {
-  backgroundColor: "#EBEBEB",  
-  }
-  }
-  });
+    "& .styledrows": {
+      backgroundColor: "#EBEBEB",
+    },
+    border: "0px",
+    outline: "none",
+    marginTop: "1px",
+    marginBottom: "1px",
+    color: "red",
+    margin:"0px",
+    outline:"none",
+  },
+  boxShadow: 200,
+  border: 200,
+  backgroundColor:"red"
+});
 
-  const oldRows = [
-    { id: 1, name: "Jonathan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-    { id: 2, name: "Stine Frederiksen", phoneNum: "24543796", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-    { id: 3, name: "Lars Bohn", phoneNum: "10593768", carGroup: "B", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-    { id: 4, name: "Lisette Markussen", phoneNum: "19504837", carGroup: "C", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-    { id: 5, name: "Frederik Fabricius", phoneNum: "21894567", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-    { id: 6, name: "Simone Seier", phoneNum: "15702498", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-  ];
 
 const columns = [
   { field: "id",  headerName: "Booking ID", minWidth: 110, align: "center" },
@@ -122,7 +134,7 @@ export default function GridTable(props) {
   ];
 
   return (
-    <div className={classes.root} style={{outlineColor: 'white', borderColor: 'white', outline: 0, border: 0}}>
+    <div className={classes.root} >
       <DataGrid
         autoHeight
         disableColumnMenu={true}
@@ -133,6 +145,8 @@ export default function GridTable(props) {
         showColumnRightBorder={true}
         disableSelectionOnClick
         columns={columns}
+        sx={{useStyles,
+              border:200}}
         rows={
 
           props.listOfBookings.map((booking) => (

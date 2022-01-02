@@ -14,15 +14,22 @@
 }
 
 
-
 #incrementButton{
     border-radius: 0px 10px 10px 0px;
+    padding-left: 10px;
 }
 
 #decrementButton, #incrementButton{
     box-shadow: none;
     border: none;
     cursor:pointer;
-    padding-left: 10px;
     padding-right:10px;
+}
+
+#decrementButton{
+    padding-left:15px;
+}
+
+#decrementButton:active, #incrementButton:active{
+    transform: translateY(1px);
 }
