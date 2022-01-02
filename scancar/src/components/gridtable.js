@@ -33,10 +33,8 @@ const useStyles = makeStyles({
     color: "red",
     margin:"0px",
     outline:"none",
+    
   },
-  boxShadow: 200,
-  border: 200,
-  backgroundColor:"red"
 });
 
 
@@ -115,12 +113,13 @@ const columns = [
 
 
 export default function GridTable(props) {
-  console.log(props.listOfBookings);
+  // console.log(props.listOfBookings);
 
-  props.listOfBookings.map((booking) => (
-    console.log(booking.bookingBookingid)
+  // props.listOfBookings.map((booking) => (
+  //   console.log(booking.bookingBookingid)
 
-    ))
+  //   ))
+
 
   const classes = useStyles();
 
@@ -145,15 +144,15 @@ export default function GridTable(props) {
         showColumnRightBorder={true}
         disableSelectionOnClick
         columns={columns}
-        sx={{useStyles,
-              border:200}}
+        sx={{
+              useStyles}}
         rows={
 
           props.listOfBookings.map((booking) => (
             {
               id: booking.bookingBookingid, 
               pickup: booking.bookingPickupdate,
-              return: booking.bookingDropoffdate,
+              return: booking.bookingDropoffdate.toUTCString(),
               carStatus: booking.bookingStatus,
             }
           ))
