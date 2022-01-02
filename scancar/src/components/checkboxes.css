@@ -1,6 +1,6 @@
 .checkboxes{
     display: grid;
-    grid-template-columns: 100px; /* How does this code actually work? Seems it's necessary but what it do? */
+    grid-template-columns: 100px;
   }
   
   .checkboxes label{

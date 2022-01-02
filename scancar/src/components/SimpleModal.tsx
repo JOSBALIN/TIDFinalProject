@@ -82,11 +82,11 @@ export default function SimpleModal(props: {
     current.getMonth() + 1
   }/${current.getFullYear()}`;
 
-  const test2 = props.o.name;
-  const test = <p>test2</p>;
-  console.log(test2);
-  console.log(typeof test);
-  console.log(date);
+  // const test2 = props.o.name;
+  // const test = <p>test2</p>;
+  // console.log(test2);
+  // console.log(typeof test);
+  // console.log(date);
 
   return (
     <div className="backgroundDiv">
