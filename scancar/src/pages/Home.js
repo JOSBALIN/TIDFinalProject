@@ -3,16 +3,11 @@ import * as React from "react";
 import "./Home.css";
 import "../App.css";
 import { getAllBookings } from "../api";
-import BasicTable from "../components/table";
 import CheckBoxes from "../components/checkboxes";
 import GridTable from "../components/gridtable";
 import "reactjs-popup/dist/index.css";
 import SimpleModal from "../components/SimpleModal";
-import DatePicker from '../components/date-picker';
 
-import { Link } from "react-router-dom";
-import { render } from "@testing-library/react";
-import { GridCellValue } from "@mui/x-data-grid";
 
 function Home() {
   const [visible, setVisible] = React.useState(false);
