@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import "./counter-button.css"
 
-
+/**
+ * @params props.label, the label for the button (CarGroup)
+ */
 class CounterButton extends Component {
   constructor(props) {
     super(props);
@@ -12,17 +14,25 @@ class CounterButton extends Component {
     this.label = props.label
   }
 
-
-
+ /**
+ * increments this.state.clicks by one
+ */
   IncrementItem = () => {
     this.setState({ clicks: this.state.clicks + 1 });
   }
+
+/**
+ * decrements this.state.clicks by one
+ */
   DecrementItem = () => {
     if(this.state.clicks > 0){
     this.setState({ clicks: this.state.clicks - 1 });
     }
   }
 
+/**
+ * Renders counterbutton with +/-, input label
+ */
   render() {
     return (
       <div className="counterButton">

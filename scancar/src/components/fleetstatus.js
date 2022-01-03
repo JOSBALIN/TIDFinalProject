@@ -5,10 +5,8 @@ import {CategoryScale} from 'chart.js';
 import {Pie, Doughnut} from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto'
 import { Chart }            from 'react-chartjs-2'
-import doughnutchart from "./doughnutchart";
-import { red } from "@mui/material/colors";
 
-
+/* State details for Doughnut chart */
 const state = {
   labels: ['Available', 'Rented', 'Unavailable'],
   datasets: [
@@ -31,7 +29,7 @@ const state = {
   ]
 }
 
-
+/* details for Stacked bar chart */
 const labels = ["11/01", "12/01","13/01","14/01","15/01","16/01","17/01",];
 const data = {
   labels: labels,
@@ -64,16 +62,11 @@ const data = {
   ]
 };
 
+/* Config for stacked bar chart */
 const config = {
   type: 'bar',
   data: data,
   options: {
-    plugins: {
-      title: {
-        display: false,
-        text: 'Car status over next 7 days'
-      },
-    },
     responsive: true,
     scales: {
       x: {
@@ -103,11 +96,6 @@ export default function FleetStatus() {
               data={state}
               options={{
                 plugins: {
-                  title: {
-                    display: false,
-                    text: "More than 80% of your fleet is unavailable in the coming week. Consider ssadding more bla bla",
-                    font: 1,
-                  },
                   legend: {
                     position: "bottom",
                     display: true,
@@ -136,11 +124,6 @@ export default function FleetStatus() {
                 },
               },
               plugins: {
-                title: {
-                  display: false,
-                  text: "Car overview next week",
-                  font: 1,
-                },
                 legend: {
                   position: "bottom",
                   display: true,
@@ -157,7 +140,6 @@ export default function FleetStatus() {
       </div>
     </div>
   );
-
 }
 
 

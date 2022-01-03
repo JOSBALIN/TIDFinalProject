@@ -1,10 +1,15 @@
 import * as React from "react";
 import "./managementmodules.css";
 import "./mtransfer.css";
-
 import DatePicker from "./date-picker";
 import CounterButton from "./counter-button";
 
+
+
+/**
+ * @param props.type: type of transfer (request/release), used for titling
+ * @returns display of transfer module 
+ */
 export default function CarTransfer(props) {
   return (
     <div className="module" id="mrequestmodule">
