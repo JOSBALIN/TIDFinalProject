@@ -8,8 +8,8 @@ class CounterButton extends Component {
     this.state = {
       clicks: 0,
       show: true,
-      label:props.label
     };
+    this.label = props.label
   }
 
 
@@ -17,7 +17,7 @@ class CounterButton extends Component {
   IncrementItem = () => {
     this.setState({ clicks: this.state.clicks + 1 });
   }
-  DecreaseItem = () => {
+  DecrementItem = () => {
     if(this.state.clicks > 0){
     this.setState({ clicks: this.state.clicks - 1 });
     }
@@ -26,8 +26,8 @@ class CounterButton extends Component {
   render() {
     return (
       <div className="counterButton">
-        <h2 id="carGroup">{this.state.label}</h2>
-        <h2 id="decrementButton" onClick={this.DecreaseItem}>-</h2>
+        <h2 id="carGroup">{this.label}</h2>
+        <h2 id="decrementButton" onClick={this.DecrementItem}>-</h2>
         { this.state.show ? <h2 id="counter">{ this.state.clicks }</h2> : "" }
         <h2 id="incrementButton" onClick={this.IncrementItem}>+</h2>
       </div>
