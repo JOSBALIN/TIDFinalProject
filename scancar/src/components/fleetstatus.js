@@ -26,7 +26,7 @@ const state = {
       ],
       data: [65, 59, 80],
       hoverOffset:4,
-      cutout: 30,
+      cutout: 75,
     }
   ]
 }
@@ -89,52 +89,73 @@ const config = {
 
 export default function FleetStatus() {
 
-  return(
+  return (
     <div>
       <div className="module" id="fleetstatusmodule">
         <div className="moduletitle" id="fleetstatus">
           <h3>Fleet status</h3>
         </div>
-        <div id = "chartDiv">
-          <div id = "chartDiv2">
-        <Doughnut id = "doughnutChart"
-          data={state}
-          options={{
-            title:{
-              display:true,
-              text:'More than 80% of your fleet is unavailable in the coming week. Consider ssadding more bla bla',
-              fontSize:200
-            },
-            legend:{
-              display:false
-            }
-
-          }}
-        />
+        <div id="chartDiv">
+          <div id="doughnutChart">
+            <p className="chartExplanation">48 hour fleet availability</p>
+            <Doughnut
+              id="doughnutChart"
+              data={state}
+              options={{
+                plugins: {
+                  title: {
+                    display: false,
+                    text: "More than 80% of your fleet is unavailable in the coming week. Consider ssadding more bla bla",
+                    font: 1,
+                  },
+                  legend: {
+                    position: "bottom",
+                    display: true,
+                    borderRadius:1,
+                    labels:{
+                      boxWidth:40,
+                      usePointStyle:true
+                      
+                    }
+                  },
+                },
+              }}
+            />
+            </div>
+        <div id="barChart">
+          <p className="chartExplanation">Overview of the rental office's fleet the next seven days</p>
+          <Bar
+            data={data}
+            options={{
+              scales: {
+                x: {
+                  stacked: true,
+                },
+                y: {
+                  stacked: true,
+                },
+              },
+              plugins: {
+                title: {
+                  display: false,
+                  text: "Car overview next week",
+                  font: 1,
+                },
+                legend: {
+                  position: "bottom",
+                  display: true,
+                  labels:{
+                    boxWidth:40,
+                    usePointStyle:true
+                  }
+                },
+              },
+            }}
+          />
+        </div>
         </div>
       </div>
-      <div id = "barChart">
-      <Bar data={data}
-      options={{
-        scales: {
-          x: {
-              stacked: true
-          },
-          y: {
-              stacked: true
-          }
-      }}}
-      />
-      </div>
-
-      </div>
-      
-
-
     </div>
-
-    
-    
   );
 
 }

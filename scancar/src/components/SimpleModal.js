@@ -14,15 +14,6 @@ function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
 
-function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -40,8 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleModal(props) {
   const classes = useStyles();
-  const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(props.isOpen);
+  const [open, setOpen] = React.useState();
 
   const isNew = props.isNew;
 
@@ -75,19 +65,7 @@ export default function SimpleModal(props) {
     }
   }
 
-
-  const [booking, setBooking] = React.useState([]); 
     
-
-    React.useEffect(async() => { 
-      const booking = await getOneBooking(props.o.id);
-      // console.log(booking);
-      setBooking(booking); 
-    }, [])
-
-
-    console.log();
-
   const current = new Date();
   const date = `${current.getDate()}/${
     current.getMonth() + 1
@@ -95,6 +73,7 @@ export default function SimpleModal(props) {
 
 
   return (
+
     <div className="backgroundDiv">
       <ModalButton />
 
@@ -113,7 +92,7 @@ export default function SimpleModal(props) {
           <div className="module">
             <div id="customerInformationTop">
               {" "}
-              <h4>Customer information</h4> <h5>BookingID: {booking.bookingBookingid}</h5>
+              <h4>Customer information</h4> <h5>BookingID: </h5>
             </div>
             <div></div>
             <div>

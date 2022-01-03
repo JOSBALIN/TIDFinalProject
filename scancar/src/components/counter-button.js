@@ -7,7 +7,8 @@ class CounterButton extends Component {
     super(props);
     this.state = {
       clicks: 0,
-      show: true
+      show: true,
+      label:props.label
     };
   }
 
@@ -24,8 +25,8 @@ class CounterButton extends Component {
 
   render() {
     return (
-      <div>
-        <h2 id="carGroup">A</h2>
+      <div className="counterButton">
+        <h2 id="carGroup">{this.state.label}</h2>
         <h2 id="decrementButton" onClick={this.DecreaseItem}>-</h2>
         { this.state.show ? <h2 id="counter">{ this.state.clicks }</h2> : "" }
         <h2 id="incrementButton" onClick={this.IncrementItem}>+</h2>

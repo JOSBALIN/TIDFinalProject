@@ -1,7 +1,6 @@
 import * as React from 'react';
 import FleetStatus from "../components/fleetstatus";
-import Request from '../components/mrequest';
-import Release from '../components/mrelease';
+import CarTransfer from '../components/mtransfer';
 
 import "../components/managementmodules.css";
 import "../App.css";
@@ -26,10 +25,10 @@ export default function Management() {
           </div>
           <div className="row">
             <div className="column">
-              <Request/>
+              <CarTransfer type={"Request"}/>
             </div>
             <div className="column">
-              <Release/>
+            <CarTransfer type={"Release"}/>
             </div>
           </div>
         </div>

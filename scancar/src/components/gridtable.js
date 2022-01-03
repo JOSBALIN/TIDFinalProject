@@ -3,6 +3,7 @@ import { DataGrid, GridRowsProp, GridColDef, GridCellParams, MuiEvent, GridApi, 
 import SimpleModal from "./SimpleModal";
 import { makeStyles } from "@mui/styles";
 import DeleteIcon from '@mui/icons-material/Delete';
+import { getOneBooking } from "../api";
 
 import "./SimpleModal.css"
 import "./gridtable.css"
@@ -11,6 +12,8 @@ import { NoEncryption } from "@mui/icons-material";
 function alertDelete() {
   window.confirm("Are you sure you want to delete this entry?\nThis cannot be undone");
 }
+
+
 
 const oldRows = [
   { id: 1, name: "Jonathan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
@@ -73,7 +76,7 @@ const columns = [
       };
      
 
-      return <SimpleModal o={onClick()} isNew={false} isOpen={false}/>
+      return <SimpleModal o={onClick()} isNew={false}/>
     }
   },
 
@@ -112,7 +115,10 @@ const columns = [
 
 
 
-export default function GridTable(props) {
+export default function GridTable(props) { 
+    
+
+
   // console.log(props.listOfBookings);
 
   // props.listOfBookings.map((booking) => (
