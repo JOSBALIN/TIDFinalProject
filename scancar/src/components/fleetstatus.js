@@ -36,48 +36,37 @@ const data = {
   datasets: [
     {
       label: 'Ready',
-      data: [11, 22, 33, 12, 31, 1, 0],
+      maxBarThickness:32,
+      data: [11, 22, 33, 12, 31, 68, 11],
       backgroundColor: '#99DF7C',
     },
     {
       label: 'Rented',
-      data: [11, 22, 33, 55, 77, 1, 0],
+      maxBarThickness:32,
+      data: [11, 22, 33, 55, 77, 16, 21],
       backgroundColor: '#60BEA8',
     },
     {
       label: 'Returned',
-      data: [22, 34, 66, 33, 22, 11, 22],
+      maxBarThickness:32,
+      data: [22, 34, 14, 33, 22, 11, 22],
       backgroundColor: '#409ad6',
     },
     {
       label: 'Transfer',
+      maxBarThickness:32,
       data: [22, 34, 66, 33, 22, 11, 22],
       backgroundColor: '#cc9f37',
     },
     {
       label: 'Unavailable',
+      maxBarThickness:32,
       data: [22, 34, 66, 33, 22, 11, 22],
       backgroundColor: '#FBBF60',
     },
   ]
 };
 
-/* Config for stacked bar chart */
-const config = {
-  type: 'bar',
-  data: data,
-  options: {
-    responsive: true,
-    scales: {
-      x: {
-        stacked: true,
-      },
-      y: {
-        stacked: true
-      }
-    }
-  }
-};
 
 
 export default function FleetStatus() {

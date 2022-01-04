@@ -127,7 +127,7 @@ export default function GridTable(props) {
   //   ))
 
 
-  const classes = useStyles();
+  const classes = useStyles({m:400});
 
   const rows = [
     { id: 1, name: "Jonathan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "props.listOfBookings[0].bookingBookingid"},
@@ -150,8 +150,7 @@ export default function GridTable(props) {
         showColumnRightBorder={true}
         disableSelectionOnClick
         columns={columns}
-        sx={{
-              useStyles}}
+        sx={{useStyles}}
         rows={
 
           props.listOfBookings.map((booking) => (

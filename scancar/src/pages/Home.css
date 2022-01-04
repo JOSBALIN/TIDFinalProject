@@ -49,6 +49,13 @@
   padding-right:10px;
 }
 
+#filtersmodule input:focus,
+#advfiltersmodule input:focus {
+  background: #ebebeb;
+  border-color: #3b917d;
+  border-width: 2px;
+}
+
 /* "Filter bookings" styling */
 #filtersmodule h3{
     color:black;

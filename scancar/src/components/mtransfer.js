@@ -12,8 +12,8 @@ import CounterButton from "./counter-button";
  */
 export default function CarTransfer(props) {
   return (
-    <div className="module" id="mrequestmodule">
-      <div className="moduletitle" id="mrequeststatus">
+    <div className="module" id="mtransfermodule">
+      <div className="moduletitle" id="mtransfermodule">
         <h3>{props.type}</h3>
       </div>
       <div className="counterbuttonAndCalendarDiv">
