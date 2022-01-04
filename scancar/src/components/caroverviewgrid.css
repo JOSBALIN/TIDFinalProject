@@ -69,3 +69,19 @@ h3 {
   top: 0px;
   text-align: start;
 }
+
+.ready{
+  background-color: #99DF7C;
+}
+
+.ready h3{
+  color: #55B52C;
+}
+
+.maintenance{
+  background-color: #FBBF60;
+}
+
+.maintenance h3{
+  color: #DB8906;
+}
