@@ -13,7 +13,7 @@ import "./CarPrem.css"
 export default function BasicTableOverview(props) {
   console.log(props.listOfCars);
   return (
-
+    <div className="flexbox-container">
       <TableContainer>
         <Table aria-label="simple table" sx={{ minWidth: 550, borderCollapse: 'separate', borderSpacing: '0px 8px'}}>
           <TableHead>
@@ -29,13 +29,14 @@ export default function BasicTableOverview(props) {
                 <TableRow className="tablerow" key={car.carLicenseplateno} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                   <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carGroup}</TableCell>
                   <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carMake + " " + car.carModel}</TableCell>
-                  <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carLicenseplateno}</TableCell>      
+                  <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carParkingLotno}</TableCell>      
                   <TableCell style={{borderBottom:"none"}} align="left" className="tablecell">{car.carStatus}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
+        </div>
       
     
   );
