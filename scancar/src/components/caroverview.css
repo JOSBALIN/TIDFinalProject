@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   justify-content: start;
-  border: solid blue;
+  border: dotted blue;
 }
 
 .flexbox-container1 {
