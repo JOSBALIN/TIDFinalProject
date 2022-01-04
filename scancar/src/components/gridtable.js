@@ -1,28 +1,22 @@
 import * as React from "react";
 import { DataGrid, GridRowsProp, GridColDef, GridCellParams, MuiEvent, GridApi, GridCellValue } from "@mui/x-data-grid";
-import type {} from '@mui/x-data-grid/themeAugmentation';
 import SimpleModal from "./SimpleModal";
 import { makeStyles } from "@mui/styles";
 import DeleteIcon from '@mui/icons-material/Delete';
+import { getOneBooking } from "../api";
 
 import "./SimpleModal.css"
 import "./gridtable.css"
+import { NoEncryption } from "@mui/icons-material";
 
 function alertDelete() {
   window.confirm("Are you sure you want to delete this entry?\nThis cannot be undone");
 }
 
-const useStyles = makeStyles({
-  root: {
-  "& .styledrows": {
-  backgroundColor: "#EBEBEB",  
-  }
-  }
-  });
 
 
-const rows: GridRowsProp = [
-  { id: 1, name: "Johan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+const oldRows = [
+  { id: 1, name: "Jonathan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
   { id: 2, name: "Stine Frederiksen", phoneNum: "24543796", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
   { id: 3, name: "Lars Bohn", phoneNum: "10593768", carGroup: "B", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
   { id: 4, name: "Lisette Markussen", phoneNum: "19504837", carGroup: "C", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
@@ -30,12 +24,28 @@ const rows: GridRowsProp = [
   { id: 6, name: "Simone Seier", phoneNum: "15702498", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
 ];
 
+const useStyles = makeStyles({
+  root: {
+    "& .styledrows": {
+      backgroundColor: "#EBEBEB",
+    },
+    border: "0px",
+    outline: "none",
+    marginTop: "1px",
+    marginBottom: "1px",
+    color: "red",
+    margin:"0px",
+    outline:"none",
+    
+  },
+});
 
-const columns: GridColDef[] = [
+
+const columns = [
   { field: "id",  headerName: "Booking ID", minWidth: 110, align: "center" },
-  { field: "name",  headerName: "Full Name", minWidth: 140,  },
-  { field: "phoneNum",  headerName: "Phone", width: 110, sortable:false },
-  { field: "carGroup",  headerName: "Group", width: 90, align: "center" },
+  // { field: "name",  headerName: "Full Name", minWidth: 140,  },
+  // { field: "phoneNum",  headerName: "Phone", width: 110, sortable:false },
+  // { field: "carGroup",  headerName: "Group", width: 90, align: "center" },
   { field: "pickup",  headerName: "Pick-up", width: 100, align: "center" },
   { field: "return",  headerName: "Return", width: 100, align: "center" },
   { field: "carStatus",  headerName: "Status", width: 90 },
@@ -52,8 +62,8 @@ const columns: GridColDef[] = [
 
       const onClick = () => {
 
-        const api: GridApi = params.api;
-        const thisRow: Record<string, GridCellValue> = {};
+        const api = params.api;
+        const thisRow = {};
 
         api
           .getAllColumns()
@@ -66,7 +76,7 @@ const columns: GridColDef[] = [
       };
      
 
-      return <SimpleModal o={onClick()} isNew={false} isOpen={false}/>
+      return <SimpleModal o={onClick()} isNew={false}/>
     }
   },
 
@@ -105,14 +115,31 @@ const columns: GridColDef[] = [
 
 
 
+export default function GridTable(props) { 
+    
 
 
-export default function GridTable() {
+  // console.log(props.listOfBookings);
+
+  // props.listOfBookings.map((booking) => (
+  //   console.log(booking.bookingBookingid)
+
+  //   ))
+
 
   const classes = useStyles();
 
+  const rows = [
+    { id: 1, name: "Jonathan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "props.listOfBookings[0].bookingBookingid"},
+    { id: 2, name: "Stine Frederiksen", phoneNum: "24543796", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+    { id: 3, name: "Lars Bohn", phoneNum: "10593768", carGroup: "B", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+    { id: 4, name: "Lisette Markussen", phoneNum: "19504837", carGroup: "C", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+    { id: 5, name: "Frederik Fabricius", phoneNum: "21894567", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+    { id: 6, name: "Simone Seier", phoneNum: "15702498", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
+  ];
+
   return (
-    <div className={classes.root} style={{outlineColor: 'white', borderColor: 'white', outline: 0, border: 0}}>
+    <div className={classes.root} >
       <DataGrid
         autoHeight
         disableColumnMenu={true}
@@ -122,8 +149,25 @@ export default function GridTable() {
         pageSize={5}
         showColumnRightBorder={true}
         disableSelectionOnClick
-        rows={rows}
         columns={columns}
+        sx={{
+              useStyles}}
+        rows={
+
+          props.listOfBookings.map((booking) => (
+            {
+              id: booking.bookingBookingid, 
+              pickup: booking.bookingPickupdate,
+              return: booking.bookingDropoffdate.toUTCString(),
+              carStatus: booking.bookingStatus,
+            }
+          ))
+        //   [
+        //   { id: 1, carStatus: 'React' },
+        //   { id: 2, carStatus: 'MUI' },
+        // ]
+      
+      }
         headerHeight={50}
         getRowClassName={(params) => "styledrows"}
 

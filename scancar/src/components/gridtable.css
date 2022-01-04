@@ -3,9 +3,6 @@
 
 .MuiDataGrid-row{
     border-radius: 2em;
-    border:none;
-    border-bottom: none;
-    outline: none;
     
 }
 
@@ -15,24 +12,15 @@
     color:black;
 }
 
+
 .deleteButton:hover{
     background-color: inherit;
     cursor:pointer;
 }
 
 
-.muiDataGrid-cell:focus{
-    outline:none;
-}
 
-.MuiDataGrid-main{
-    border: none;
-    border-bottom: none;
-    grid: none;
-    border-color: white;
-    box-shadow: 100;
 
-}
 
 
 .MuiDataGrid-columnHeader{
@@ -41,11 +29,4 @@ color:black;
 font-family: Lato;
 font-size: 14px;
 font-weight:bolder;
-
-}
-
-
-.muiDataGrid-root{
-    outline:none;
-    outline-color:white;
 }

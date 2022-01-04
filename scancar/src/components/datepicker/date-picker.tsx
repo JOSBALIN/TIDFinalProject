@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import MonthPicker from './month-picker';
 import DateButton from './date-button';
-import { getDatesOfMonth } from './util';
-import './managementmodules.css';
+import { getDatesOfMonth } from '../util';
+import '../managementmodules.css';
 
 export type DatePickerProps = {
   /**
@@ -26,12 +26,17 @@ export type DatePickerProps = {
   Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'selected'>
 >;
 
+
+// Yesterday's date. Used to define the possible minimum value of date-picker (today)
+let date = new Date();
+date.setDate(date.getDate() - 1);
+
 const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>(
   (
     {
       onChange,
       selected = new Date(),
-      minDate = new Date(1900, 0, 1),
+      minDate = date,
       maxDate,
       className,
       ...props

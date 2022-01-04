@@ -4,9 +4,9 @@ import "./CarPrem.css";
  
 
 
-export default function LotOverview() {
+export default function LotOverview(props) {
 
-        
+    this.occupied = props.occupied;
         return (
             <div className="grid-container">
             <div className="grid-item grid-item-1">    

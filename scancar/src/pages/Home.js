@@ -2,21 +2,26 @@ import * as React from "react";
 //import logo from "../logo.svg";
 import "./Home.css";
 import "../App.css";
-import BasicTable from "../components/table";
+import { getAllBookings } from "../api";
 import CheckBoxes from "../components/checkboxes";
 import GridTable from "../components/gridtable";
 import "reactjs-popup/dist/index.css";
 import SimpleModal from "../components/SimpleModal";
-import DatePicker from "react-datepicker";
 
-import { Link } from "react-router-dom";
-import { render } from "@testing-library/react";
-import { GridCellValue } from "@mui/x-data-grid";
 
 function Home() {
   const [visible, setVisible] = React.useState(false);
 
-  const emptyRecord: Record<string, GridCellValue> = {
+  const [listOfBookings, setListOfBookings] = React.useState([]); 
+    
+
+    React.useEffect(async() => { 
+      const allBookings = await getAllBookings();
+      console.log(allBookings);
+      setListOfBookings(allBookings); 
+    }, [])
+
+  const emptyRecord = {
     0: {id: 0}
   };
 
@@ -84,11 +89,17 @@ function Home() {
                     <h2>Pick-up & Return</h2>
                     <div className="row">
                       <div className="column">
-                        Date
-                        {/* Insert SimpleModal here to open calendar */}
+                      <label htmlFor="pickupDate">Pick-up date:</label>
+
+                      <input type="date" id="pickupDate" name="rent-pickup"
+                            value="2022-01-01"
+                            min="2022-01-01" max="2023-12-31"/>
                       </div>
                       <div className="column">
-                        Time
+                      <label htmlFor="pickupTime">Pick-up time:</label>
+
+                      <input type="time" id="pickupTime" name="appt"
+                            min="08:00" max="18:00" required/>
                       </div>
                       <div className="column">
                         Location
@@ -103,11 +114,17 @@ function Home() {
                     </div>
                     <div className="row">
                       <div className="column">
-                        Date
-                        {/* Insert SimpleModal here to open calendar */}
+                      <label htmlFor="return">Return date:</label>
+
+                      <input type="date" id="return" name="rent-return"
+                            value="2022-01-01"
+                            min="2022-01-01" max="2023-12-31"/>
                       </div>
                       <div className="column">
-                        Time
+                         <label htmlFor="returnTime">Return time:</label>
+
+                        <input type="time" id="returnTime" name="appt"
+                              min="08:00" max="18:00" required/>
                       </div>
                       <div className="column">
                         Location
@@ -125,7 +142,7 @@ function Home() {
             </div>
           )}
           <div className="module" id="listmodule">
-             <GridTable /> 
+             <GridTable listOfBookings={listOfBookings}/> 
           </div>
         </div>
       </div>

@@ -1,12 +1,9 @@
 import * as React from 'react';
-//import logo from "../logo.svg";
-import "../App.css";
 import FleetStatus from "../components/fleetstatus";
-import Request from '../components/mrequest';
-import Release from '../components/mrelease';
-import BasicTable from "../components/table";
-import CheckBoxes from "../components/checkboxes";
+import CarTransfer from '../components/mtransfer';
 
+import "../components/managementmodules.css";
+import "../App.css";
 
 import { Link } from 'react-router-dom';
 
@@ -28,10 +25,10 @@ export default function Management() {
           </div>
           <div className="row">
             <div className="column">
-              <Request/>
+              <CarTransfer type={"Request"}/>
             </div>
             <div className="column">
-              <Release/>
+            <CarTransfer type={"Release"}/>
             </div>
           </div>
         </div>
