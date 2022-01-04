@@ -70,18 +70,18 @@ h3 {
   text-align: start;
 }
 
-.ready{
+.Ready{
   background-color: #99DF7C;
 }
 
-.ready h3{
+.Ready h3{
   color: #55B52C;
 }
 
-.maintenance{
+.Maintenance{
   background-color: #FBBF60;
 }
 
-.maintenance h3{
+.Maintenance h3{
   color: #DB8906;
 }

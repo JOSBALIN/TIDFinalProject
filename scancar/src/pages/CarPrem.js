@@ -32,7 +32,7 @@ function Home() {
                 </div>
               </div>
               <div className="columns">
-                <LotOverview/>
+                <LotOverview listOfCars={listOfCars}/>
               </div>
             </div>
           </div>
