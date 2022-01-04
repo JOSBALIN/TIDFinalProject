@@ -12,19 +12,22 @@ import Parse from 'parse'
   export async function getAllCars() {
     try {
     let query = new Parse.Query('Car');
+    
+    query.include("lotno");
     // Run the query to retrieve all objects on Cars class, with their respective attributes
     let queryResult = await query.find();
     console.log(queryResult);
     // Mapping all rows to a map
     const carList = queryResult.map((car) => {return {carGroup: car.get("group"), carMake: car.get("make"), carModel: car.get("model"), carLicenseplateno: car.get("licenseplateno"),
-    carStatus: car.get("status"), carFueltype: car.get("fueltype"), carNoofdoors: car.get("noofdoors"), carColor: car.get("color")}});    
+    carStatus: car.get("status"), carFueltype: car.get("fueltype"), carNoofdoors: car.get("noofdoors"), carColor: car.get("color"),
+    carParkingLotno: car.get("lotno").get("lotno")}});    
     console.log(carList);
     return carList;
     } catch (error) {
         console.log(error);   
     }
   }
-  
+
   /**
  * @param 
  * @returns list of all persons 
@@ -35,7 +38,7 @@ import Parse from 'parse'
     let queryResult = await query.find();
     console.log(queryResult);
     // Mapping all rows to a map
-    const personList = queryResult.map((person) => {return {personPhonenumber: person.get("phonenumber"), personAddress: person.get("address"), personDriverlicensenumber: person.get("driverlicensenumber"),
+    const personList = queryResult.map((person) => {return {personPhonenumber: person.get("phonenumber"), personAddress: person.get("address"), personDriverlicensenumber: person.get("driverlicenseno"),
     personPersonid: person.get("personid"), personFullname: person.get("fullname")}});
     console.log(personList);
     return personList;
@@ -52,19 +55,21 @@ import Parse from 'parse'
     try {
     let query = new Parse.Query('Booking');
     // Run the query to retrieve all objects of Booking class, and their respective attibutes
+    query.include("licenseplateno")
     let queryResult = await query.find();
+    
     console.log(queryResult);
     // Mapping all rows to the map
-    const bookingList = queryResult.map((booking) => {return {bookingBookingid: booking.get("bookingid"), bookingPickupdate: booking.get("pickupdate"),
+    const bookingList = queryResult.map((booking) => {return {bookingid: booking.get("bookingid"), bookingPickupdate: booking.get("pickupdate"),
     bookingPickuplocation: booking.get("pickuplocation"), bookingDropoffdate: booking.get("dropoffdate"), bookingDropofflocation: booking.get("dropofflocation"),
-    bookingPersonid: booking.get("personid"), bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno")}});
+    bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno").get("licenseplateno"), bookingFullname: booking.get("fullname").get("fullname")}});
     console.log(bookingList);
     return bookingList;
     } catch (error) {
         console.log(error);
     }
   }
-
+    
   /**
  * @param 
  * @returns list of all parking lots 
@@ -87,4 +92,14 @@ import Parse from 'parse'
     }
   }
 
-
+  export async function getAllBookingInfo() {
+    try {
+      let query = new Parse.Query("Booking");
+      query.include("licenseplateno")
+      query.include("driverlicenseno")
+      query.include("address")
+      
+    } catch (error) {
+      console.log("error")
+    }
+  }

@@ -1,9 +1,5 @@
 import * as React from 'react';
-
-
-
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
 import Home from './pages/Home.tsx';
 import Management from './pages/Management.tsx';
 import CarPrem from './pages/CarPrem.js';
