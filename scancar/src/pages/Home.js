@@ -25,6 +25,7 @@ function Home() {
     0: {id: 0}
   };
 
+
   return (
     <div className="Background">
       <div className="navbar">
@@ -92,7 +93,6 @@ function Home() {
                       <label htmlFor="pickupDate">Pick-up date:</label>
 
                       <input type="date" id="pickupDate" name="rent-pickup"
-                            value="2022-01-01"
                             min="2022-01-01" max="2023-12-31"/>
                       </div>
                       <div className="column">
@@ -117,7 +117,6 @@ function Home() {
                       <label htmlFor="return">Return date:</label>
 
                       <input type="date" id="return" name="rent-return"
-                            value="2022-01-01"
                             min="2022-01-01" max="2023-12-31"/>
                       </div>
                       <div className="column">

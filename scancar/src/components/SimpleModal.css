@@ -49,6 +49,9 @@
   grid-gap: 16px;
 }
 
+
+
+
 select{
   width: 112px;
   height: 20px;
@@ -70,6 +73,12 @@ select{
   border:none;
 
 }
+
+#bookinginformation input:focus{
+  background: #ebebeb;
+  border-color: #3b917d;
+  border-width: 200px;
+  }
 
   #customerInformationTop h3, h4{
     font-family: "Lato";

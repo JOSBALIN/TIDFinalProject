@@ -79,7 +79,7 @@ export default function FleetStatus() {
         </div>
         <div id="chartDiv">
           <div id="doughnutChart">
-            <p className="chartExplanation">48 hour fleet availability</p>
+            <p className="chartExplanation">Current fleet status</p>
             <Doughnut
               id="doughnutChart"
               data={state}

@@ -89,31 +89,6 @@ import Parse from 'parse'
     bookingPickuplocation: booking.get("pickuplocation"), bookingDropoffdate: booking.get("dropoffdate"), bookingDropofflocation: booking.get("dropofflocation"),
     bookingPersonid: booking.get("personid"), bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno")}});
     console.log(bookingList);
-    console.log(bookingList[0].bookingDropoffdate.getMonth())
-    return bookingList;
-    } catch (error) {
-        console.log(error);
-    }
-  }
-
-
-  /**
- * @param 
- * @returns list of all bookings mapped
- */
-   export async function getOneBooking(props) {
-    try {
-    let query = new Parse.Query('Booking');
-    // Run the query to retrieve all objects of Booking class, and their respective attibutes
-    query.equalTo("bookingid", props)
-    let queryResult = await query.find();
-
-    console.log(queryResult);
-    // Mapping all rows to the map
-    const bookingList = queryResult.map((booking) => {return {bookingBookingid: booking.get("bookingid"), bookingPickupdate: booking.get("pickupdate"),
-    bookingPickuplocation: booking.get("pickuplocation"), bookingDropoffdate: booking.get("dropoffdate"), bookingDropofflocation: booking.get("dropofflocation"),
-    bookingPersonid: booking.get("personid"), bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno")}});
-    console.log(bookingList);
     return bookingList;
     } catch (error) {
         console.log(error);

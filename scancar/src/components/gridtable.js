@@ -145,8 +145,8 @@ export default function GridTable(props) {
         disableColumnMenu={true}
         scrollbarSize={100}
         disableColumnSelector={true}
-        rowHeight={60}
-        pageSize={5}
+        rowHeight={56}
+        pageSize={10}
         showColumnRightBorder={true}
         disableSelectionOnClick
         columns={columns}
@@ -155,7 +155,7 @@ export default function GridTable(props) {
 
           props.listOfBookings.map((booking) => (
             {
-              id: booking.bookingBookingid, 
+              id: booking.bookingid, 
               pickup: booking.bookingPickupdate,
               return: booking.bookingDropoffdate.toUTCString(),
               carStatus: booking.bookingStatus,

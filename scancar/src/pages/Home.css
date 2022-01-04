@@ -90,6 +90,7 @@ h1:hover, h2:hover, h3:hover, h4:hover{
 
 #newBooking{
     background: #3B917D;
+    float:right;
     border-radius: 20px;
     font-family: Lato;
     font-style: normal;
@@ -101,5 +102,4 @@ h1:hover, h2:hover, h3:hover, h4:hover{
     white-space: nowrap;
     color:white;
     padding: 4px 8px 4px 8px;
-
 }

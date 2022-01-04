@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import MonthPicker from './month-picker';
 import DateButton from './date-button';
-import { getDatesOfMonth } from '../util';
+import { getDatesOfMonth } from './util';
 import '../managementmodules.css';
 
 export type DatePickerProps = {
