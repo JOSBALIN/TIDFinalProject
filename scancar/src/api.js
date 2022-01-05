@@ -134,4 +134,8 @@ import Parse from 'parse'
     } catch (error) {
       console.log("error")
     }
+<<<<<<< Updated upstream
   }
+=======
+  }
+>>>>>>> Stashed changes
