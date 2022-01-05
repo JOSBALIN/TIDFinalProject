@@ -89,14 +89,12 @@ import Parse from 'parse'
     bookingPickuplocation: booking.get("pickuplocation"), bookingDropoffdate: booking.get("dropoffdate"), bookingDropofflocation: booking.get("dropofflocation"),
     bookingPersonid: booking.get("personid"), bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno")}});
     console.log(bookingList);
-    console.log(bookingList[0].bookingDropoffdate.getMonth())
     return bookingList;
     } catch (error) {
         console.log(error);
     }
   }
-
-
+    
   /**
  * @param 
  * @returns list of all parking lots 

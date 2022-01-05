@@ -155,7 +155,7 @@ export default function SimpleModal(props) {
           </div>
 
           <div id="buttonDiv">
-            <button className = "modalButton" id="cancelButton">Cancel</button>
+            <button className = "modalButton" id="cancelButton" onClick={handleClose}>Cancel</button>
             {isNew ? (
               ""
             ) : (
