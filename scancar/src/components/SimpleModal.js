@@ -89,13 +89,17 @@ export default function SimpleModal(props) {
             <h3>{isNew ? "New Booking" : "Edit Booking"}</h3>
           </div>
           <div className="module">
-            <div id="customerInformationTop">
+            <div className="row" id="customerInformationTop">
               {" "}
-              <h4>Customer information</h4> <h5>BookingID: </h5>
+              <div className="column">
+                <h4>Customer information</h4>
+              </div>
+              <div className="column" id="cartype">
+                <h5>BookingID: </h5>
+              </div>
             </div>
-            <div></div>
             <div>
-              <form id="bookinginformation">
+              <form className="row" id="bookinginformation">
                 <p>
                   <label>Name</label>
                   <input type="text" name="Name" />
@@ -116,40 +120,69 @@ export default function SimpleModal(props) {
             </div>
           </div>
           <div className="module">
-            <div id="customerInformationTop">
-              {" "}
-              <h4>Pick-up & return</h4> <h4>Car type</h4>
+            <div className="row" id="customerInformationTop">
+              {/* {" "} */}
+              <div className="column">
+                <h4>Pick-up & return</h4>
+              </div>
+              <div className="column" id="cartype">
+                <h4>Car type</h4>
+              </div>
             </div>
             <div>
-              <form id="bookinginformation">
-                <p>
-                  <label>Date</label>
-                  <DateRangeIcon></DateRangeIcon>
-                  <input type="date" name="date" defaultValue="10-10-2021" />
-                </p>
-                <p>
-                  <label>Time</label>
-                  <input type="number" name="hour" />
-                </p>
-                <p>
-                  <label>Location</label>
-                  <select name="location" id="location">
-                    <option value="Nordhavn">Nordhavn</option>
-                    <option value="Sydhavn">Sydhavn</option>
-                    <option value="Amager">Amager</option>
-                  </select>
-                </p>
-                <p>
-                  <label>Group</label>
-                  <select name="location" id="location">
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                    <option value="F">F</option>
-                  </select>
-                </p>
+              <form className="row" id="bookinginformation">
+                  <div className="column">
+                    <p>
+                      <label>Date</label>
+                        {/* <DateRangeIcon></DateRangeIcon> */}
+                      <input type="date" name="date" defaultValue="10-10-2021" />
+                    </p> 
+                    <p>
+                        {/* <DateRangeIcon></DateRangeIcon> */}
+                      <input type="date" name="date" defaultValue="10-10-2021" />
+                    </p> 
+                  </div>
+                  <div className="column">
+                    <p>
+                      <label>Time</label>
+                      <input type="time" id="pickupTime" name="appt"
+                        min="08:00" max="18:00" required/>
+                    </p>
+                    <p>
+                      <input type="time" id="pickupTime" name="appt"
+                        min="08:00" max="18:00" required/>
+                    </p>
+                  </div>
+                  <div className="column">
+                    <p>
+                      <label>Location</label>
+                      <select name="location" id="location">
+                        <option value="Nordhavn">Nordhavn</option>
+                        <option value="Sydhavn">Sydhavn</option>
+                        <option value="Amager">Amager</option>
+                      </select>
+                    </p>
+                    <p>
+                      <select name="location" id="location">
+                        <option value="Nordhavn">Nordhavn</option>
+                        <option value="Sydhavn">Sydhavn</option>
+                        <option value="Amager">Amager</option>
+                      </select>
+                    </p>
+                  </div>
+                  <div className="column">
+                    <p>
+                    <label>Group</label>
+                    <select name="location" id="location">
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
+                      <option value="E">E</option>
+                      <option value="F">F</option>
+                    </select>
+                  </p>
+                  </div>
               </form>
             </div>
           </div>
