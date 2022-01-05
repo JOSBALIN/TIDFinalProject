@@ -2,7 +2,7 @@ import * as React from "react";
 //import logo from "../logo.svg";
 import "./Home.css";
 import "../App.css";
-import { getAllBookings } from "../api";
+import { getAllBookingInfo } from "../api";
 import CheckBoxes from "../components/checkboxes";
 import GridTable from "../components/gridtable";
 import "reactjs-popup/dist/index.css";
@@ -16,7 +16,7 @@ function Home() {
     
 
     React.useEffect(async() => { 
-      const allBookings = await getAllBookings();
+      const allBookings = await getAllBookingInfo();
       console.log(allBookings);
       setListOfBookings(allBookings); 
     }, [])

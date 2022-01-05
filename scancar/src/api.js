@@ -108,7 +108,7 @@ import Parse from 'parse'
       const allBookingInfoList = queryResult.map((booking) => {return {licenseplateno: booking.get("licenseplateno").get("licenseplateno"),
       driverlicenseno: booking.get("fullname").get("driverlicenseno"), address: booking.get("fullname").get("address"), phonenumber: booking.get("fullname").get("phonenumber"),
       fullname: booking.get("fullname").get("fullname"), cargroup: booking.get("licenseplateno").get("group"), location: booking.get("pickuplocation"), bookingid: booking.get("bookingid"),
-      pickupdate: booking.get("pickupdate"), dropoffdate: booking.get("dropoffdate")
+      pickupdate: booking.get("pickupdate"), dropoffdate: booking.get("dropoffdate"), status: booking.get("status")
      }});
       console.log(allBookingInfoList);
       return allBookingInfoList;

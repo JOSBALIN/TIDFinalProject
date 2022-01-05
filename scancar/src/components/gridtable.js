@@ -3,7 +3,7 @@ import { DataGrid, GridRowsProp, GridColDef, GridCellParams, MuiEvent, GridApi, 
 import SimpleModal from "./SimpleModal";
 import { makeStyles } from "@mui/styles";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { getOneBooking } from "../api";
+import { getAllBookingInfo } from "../api";
 
 import "./SimpleModal.css"
 import "./gridtable.css"
@@ -43,9 +43,9 @@ const useStyles = makeStyles({
 
 const columns = [
   { field: "id",  headerName: "Booking ID", minWidth: 110, align: "center" },
-  // { field: "name",  headerName: "Full Name", minWidth: 140,  },
-  // { field: "phoneNum",  headerName: "Phone", width: 110, sortable:false },
-  // { field: "carGroup",  headerName: "Group", width: 90, align: "center" },
+  { field: "name",  headerName: "Full Name", minWidth: 140,  },
+  { field: "phoneNum",  headerName: "Phone", width: 110, sortable:false },
+  { field: "carGroup",  headerName: "Group", width: 90, align: "center" },
   { field: "pickup",  headerName: "Pick-up", width: 100, align: "center" },
   { field: "return",  headerName: "Return", width: 100, align: "center" },
   { field: "carStatus",  headerName: "Status", width: 90 },
@@ -129,14 +129,6 @@ export default function GridTable(props) {
 
   const classes = useStyles({m:400});
 
-  const rows = [
-    { id: 1, name: "Jonathan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "props.listOfBookings[0].bookingBookingid"},
-    { id: 2, name: "Stine Frederiksen", phoneNum: "24543796", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-    { id: 3, name: "Lars Bohn", phoneNum: "10593768", carGroup: "B", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-    { id: 4, name: "Lisette Markussen", phoneNum: "19504837", carGroup: "C", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-    { id: 5, name: "Frederik Fabricius", phoneNum: "21894567", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-    { id: 6, name: "Simone Seier", phoneNum: "15702498", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-  ];
 
   return (
     <div className={classes.root} >
@@ -156,9 +148,12 @@ export default function GridTable(props) {
           props.listOfBookings.map((booking) => (
             {
               id: booking.bookingid, 
-              pickup: booking.bookingPickupdate,
-              return: booking.bookingDropoffdate.toUTCString(),
-              carStatus: booking.bookingStatus,
+              name: booking.fullname,
+              phoneNum: booking.phonenumber,
+              carGroup: booking.cargroup,
+              pickup: booking.pickupdate.toUTCString(),
+              return: booking.dropoffdate.toUTCString(),
+              carStatus: booking.status
             }
           ))
         //   [
