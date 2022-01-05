@@ -1,9 +1,5 @@
 import Parse from 'parse'
 //Initialize SDK
- Parse.initialize('kBkP8zQ5gmsLZQ1UiZzB37HlcD6kRQP8cejp6V1H',
-'DllqYKE8Uy0zwC6caULyJvHbuC2ynSUi1jMFuzXL');
- Parse.serverURL="https://parseapi.back4app.com/";
-
 
 /**
  * @param 
@@ -72,28 +68,28 @@ import Parse from 'parse'
   }
 
 
-  /**
- * @param 
- * @returns list of all bookings mapped
- */
-   export async function getOneBooking(props) {
-    try {
-    let query = new Parse.Query('Booking');
-    // Run the query to retrieve all objects of Booking class, and their respective attibutes
-    query.equalTo("bookingid", props)
-    let queryResult = await query.find();
+//   /**
+//  * @param 
+//  * @returns list of all bookings mapped
+//  */
+//    export async function getOneBooking(props) {
+//     try {
+//     let query = new Parse.Query('Booking');
+//     // Run the query to retrieve all objects of Booking class, and their respective attibutes
+//     query.equalTo("bookingid", props)
+//     let queryResult = await query.find();
 
-    console.log(queryResult);
-    // Mapping all rows to the map
-    const bookingList = queryResult.map((booking) => {return {bookingBookingid: booking.get("bookingid"), bookingPickupdate: booking.get("pickupdate"),
-    bookingPickuplocation: booking.get("pickuplocation"), bookingDropoffdate: booking.get("dropoffdate"), bookingDropofflocation: booking.get("dropofflocation"),
-    bookingPersonid: booking.get("personid"), bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno")}});
-    console.log(bookingList);
-    return bookingList;
-    } catch (error) {
-        console.log(error);
-    }
-  }
+//     console.log(queryResult);
+//     // Mapping all rows to the map
+//     const bookingList = queryResult.map((booking) => {return {bookingBookingid: booking.get("bookingid"), bookingPickupdate: booking.get("pickupdate"),
+//     bookingPickuplocation: booking.get("pickuplocation"), bookingDropoffdate: booking.get("dropoffdate"), bookingDropofflocation: booking.get("dropofflocation"),
+//     bookingPersonid: booking.get("personid"), bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno")}});
+//     console.log(bookingList);
+//     return bookingList;
+//     } catch (error) {
+//         console.log(error);
+//     }
+//   }
     
   /**
  * @param 
@@ -123,7 +119,18 @@ import Parse from 'parse'
       query.include("licenseplateno")
       query.include("driverlicenseno")
       query.include("address")
+      query.include("phonenumber")
+      query.include("fullname")
+      query.include("group")
+      let queryResult = await query.find();
       
+      const allBookingInfoList = queryResult.map((booking) => {return {licenseplateno: booking.get("licenseplateno").get("licenseplateno"),
+      driverlicenseno: booking.get("fullname").get("driverlicenseno"), address: booking.get("fullname").get("address"), phonenumber: booking.get("fullname").get("phonenumber"),
+      fullname: booking.get("fullname").get("fullname"), cargroup: booking.get("licenseplateno").get("group"), location: booking.get("pickuplocation"), bookingid: booking.get("bookingid"),
+      pickupdate: booking.get("pickupdate"), dropoffdate: booking.get("dropoffdate")
+     }});
+      console.log(allBookingInfoList);
+      return allBookingInfoList;
     } catch (error) {
       console.log("error")
     }
