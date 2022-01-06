@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import Home from './pages/Home.js';
-import Management from './pages/Management.tsx';
+import Management from './pages/Management.js';
 import CarPrem from './pages/CarPrem.js';
 import Sidebar from "./components/sidebar.tsx";
 import NavBar from './components/navbar.tsx';
