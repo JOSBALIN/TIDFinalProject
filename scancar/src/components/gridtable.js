@@ -39,6 +39,8 @@ const columns = [
   { field: "pickup",  headerName: "Pick-up", minWidth: 100, flex: 0.3, align: "center", headerAlign:"center" },
   { field: "return",  headerName: "Return", minWidth: 100, flex: 0.3, align: "center", headerAlign:"center" },
   { field: "carStatus",  headerName: "Status", minWidth: 90, align: "left", headerAlign:"center" },
+  { field: "licenseID",  headerName: "Driver's License", minWidth: 90, align: "left", headerAlign:"center", hide:true },
+
 
   // Button in grid adapted from https://stackoverflow.com/questions/64331095/how-to-add-a-button-to-every-row-in-mui-datagrid
   {
@@ -50,7 +52,7 @@ const columns = [
     renderCell: (params) => {
 
       const onClick = () => {
-
+        
         const api = params.api;
         const thisRow = {};
 
@@ -112,7 +114,8 @@ export default function GridTable(props) {
               carGroup: booking.cargroup,
               pickup: booking.pickupdate.getDate()+"/"+booking.pickupdate.getMonth()+"/"+booking.pickupdate.getYear()+"  "+booking.pickupdate.getHours() +":"+booking.pickupdate.getMinutes(),
               return: booking.dropoffdate.getDate()+"/"+booking.dropoffdate.getMonth()+"/"+booking.dropoffdate.getYear()+"  "+booking.dropoffdate.getHours() +":"+booking.dropoffdate.getMinutes(),
-              carStatus: booking.status
+              carStatus: booking.status,
+              licenseID: booking.driverlicenseno
             }
           ))
         //   [

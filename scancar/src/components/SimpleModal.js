@@ -63,7 +63,7 @@ export default function SimpleModal(props) {
   }
 
 
-  console.log(props.o.id)
+  console.log(props.o)
 
 
   const [listOfBookings, setListOfBookings] = React.useState([]); 
@@ -111,19 +111,19 @@ export default function SimpleModal(props) {
               <form className="row" id="bookinginformation">
                 <p>
                   <label>Name</label>
-                  <input type="text" name="Name" />
+                  <input type="text" name="Name" defaultValue={props.o.name}/>
                 </p>
                 <p>
                   <label>Phone Number</label>
-                  <input type="text" name="Phone Number" />
+                  <input type="text" name="Phone Number" defaultValue={props.o.phoneNum} />
                 </p>
                 <p>
                   <label>Address</label>
-                  <input type="text" name="Address" />
+                  <input type="text" name="Address" defaultValue={props.o.address}/>
                 </p>
                 <p>
                   <label>License ID</label>
-                  <input type="text" name="Phone Number" />
+                  <input type="text" name="License ID" defaultValue={props.o.licenseID}/>
                 </p>
               </form>
             </div>
