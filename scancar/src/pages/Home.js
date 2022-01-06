@@ -38,8 +38,15 @@ function Home() {
             <h2>Booking Overview</h2>
           </div>
           <div className="module" id="filtersmodule">
-            <h3>Filter bookings</h3>
-            <div>
+            <div className="row">
+              <div className="column">
+                <h3>Filter bookings</h3>
+              </div>
+              <div>
+                <SimpleModal o={emptyRecord} isNew={true} isOpen={false}/>
+              </div>
+            </div>
+            <div className="row">
               <form id="filterform">
                 <p>
                   <label>Booking ID</label>
@@ -58,10 +65,16 @@ function Home() {
                   <input type="text" name="Address" />
                 </p>
                 <p>
-                  <SimpleModal o={emptyRecord} isNew={true} isOpen={false}/>
+                  
                 </p>
               </form>
             </div>
+            
+
+            
+            
+              
+          
             <button onClick={() => setVisible(!visible)} id="advfilters">
               {visible ? "v   Advanced Filters" : ">   Advanced Filters"}
             </button>

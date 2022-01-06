@@ -5,14 +5,14 @@
 /* establish "line by line" layout for input fields */
 #filterform {
   display: grid;
-  grid-template-columns: 112px 112px 112px 112px 112px;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: fit-content;
   grid-gap: 16px;
 }
 
 #advfilterform {
   display: grid;
-  grid-template-columns: 112px 112px 112px;
-  grid-gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #timepickform {
@@ -38,11 +38,26 @@
 }
 
 /* input field styles for basic and advanced filters */
-#filtersmodule input,
-#advfiltersmodule input {
-  width: 92px;
+#filtersmodule input {
   height: 20px;
   outline: none;
+  width: auto !important;
+  max-width: 144px;
+  min-width: 30px;
+  background: #d6d6d6;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: white;
+  padding-left:15px;
+  padding-right:15px;
+}
+
+#advfiltersmodule input {
+  height: 20px;
+  outline: none;
+  width: auto !important;
+  max-width: 96px;
+  min-width: 30px;
   background: #d6d6d6;
   border-radius: 20px;
   border-style: solid;
@@ -95,8 +110,6 @@ h1:hover, h2:hover, h3:hover, h4:hover{
 
 #newBooking{
     background: #3B917D;
-    position: absolute;
-    right: 25%;
     border-radius: 20px;
     font-family: "Lato";
     font-style: normal;

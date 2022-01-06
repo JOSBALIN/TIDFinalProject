@@ -192,6 +192,7 @@ export default function SimpleModal(props) {
                           <option value="Ready">Ready</option>
                           <option value="Picked-up">Picked up</option>
                           <option value="Returned">Returned</option>
+                          <option value="Not returned">Not returned</option>
                         </select>
                       </p>
                       )}

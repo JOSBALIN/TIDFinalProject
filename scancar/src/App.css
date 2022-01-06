@@ -28,17 +28,17 @@
 /* Styling "canvas", gray background upon which modules are hosted */
 .canvas {
   background: #ebebeb;
+  padding-bottom: 20% !important;
   margin-top: 75px;
+  max-width: 1400;
   height: 100%;
   width: 60%;
+  min-width: 800px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1em;
 }
 
-.canvas{
-  padding-bottom:20% !important;
-}
 
 /* modules, styling rules for each "box of content", based on design guide */
 .module {
