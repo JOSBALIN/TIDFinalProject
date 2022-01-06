@@ -84,12 +84,12 @@ export default async function createCar(props) {
     try {
     let query = new Parse.Query("Booking");
     // Run the query to retrieve all objects of Booking class, and their respective attibutes
-    query.equalTo("bookingid", props)
     query.include("licenseplateno")
     query.include("fullname")
     query.include("address")
     query.include("phonenumber")
     query.include("group")
+    query.equalTo("bookingid", props)
 
     
     let queryResult = await query.find();
