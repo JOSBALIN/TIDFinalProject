@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
-.test{
-    background-color: rgba(255, 255, 255, 0.25);
-}
-
-
 
 
 #modalDiv{
@@ -155,3 +150,12 @@ select:focus{
     cursor:pointer;
     filter:invert(20%)
   }
+
+  #cargroup{
+    width:64px;
+  }
+
+  .time{
+    width:70px !important;
+  }
+  

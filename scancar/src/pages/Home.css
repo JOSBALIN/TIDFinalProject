@@ -49,6 +49,8 @@
   padding-right:10px;
 }
 
+
+
 #filtersmodule input:focus,
 #advfiltersmodule input:focus {
   background: #ebebeb;
@@ -87,6 +89,7 @@ h1:hover, h2:hover, h3:hover, h4:hover{
   cursor:pointer;
   filter:invert(20%)
 }
+
 
 #newBooking{
     background: #3B917D;

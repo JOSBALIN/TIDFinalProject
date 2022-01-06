@@ -3,9 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Modal from "@material-ui/core/Modal";
 import "./SimpleModal.css";
-import { GridCellValue } from "@mui/x-data-grid";
 import EditIcon from "@mui/icons-material/Edit";
-import DateRangeIcon from "@mui/icons-material/DateRange";
 import { getSpecificBooking } from "../api";
 
 
@@ -71,12 +69,6 @@ export default function SimpleModal(props) {
     setListOfBookings(allBookings); 
   }, [])
 
-    
-  const current = new Date();
-  const date = `${current.getFullYear()}-${
-    current.getMonth() + 1
-  }/${current.getFullYear()}`;
-  console.log(props.o.pickupHour)
 
 
   return (
@@ -149,11 +141,11 @@ export default function SimpleModal(props) {
                   <div className="column">
                     <p>
                       <label>Time</label>
-                      <input type="time" id="pickupTime" name="appt" defaultValue={props.o.pickupTime}
+                      <input type="time" className="time" name="appt" defaultValue={props.o.pickupTime}
                         min="08:00" max="18:00" required/>
                     </p>
                     <p>
-                      <input type="time" id="pickupTime" name="appt" defaultValue={props.o.returnTime}
+                      <input type="time" className="time" name="appt" defaultValue={props.o.returnTime}
                         min="08:00" max="18:00" required/>
                     </p>
                   </div>
@@ -177,7 +169,7 @@ export default function SimpleModal(props) {
                   <div className="column">
                     <p>
                     <label>Group</label>
-                    <select name="location" id="location" defaultValue={props.o.carGroup}>
+                    <select name="cargroup" id="cargroup" defaultValue={props.o.carGroup}>
                       <option value="A">A</option>
                       <option value="B">B</option>
                       <option value="C">C</option>
