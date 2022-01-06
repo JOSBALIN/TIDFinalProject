@@ -76,7 +76,7 @@ export default function SimpleModal(props) {
 
     
   const current = new Date();
-  const date = `${current.getDate()}/${
+  const date = `${current.getFullYear()}-${
     current.getMonth() + 1
   }/${current.getFullYear()}`;
 
@@ -142,7 +142,7 @@ export default function SimpleModal(props) {
                   <div className="column">
                     <p>
                       <label>Date</label>
-                      <input type="date" name="date" defaultValue="10-10-2021" />
+                      <input type="date" name="date" defaultValue="2021-10-10" />
                     </p> 
                     <p>
                       <input type="date" name="date" defaultValue="10-10-2021" />
@@ -179,7 +179,7 @@ export default function SimpleModal(props) {
                   <div className="column">
                     <p>
                     <label>Group</label>
-                    <select name="location" id="location">
+                    <select name="location" id="location" defaultValue={props.o.carGroup}>
                       <option value="A">A</option>
                       <option value="B">B</option>
                       <option value="C">C</option>
