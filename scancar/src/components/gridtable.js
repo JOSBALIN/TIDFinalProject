@@ -26,8 +26,7 @@ const useStyles = makeStyles({
     marginBottom: "1px",
     color: "red",
     margin:"0px",
-    outline:"none",
-    
+    outline:"none",    
   },
 });
 
@@ -39,7 +38,7 @@ const columns = [
   { field: "carGroup",  headerName: "Group", minWidth: 90, align: "center", headerAlign:"center" },
   { field: "pickup",  headerName: "Pick-up", minWidth: 100, flex: 0.3, align: "center", headerAlign:"center" },
   { field: "return",  headerName: "Return", minWidth: 100, flex: 0.3, align: "center", headerAlign:"center" },
-  { field: "carStatus",  headerName: "Status", minWidth: 90, headerAlign:"center" },
+  { field: "carStatus",  headerName: "Status", minWidth: 90, align: "left", headerAlign:"center" },
 
   // Button in grid adapted from https://stackoverflow.com/questions/64331095/how-to-add-a-button-to-every-row-in-mui-datagrid
   {
@@ -88,16 +87,6 @@ const columns = [
 
 export default function GridTable(props) { 
     
-
-
-  // console.log(props.listOfBookings);
-
-  // props.listOfBookings.map((booking) => (
-  //   console.log(booking.bookingBookingid)
-
-  //   ))
-
-
   const classes = useStyles({m:400});
 
 

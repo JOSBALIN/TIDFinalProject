@@ -9,11 +9,6 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 import { getOneBooking } from "../api";
 
 
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
-
-
 const useStyles = makeStyles((theme) => ({
   modal: {
     alignItems: "center",
@@ -81,7 +76,6 @@ export default function SimpleModal(props) {
         aria-describedby="simple-modal-description"
         open={open}
         onClose={handleClose}
-        className="test"
       >
         <div className={classes.paper} id="modalDiv">
           <div className="modalTitle">
@@ -95,7 +89,7 @@ export default function SimpleModal(props) {
                 <h4>Customer information</h4>
               </div>
               <div className="column" id="cartype">
-                <h5>BookingID: </h5>
+              { isNew ? "" : <h5>BookingID: {props.o.id}</h5> }
               </div>
             </div>
             <div>
@@ -121,7 +115,6 @@ export default function SimpleModal(props) {
           </div>
           <div className="module">
             <div className="row" id="customerInformationTop">
-              {/* {" "} */}
               <div className="column">
                 <h4>Pick-up & return</h4>
               </div>
@@ -134,11 +127,9 @@ export default function SimpleModal(props) {
                   <div className="column">
                     <p>
                       <label>Date</label>
-                        {/* <DateRangeIcon></DateRangeIcon> */}
                       <input type="date" name="date" defaultValue="10-10-2021" />
                     </p> 
                     <p>
-                        {/* <DateRangeIcon></DateRangeIcon> */}
                       <input type="date" name="date" defaultValue="10-10-2021" />
                     </p> 
                   </div>

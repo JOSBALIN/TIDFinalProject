@@ -57,19 +57,20 @@ function drawA(props){
 }
 
   const bSpots = []
-  for(let i = 1; i <= 14; i++){
-    let currentSpot = parkingSpots[i+14]
-    let test = JSON.stringify(currentSpot.status)
-    console.log(test)
-    console.log(currentSpot)
-    bSpots.push(
-      <ParkingLotSpot id={currentSpot.id} className={` ${test} small-grid-box`}/>
-    )
+  function drawB(props){
+    for(let i = 1; i <= 14; i++){
+      let currentSpot = props[i+14]
+      let className = "small-grid-box " + currentSpot.status
+      aSpots.push(
+        <ParkingLotSpot id={currentSpot.id} className={className}/>
+      )
+    }
+  return bSpots
   }
 
   const cSpots = []
+  function drawC(props){
   for(let i = 1; i <= 14; i++){
-
     let currentSpot = parkingSpots[i+28]
     let className = "small-grid-box " + currentSpot.status
 
@@ -77,6 +78,8 @@ function drawA(props){
       <ParkingLotSpot id={currentSpot.id} className={className}/>
     )
   }
+  return cSpots
+}
 
   
 
@@ -84,7 +87,7 @@ function drawA(props){
     <div className="grid-container">
       <div className="grid-item grid-item-1">
       <div className="small-grid-box-container-horizontal">
-        {cSpots}
+        {drawC(check())}
       </div>
       </div>
       <div className="grid-item grid-item-2">
@@ -94,7 +97,7 @@ function drawA(props){
       </div>
       <div className="grid-item grid-item-3">
       <div className="small-grid-box-container-vertical">
-        {bSpots}
+        {drawB(check())}
         </div>
       </div>
     </div>
