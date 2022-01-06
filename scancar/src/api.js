@@ -84,6 +84,7 @@ export default async function createCar(props) {
     let query = new Parse.Query("Booking");
     // Run the query to retrieve all objects of Booking class, and their respective attibutes
     query.include("licenseplateno")
+    query.include("fullname")
     let queryResult = await query.find();
     
     console.log(queryResult);
@@ -94,6 +95,30 @@ export default async function createCar(props) {
     console.log("Bookings retrieved" + bookingList);
     console.log(bookingList[0].bookingDropoffdate.getMonth())
     return bookingList;
+    } catch (error) {
+        console.log("Error while retrieving bookings" + error);
+    }
+  }
+  /**
+ * @param 
+ * @returns list of all bookings mapped
+ */
+  export async function getSpecificBooking(props) {
+    try {
+    let query = new Parse.Query("Booking");
+    // Run the query to retrieve all objects of Booking class, and their respective attibutes
+    query.include("licenseplateno")
+    query.include("fullname")
+    query.equaltTo(props.bookingid)
+    let queryResult = await query.find();
+    
+    console.log(queryResult);
+    // Mapping all rows to the map
+    const booking = queryResult.map((booking) => {return {bookingid: booking.get("bookingid"), bookingPickupdate: booking.get("pickupdate"),
+    bookingPickuplocation: booking.get("pickuplocation"), bookingDropoffdate: booking.get("dropoffdate"), bookingDropofflocation: booking.get("dropofflocation"),
+    bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno").get("licenseplateno"), bookingFullname: booking.get("fullname").get("fullname")}});
+    console.log("Booking retrieved" + booking);
+    return booking;
     } catch (error) {
         console.log("Error while retrieving bookings" + error);
     }
