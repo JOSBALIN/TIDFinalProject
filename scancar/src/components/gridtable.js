@@ -15,15 +15,6 @@ function alertDelete() {
 
 
 
-const oldRows = [
-  { id: 1, name: "Jonathan Larsen", phoneNum: "20304050", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-  { id: 2, name: "Stine Frederiksen", phoneNum: "24543796", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-  { id: 3, name: "Lars Bohn", phoneNum: "10593768", carGroup: "B", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-  { id: 4, name: "Lisette Markussen", phoneNum: "19504837", carGroup: "C", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-  { id: 5, name: "Frederik Fabricius", phoneNum: "21894567", carGroup: "D", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-  { id: 6, name: "Simone Seier", phoneNum: "15702498", carGroup: "A", pickup: "01/01/2022", return: "10/01/2022", carStatus: "delivered"},
-];
-
 const useStyles = makeStyles({
   root: {
     "& .styledrows": {
@@ -42,15 +33,14 @@ const useStyles = makeStyles({
 
 
 const columns = [
-  { field: "id",  headerName: "Booking ID", minWidth: 110, align: "center" },
-  { field: "name",  headerName: "Full Name", minWidth: 140,  },
-  { field: "phoneNum",  headerName: "Phone", width: 110, sortable:false },
-  { field: "carGroup",  headerName: "Group", width: 90, align: "center" },
-  { field: "pickup",  headerName: "Pick-up", width: 100, align: "center" },
-  { field: "return",  headerName: "Return", width: 100, align: "center" },
-  { field: "carStatus",  headerName: "Status", width: 90 },
+  { field: "id",  headerName: "Booking ID", minWidth: 110, align: "center", headerAlign:"center" },
+  { field: "name",  headerName: "Full Name", minWidth: 140, flex: 0.6,  },
+  { field: "phoneNum",  headerName: "Phone", minWidth: 110, sortable:false },
+  { field: "carGroup",  headerName: "Group", minWidth: 90, align: "center", headerAlign:"center" },
+  { field: "pickup",  headerName: "Pick-up", minWidth: 100, flex: 0.3, align: "center", headerAlign:"center" },
+  { field: "return",  headerName: "Return", minWidth: 100, flex: 0.3, align: "center", headerAlign:"center" },
+  { field: "carStatus",  headerName: "Status", minWidth: 90, headerAlign:"center" },
 
-  
   // Button in grid adapted from https://stackoverflow.com/questions/64331095/how-to-add-a-button-to-every-row-in-mui-datagrid
   {
     field: "edit",
@@ -96,25 +86,6 @@ const columns = [
 
 ];
 
-// const columns: GridColDef[] = [
-//   { field: "id", hide: true },
-//   { field: "col1", headerName: "Column 1", width: 150, editable: true},
-//   { field: "col2", headerName: "Column 2", width: 150, editable: true },
-//   { field: "col3", headerName: "Column 3", width: 150}
-  
-// ];
-
-/**
-  * Set the cellMode of a cell.
-  * @param GridRowId
-  * @param string
-  * @param 'edit' | 'view'
-  */
-
-
-
-
-
 export default function GridTable(props) { 
     
 
@@ -144,15 +115,14 @@ export default function GridTable(props) {
         columns={columns}
         sx={{useStyles}}
         rows={
-
           props.listOfBookings.map((booking) => (
             {
               id: booking.bookingid, 
               name: booking.fullname,
               phoneNum: booking.phonenumber,
               carGroup: booking.cargroup,
-              pickup: booking.pickupdate.toUTCString(),
-              return: booking.dropoffdate.toUTCString(),
+              pickup: booking.pickupdate.getDate()+"/"+booking.pickupdate.getMonth()+"/"+booking.pickupdate.getYear()+"  "+booking.pickupdate.getHours() +":"+booking.pickupdate.getMinutes(),
+              return: booking.dropoffdate.getDate()+"/"+booking.dropoffdate.getMonth()+"/"+booking.dropoffdate.getYear()+"  "+booking.dropoffdate.getHours() +":"+booking.dropoffdate.getMinutes(),
               carStatus: booking.status
             }
           ))

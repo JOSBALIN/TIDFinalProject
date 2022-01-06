@@ -128,6 +128,10 @@ select{
       line-height: 22px;
   }
 
+  .column #cartype{
+    text-align: right;
+  }
+
   #deleteButton{
     font-family: "Lato";
     display:inline;

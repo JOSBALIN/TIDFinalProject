@@ -29,6 +29,7 @@ export default function CarTransfer(props) {
           <DatePicker />
         </div>
       </div>
+      <div><button className="bottomButton">{props.type}</button></div>
     </div>
   );
 }
