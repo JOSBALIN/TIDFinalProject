@@ -28,13 +28,16 @@
 /* Styling "canvas", gray background upon which modules are hosted */
 .canvas {
   background: #ebebeb;
-  padding-bottom: 10%;
   margin-top: 75px;
   height: 100%;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1em;
+}
+
+.canvas{
+  padding-bottom:20% !important;
 }
 
 /* modules, styling rules for each "box of content", based on design guide */
