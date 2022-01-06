@@ -33,7 +33,9 @@
   clear: both;
 }
 
-
+.canvas{
+  padding-bottom:20% !important;
+}
 
 /* input field styles for basic and advanced filters */
 #filtersmodule input {
