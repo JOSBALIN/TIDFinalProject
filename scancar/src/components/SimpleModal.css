@@ -1,17 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
-.test{
-    background-color: rgba(255, 255, 255, 0.25);
-}
-
-
 
 
 #modalDiv{
     background-color: #EBEBEB;
     position:absolute;
-    width:auto;
+    width:50%;
+    min-width:570px;
+    max-width: 750px;
     top: 50%;
     left: 50%;
     margin-right: -50%;
@@ -54,10 +51,19 @@
 
 select{
   width: 112px;
-  height: 20px;
+  height: 26px;
   background: #d6d6d6;
   border-radius: 20px;
-  border:none;
+  border-style: solid;
+  border-color: white;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+select:focus{
+  background: #ebebeb;
+  border-color: #3b917d;
+  border-width: 2px;
 }
 
 #editButton:hover{
@@ -65,26 +71,27 @@ select{
 }
 
 #bookinginformation input {
-  width: 112px;
+  width: 92px;
   height: 20px;
   outline: none;
   background: #d6d6d6;
   border-radius: 20px;
-  border:none;
-
+  border-style: solid;
+  border-color: white;
+  padding-left:10px;
+  padding-right:10px;
 }
 
 #bookinginformation input:focus{
   background: #ebebeb;
   border-color: #3b917d;
-  border-width: 200px;
+  border-width: 2px;
   }
 
   #customerInformationTop h3, h4{
     font-family: "Lato";
     font-style: normal;
   }
-
   
   #cancelButton{
     background: #F9A010;
@@ -137,11 +144,18 @@ select{
     display:inline;
     color:black;
     margin-left:5%
-    
-
   }
 
   #deleteButton:hover{
     cursor:pointer;
     filter:invert(20%)
   }
+
+  #cargroup{
+    width:64px;
+  }
+
+  .time{
+    width:70px !important;
+  }
+  

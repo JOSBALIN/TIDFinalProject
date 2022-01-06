@@ -3,15 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Modal from "@material-ui/core/Modal";
 import "./SimpleModal.css";
-import { GridCellValue } from "@mui/x-data-grid";
 import EditIcon from "@mui/icons-material/Edit";
-import DateRangeIcon from "@mui/icons-material/DateRange";
-import { getOneBooking } from "../api";
-
-
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
+import { getSpecificBooking } from "../api";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,7 +21,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function SimpleModal(props) {
+
+
   const classes = useStyles();
   const [open, setOpen] = React.useState();
 
@@ -64,11 +60,15 @@ export default function SimpleModal(props) {
     }
   }
 
-    
-  const current = new Date();
-  const date = `${current.getDate()}/${
-    current.getMonth() + 1
-  }/${current.getFullYear()}`;
+
+  const [listOfBookings, setListOfBookings] = React.useState([]); 
+
+  React.useEffect(async() => { 
+    const allBookings = await getSpecificBooking(props.o.id);
+    console.log(allBookings);
+    setListOfBookings(allBookings); 
+  }, [])
+
 
 
   return (
@@ -81,7 +81,6 @@ export default function SimpleModal(props) {
         aria-describedby="simple-modal-description"
         open={open}
         onClose={handleClose}
-        className="test"
       >
         <div className={classes.paper} id="modalDiv">
           <div className="modalTitle">
@@ -95,33 +94,32 @@ export default function SimpleModal(props) {
                 <h4>Customer information</h4>
               </div>
               <div className="column" id="cartype">
-                <h5>BookingID: </h5>
+              { isNew ? "" : <h5>BookingID: {props.o.id}</h5> }
               </div>
             </div>
             <div>
               <form className="row" id="bookinginformation">
                 <p>
                   <label>Name</label>
-                  <input type="text" name="Name" />
+                  <input type="text" name="Name" defaultValue={props.o.name}/>
                 </p>
                 <p>
                   <label>Phone Number</label>
-                  <input type="text" name="Phone Number" />
+                  <input type="text" name="Phone Number" defaultValue={props.o.phoneNum} />
                 </p>
                 <p>
                   <label>Address</label>
-                  <input type="text" name="Address" />
+                  <input type="text" name="Address" defaultValue={props.o.address}/>
                 </p>
                 <p>
                   <label>License ID</label>
-                  <input type="text" name="Phone Number" />
+                  <input type="text" name="License ID" defaultValue={props.o.licenseID}/>
                 </p>
               </form>
             </div>
           </div>
           <div className="module">
             <div className="row" id="customerInformationTop">
-              {/* {" "} */}
               <div className="column">
                 <h4>Pick-up & return</h4>
               </div>
@@ -134,22 +132,20 @@ export default function SimpleModal(props) {
                   <div className="column">
                     <p>
                       <label>Date</label>
-                        {/* <DateRangeIcon></DateRangeIcon> */}
-                      <input type="date" name="date" defaultValue="10-10-2021" />
+                      <input type="date" name="date" defaultValue={props.o.pickupDate} />
                     </p> 
                     <p>
-                        {/* <DateRangeIcon></DateRangeIcon> */}
-                      <input type="date" name="date" defaultValue="10-10-2021" />
+                      <input type="date" name="date" defaultValue={props.o.returnDate} />
                     </p> 
                   </div>
                   <div className="column">
                     <p>
                       <label>Time</label>
-                      <input type="time" id="pickupTime" name="appt"
+                      <input type="time" className="time" name="appt" defaultValue={props.o.pickupTime}
                         min="08:00" max="18:00" required/>
                     </p>
                     <p>
-                      <input type="time" id="pickupTime" name="appt"
+                      <input type="time" className="time" name="appt" defaultValue={props.o.returnTime}
                         min="08:00" max="18:00" required/>
                     </p>
                   </div>
@@ -199,7 +195,6 @@ export default function SimpleModal(props) {
                         </select>
                       </p>
                       )}
-                    
                   </div>
               </form>
             </div>

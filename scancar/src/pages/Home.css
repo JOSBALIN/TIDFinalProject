@@ -49,6 +49,8 @@
   padding-right:10px;
 }
 
+
+
 #filtersmodule input:focus,
 #advfiltersmodule input:focus {
   background: #ebebeb;
@@ -88,12 +90,13 @@ h1:hover, h2:hover, h3:hover, h4:hover{
   filter:invert(20%)
 }
 
+
 #newBooking{
     background: #3B917D;
     position: absolute;
     right: 25%;
     border-radius: 20px;
-    font-family: Lato;
+    font-family: "Lato";
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
