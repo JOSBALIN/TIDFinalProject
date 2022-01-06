@@ -61,7 +61,7 @@ function drawA(props){
     for(let i = 1; i <= 14; i++){
       let currentSpot = props[i+14]
       let className = "small-grid-box " + currentSpot.status
-      aSpots.push(
+      bSpots.push(
         <ParkingLotSpot id={currentSpot.id} className={className}/>
       )
     }
@@ -73,7 +73,6 @@ function drawA(props){
   for(let i = 1; i <= 14; i++){
     let currentSpot = parkingSpots[i+28]
     let className = "small-grid-box " + currentSpot.status
-
     cSpots.push(
       <ParkingLotSpot id={currentSpot.id} className={className}/>
     )

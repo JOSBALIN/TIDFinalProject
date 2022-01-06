@@ -6,7 +6,7 @@ import "./SimpleModal.css";
 import { GridCellValue } from "@mui/x-data-grid";
 import EditIcon from "@mui/icons-material/Edit";
 import DateRangeIcon from "@mui/icons-material/DateRange";
-import { getOneBooking } from "../api";
+import { getSpecificBooking } from "../api";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +23,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function SimpleModal(props) {
+
+
+  const [listOfBookings, setListOfBookings] = React.useState([]); 
+
+  React.useEffect(async() => { 
+    const allBookings = await getSpecificBooking(props.o.id);
+    console.log(allBookings);
+    setListOfBookings(allBookings); 
+  }, [])
+
   const classes = useStyles();
   const [open, setOpen] = React.useState();
 

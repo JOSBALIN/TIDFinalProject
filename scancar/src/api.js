@@ -109,7 +109,7 @@ export default async function createCar(props) {
     // Run the query to retrieve all objects of Booking class, and their respective attibutes
     query.include("licenseplateno")
     query.include("fullname")
-    query.equaltTo(props.bookingid)
+    query.equalTo(props.bookingid)
     let queryResult = await query.find();
     
     console.log(queryResult);
