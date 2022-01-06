@@ -5,15 +5,14 @@
 /* establish "line by line" layout for input fields */
 #filterform {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  max-width: fit-content max-content;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: fit-content;
   grid-gap: 16px;
 }
 
 #advfilterform {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #timepickform {
@@ -40,17 +39,23 @@
 #filtersmodule input {
   height: 20px;
   outline: none;
+  width: auto !important;
+  max-width: 144px;
+  min-width: 30px;
   background: #d6d6d6;
   border-radius: 20px;
   border-style: solid;
   border-color: white;
-  padding-left:10px;
-  padding-right:10px;
+  padding-left:15px;
+  padding-right:15px;
 }
 
 #advfiltersmodule input {
   height: 20px;
   outline: none;
+  width: auto !important;
+  max-width: 96px;
+  min-width: 30px;
   background: #d6d6d6;
   border-radius: 20px;
   border-style: solid;
