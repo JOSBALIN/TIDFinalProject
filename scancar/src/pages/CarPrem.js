@@ -22,7 +22,7 @@ function Home() {
         <div>
           <div className="canvas">
             <div className="moduletitle" id="carprem">
-              <h2>Cars on premises</h2>
+              <h2>Cars on Premises</h2>
             </div>
             <div className="row">
               <div className="column">

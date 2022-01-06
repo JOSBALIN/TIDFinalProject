@@ -5,13 +5,13 @@
 /* establish "line by line" layout for input fields */
 #filterform {
   display: grid;
-  grid-template-columns: 112px 112px 112px 112px 112px;
+  grid-template-columns: 144px 144px 144px 144px 144px;
   grid-gap: 16px;
 }
 
 #advfilterform {
   display: grid;
-  grid-template-columns: 112px 112px 112px;
+  grid-template-columns: 120px 120px 120px;
   grid-gap: 16px;
 }
 
@@ -36,9 +36,20 @@
 
 
 /* input field styles for basic and advanced filters */
-#filtersmodule input,
+#filtersmodule input {
+  width: 120px;
+  height: 20px;
+  outline: none;
+  background: #d6d6d6;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: white;
+  padding-left:10px;
+  padding-right:10px;
+}
+
 #advfiltersmodule input {
-  width: 92px;
+  width: 96px;
   height: 20px;
   outline: none;
   background: #d6d6d6;
