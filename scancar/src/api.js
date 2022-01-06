@@ -75,30 +75,7 @@ export default async function createCar(props) {
     }
   }
 
-  /**
- * @param 
- * @returns list of all bookings mapped
- */
-  export async function getAllBookings() {
-    try {
-    let query = new Parse.Query("Booking");
-    // Run the query to retrieve all objects of Booking class, and their respective attibutes
-    query.include("licenseplateno")
-    query.include("fullname")
-    let queryResult = await query.find();
-    
-    console.log(queryResult);
-    // Mapping all rows to the map
-    const bookingList = queryResult.map((booking) => {return {bookingid: booking.get("bookingid"), bookingPickupdate: booking.get("pickupdate"),
-    bookingPickuplocation: booking.get("pickuplocation"), bookingDropoffdate: booking.get("dropoffdate"), bookingDropofflocation: booking.get("dropofflocation"),
-    bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno").get("licenseplateno"), bookingFullname: booking.get("fullname").get("fullname")}});
-    console.log("Bookings retrieved" + bookingList);
-    console.log(bookingList[0].bookingDropoffdate.getMonth())
-    return bookingList;
-    } catch (error) {
-        console.log("Error while retrieving bookings" + error);
-    }
-  }
+  
   /**
  * @param 
  * @returns list of all bookings mapped
@@ -107,16 +84,23 @@ export default async function createCar(props) {
     try {
     let query = new Parse.Query("Booking");
     // Run the query to retrieve all objects of Booking class, and their respective attibutes
+    query.equalTo("bookingid", props)
     query.include("licenseplateno")
     query.include("fullname")
-    query.equalTo("bookingid", props)
+    query.include("address")
+    query.include("phonenumber")
+    query.include("group")
+
+    
     let queryResult = await query.find();
     
     console.log(queryResult);
     // Mapping all rows to the map
     const booking = queryResult.map((booking) => {return {bookingid: booking.get("bookingid"), bookingPickupdate: booking.get("pickupdate"),
     bookingPickuplocation: booking.get("pickuplocation"), bookingDropoffdate: booking.get("dropoffdate"), bookingDropofflocation: booking.get("dropofflocation"),
-    bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno").get("licenseplateno"), bookingFullname: booking.get("fullname").get("fullname")}});
+    bookingStatus: booking.get("status"), bookingLicenseplateno: booking.get("licenseplateno").get("licenseplateno"), bookingFullname: booking.get("fullname").get("fullname"),
+    bookingaddress: booking.get("fullname").get("address"), bookingcargroup: booking.get("licenseplateno").get("group"),
+    bookingphonenumber: booking.get("fullname").get("phonenumber")}});
     console.log("Booking retrieved" + booking);
     return booking;
     } catch (error) {
