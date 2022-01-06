@@ -27,14 +27,6 @@ const useStyles = makeStyles((theme) => ({
 export default function SimpleModal(props) {
 
 
-  const [listOfBookings, setListOfBookings] = React.useState([]); 
-
-  React.useEffect(async() => { 
-    const allBookings = await getSpecificBooking(props.o.id);
-    console.log(allBookings);
-    setListOfBookings(allBookings); 
-  }, [])
-
   const classes = useStyles();
   const [open, setOpen] = React.useState();
 
@@ -69,6 +61,18 @@ export default function SimpleModal(props) {
       );
     }
   }
+
+
+  console.log(props.o.id)
+
+
+  const [listOfBookings, setListOfBookings] = React.useState([]); 
+
+  React.useEffect(async() => { 
+    const allBookings = await getSpecificBooking(props.o.id);
+    console.log(allBookings);
+    setListOfBookings(allBookings); 
+  }, [])
 
     
   const current = new Date();
