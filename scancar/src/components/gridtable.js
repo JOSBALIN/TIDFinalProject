@@ -36,11 +36,15 @@ const columns = [
   { field: "name",  headerName: "Full Name", minWidth: 140, flex: 0.6,  },
   { field: "phoneNum",  headerName: "Phone", minWidth: 110, sortable:false },
   { field: "carGroup",  headerName: "Group", minWidth: 90, align: "center", headerAlign:"center" },
-  { field: "pickup",  headerName: "Pick-up", minWidth: 100, flex: 0.3, align: "center", headerAlign:"center" },
-  { field: "return",  headerName: "Return", minWidth: 100, flex: 0.3, align: "center", headerAlign:"center" },
+  { field: "pickup",  headerName: "Pick-up", minWidth: 100, sortable:false, flex: 0.3, align: "center", headerAlign:"center" },
+  { field: "return",  headerName: "Return", minWidth: 100, sortable:false, flex: 0.3, align: "center", headerAlign:"center" },
   { field: "carStatus",  headerName: "Status", minWidth: 90, align: "left", headerAlign:"center" },
   { field: "licenseID",  headerName: "Driver's License", minWidth: 90, align: "left", headerAlign:"center", hide:true },
   { field: "address",  headerName: "Address", minWidth: 90, align: "left", headerAlign:"center", hide:true },
+  { field: "pickupDate",  hide:true },
+  { field: "pickupTime",  hide:true },
+  { field: "returnDate",  hide:true },
+  { field: "returnTime",  hide:true },
 
 
   // Button in grid adapted from https://stackoverflow.com/questions/64331095/how-to-add-a-button-to-every-row-in-mui-datagrid
@@ -91,8 +95,9 @@ const columns = [
 export default function GridTable(props) { 
     
   const classes = useStyles({m:400});
+  
+  // Vars and functions for formatting date, taken from W3 schools' articles on getMonths & getMinutes
   const months = ["01","02","03","04","05","06","07","08","09","10","11","12"];
-
   function addZero(i) {
     if (i < 10) {i = "0" + i}
     return i;
@@ -122,7 +127,11 @@ export default function GridTable(props) {
               return: booking.dropoffdate.getDate()+"/"+months[booking.dropoffdate.getMonth()]+"/"+booking.dropoffdate.getFullYear()+"  "+booking.dropoffdate.getHours() +":"+addZero(booking.dropoffdate.getMinutes()),
               carStatus: booking.status,
               licenseID: booking.driverlicenseno,
-              address: booking.address
+              address: booking.address,
+              pickupDate: booking.pickupdate.getFullYear()+"-"+months[booking.pickupdate.getMonth()]+"-"+addZero(booking.pickupdate.getDate()),
+              pickupTime: booking.pickupdate.getHours() +":"+addZero(booking.pickupdate.getMinutes()),
+              returnDate: booking.dropoffdate.getFullYear()+"-"+months[booking.dropoffdate.getMonth()]+"-"+addZero(booking.dropoffdate.getDate()),
+              returnTime: booking.dropoffdate.getHours() +":"+addZero(booking.dropoffdate.getMinutes()),
             }
           ))
         //   [

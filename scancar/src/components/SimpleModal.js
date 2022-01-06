@@ -63,9 +63,6 @@ export default function SimpleModal(props) {
   }
 
 
-  console.log(props.o)
-
-
   const [listOfBookings, setListOfBookings] = React.useState([]); 
 
   React.useEffect(async() => { 
@@ -79,6 +76,7 @@ export default function SimpleModal(props) {
   const date = `${current.getFullYear()}-${
     current.getMonth() + 1
   }/${current.getFullYear()}`;
+  console.log(props.o.pickupHour)
 
 
   return (
@@ -142,20 +140,20 @@ export default function SimpleModal(props) {
                   <div className="column">
                     <p>
                       <label>Date</label>
-                      <input type="date" name="date" defaultValue="2021-10-10" />
+                      <input type="date" name="date" defaultValue={props.o.pickupDate} />
                     </p> 
                     <p>
-                      <input type="date" name="date" defaultValue="10-10-2021" />
+                      <input type="date" name="date" defaultValue={props.o.returnDate} />
                     </p> 
                   </div>
                   <div className="column">
                     <p>
                       <label>Time</label>
-                      <input type="time" id="pickupTime" name="appt"
+                      <input type="time" id="pickupTime" name="appt" defaultValue={props.o.pickupTime}
                         min="08:00" max="18:00" required/>
                     </p>
                     <p>
-                      <input type="time" id="pickupTime" name="appt"
+                      <input type="time" id="pickupTime" name="appt" defaultValue={props.o.returnTime}
                         min="08:00" max="18:00" required/>
                     </p>
                   </div>
