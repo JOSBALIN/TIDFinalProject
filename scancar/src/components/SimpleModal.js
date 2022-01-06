@@ -168,16 +168,33 @@ export default function SimpleModal(props) {
                   </div>
                   <div className="column">
                     <p>
-                    <label>Group</label>
-                    <select name="cargroup" id="cargroup" defaultValue={props.o.carGroup}>
-                      <option value="A">A</option>
-                      <option value="B">B</option>
-                      <option value="C">C</option>
-                      <option value="D">D</option>
-                      <option value="E">E</option>
-                      <option value="F">F</option>
-                    </select>
-                  </p>
+                      <label>Group</label>
+                      <select name="location" id="location">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                      </select>
+                    </p>
+                    <p>
+                      <label>Plate #</label>
+                      <input type="text"/>
+                    </p>
+                    {isNew ? (
+                        ""
+                      ) : (
+                      <p>
+                        <label>Status</label>
+                        <select name="status" id="status" defaultValue={props.o.carStatus}>
+                          <option value="Awaiting Transfer">Awaiting transfer</option>
+                          <option value="Ready">Ready</option>
+                          <option value="Picked-up">Picked up</option>
+                          <option value="Returned">Returned</option>
+                        </select>
+                      </p>
+                      )}
                   </div>
               </form>
             </div>
