@@ -8,24 +8,348 @@ import Parse from "parse"
 //create* are create operation, creating a object of the specified type with the mandatory fields associated to the obejct.
 Any non mandatory pointer attributes will be in seperate calls
 */
-export default async function createCar(props) {         
+
+// Creates a car without associating it with a booking
+async function createCarWithoutBooking(props) {         
     try {
-        const myNewObject = new Parse.Object("Car");
-        myNewObject.set("status", props.status);
-        myNewObject.set("fueltype", props.fueltype);
-        myNewObject.set("color", props.color);
-        myNewObject.set("make", props.make);
-        myNewObject.set("model", props.model);
-        myNewObject.set("group", props.group);
-        myNewObject.set("noofdoors", props.noofdoors);
-        myNewObject.set("licenseplateno", props.licenseplateno);
-        const result = await myNewObject.save();
-        // Access the Parse Object attributes using the .GET method
+        const Car = Parse.Object.extend("Car");
+        const thisCar = new Car();
+
+        const lotquery = new Parse.Query("Parkinglot")
+        lotquery.equalTo("lotno", props.lotno)
+
+        let temp = await lotquery.find();
+        var lotnobjectid = JSON.parse(JSON.stringify(temp))
+        console.log(lotnobjectid[0].objectId)
+        var lotnoPointer = {
+            __type: "Pointer",
+            className: "Parkinglot",
+            objectId: lotnobjectid[0].objectId,
+        };
+
+        thisCar.set("status", props.status);
+        thisCar.set("fueltype", props.fueltype);
+        thisCar.set("color", props.color);
+        thisCar.set("make", props.make);
+        thisCar.set("model", props.model);
+        thisCar.set("group", props.group);
+        thisCar.set("noofdoors", props.noofdoors);
+        thisCar.set("licenseplateno", props.licenseplateno);
+        thisCar.set("lotno", lotnoPointer);
+
+        const result = await thisCar.save();
         console.log("Car created", result);
+
     } catch (error) {
-        console.error("Error while creating Car", error);
+        console.error("Error while creating Car: ", error);
     }
-     
+}
+
+// Creates a car and associates it with a existing booking
+async function createCarWithBooking(props) {         
+    try {
+        const Car = Parse.Object.extend("Car");
+        const thisCar = new Car();
+
+        const lotquery = new Parse.Query("Parkinglot")
+        lotquery.equalTo("lotno", props.lotno)
+
+        let temp = await lotquery.find();
+        var lotnobjectid = JSON.parse(JSON.stringify(temp))
+        console.log(lotnobjectid[0].objectId)
+        var lotnoPointer = {
+            __type: "Pointer",
+            className: "Parkinglot",
+            objectId: lotnobjectid[0].objectId,
+        };
+        
+        const bookingquery = new Parse.Query("Booking")
+        bookingquery.equalTo("bookingid", props.bookingid)
+
+        let temp1 = await bookingquery.find();
+        var bookingobjectid = JSON.parse(JSON.stringify(temp1))
+        console.log(bookingobjectid[0].objectId)
+        var bookingPointer = {
+            __type: "Pointer",
+            className: "Booking",
+            objectId: bookingobjectid[0].objectId,
+        };
+
+        thisCar.set("status", props.status);
+        thisCar.set("fueltype", props.fueltype);
+        thisCar.set("color", props.color);
+        thisCar.set("make", props.make);
+        thisCar.set("model", props.model);
+        thisCar.set("group", props.group);
+        thisCar.set("noofdoors", props.noofdoors);
+        thisCar.set("licenseplateno", props.licenseplateno);
+        thisCar.set("lotno", lotnoPointer);
+        thisCar.set("bookings", bookingPointer);
+
+        const result = await thisCar.save();
+        console.log("Car created", result);
+
+    } catch (error) {
+        console.error("Error while creating Car: ", error);
+    }
+}
+
+// Create person without associating them to a booking
+async function createPersonWithoutBooking(props) {         
+    try {
+        const Person = Parse.Object.extend("Person");
+        const thisPerson = new Person();
+
+        thisPerson.set("phonenumber", props.phonenumber);
+        thisPerson.set("address", props.address);
+        thisPerson.set("driverlicenseno", props.driverlicenseno);
+        thisPerson.set("fullname", props.fullname);
+        thisPerson.set("bookings", null);
+        const result = await thisPerson.save();
+        console.log("Person created", result);
+    } catch (error) {
+        console.error("Error while creating Person: ", error)
+    }
+}
+
+// Create a new booking and associate it with a existing car and person 
+async function createBookingWithExistingPersonAndExistingCar(props) {    
+    try {
+        // Finding person objectid
+        const personquery = new Parse.Query("Person")
+        personquery.equalTo("fullname", "Elton John")
+        const carquery = new Parse.Query("Car")
+        carquery.equalTo("licenseplateno", "ak047")
+
+        try {
+        let temp = await personquery.find();
+        var personobjectid = JSON.parse(JSON.stringify(temp))
+        console.log("Person object id" + personobjectid[0].objectId)
+        var personPointer = {
+            __type: "Pointer",
+            className: "Person",
+            objectId: personobjectid[0].objectId,
+        };
+        // Finding car objectid
+        
+
+        let temp1 = await carquery.find();
+        var carobjectid = JSON.parse(JSON.stringify(temp1))
+        console.log("Car object id:" + carobjectid[0].objectId)
+        var carPointer = {
+            __type: "Pointer",
+            className: "Car",
+            objectId: carobjectid[0].objectId,
+        };
+        } catch (error) {
+            console.error("Here is one " + error)
+        }
+        // Creating new booking object
+        const Booking = Parse.Object.extend("Booking");
+        const thisBooking = new Booking();
+        
+        // Setting properties
+        thisBooking.set("bookingid", "8");
+        thisBooking.set("pickupdate", new Date());
+        thisBooking.set("dropoffdate", new Date());
+        thisBooking.set("dropofflocation", "Nordhavn");
+        thisBooking.set("pickuplocation", "Hellerup");
+        thisBooking.set("status", "Delivered");
+        thisBooking.set("fullname", personPointer);
+        thisBooking.set("licenseplateno", carPointer);
+
+        try {
+            const result = await thisBooking.save();
+        console.log("Booking created", result);
+        
+        // Finding newly created booking objectid
+        const bookingquery = new Parse.Query("Booking")
+        bookingquery.equalTo("bookingid", "8")
+        let temp2 = await bookingquery.find();
+        var bookingobjectid = JSON.parse(JSON.stringify(temp2))
+        console.log("Booking object id" + bookingobjectid[0].objectId)
+        var bookingPointer = {
+            __type: "Pointer",
+            className: "Booking",
+            objectId: bookingobjectid[0].objectId,
+        };
+
+        } catch (error) {
+            
+        }
+        
+    } catch (error) {
+        console.error("Error while creating Booking: ", error);
+    }
+        const updatePersonQuery = new Parse.Query("Person");
+        const personQuery = new Parse.Query("Person");
+
+        const updateCarQuery = new Parse.Query("Car");
+        const carQuery = new Parse.Query("Car");
+
+     try {
+        
+            // Updating person booking pointer to newly created booking
+        personQuery.equalTo("fullname", "Elton John")
+        let temp1 = await personQuery.find();
+        var personobjectid = JSON.parse(JSON.stringify(temp1))
+        console.log("Person object id " + personobjectid[0].objectId)
+        const personObject  = await updatePersonQuery.get(personobjectid[0].objectId)
+        personObject.set("bookings", bookingPointer);
+
+
+        // Updating car booking pointer to newly created booking
+        carQuery.equalTo("licenseplateno", "ak047");
+        let temp2 = await carQuery.find();
+        var carobjectid = JSON.parse(JSON.stringify(temp2))
+        console.log("Car object id " + carobjectid[0].objectId)
+        const carObject = await updateCarQuery.get(carobjectid[0].objectId)
+        carObject.set("bookings", bookingPointer)
+
+        try {
+        const updatedPerson = await personObject.save();
+        console.log("Updated person" + updatedPerson)
+        console.log(updatedPerson.get("bookings"));
+
+        const updatedCar = await carObject.save();
+        console.log("Updated car" + updatedCar)
+        console.log(updatedCar.get("bookings"));
+        
+        } catch (error) {
+            
+        }
+        } catch (error) {
+            console.error("Error whilst updating" + error)
+        }
+}
+
+
+// Create a booking and associates a new person and an existing car with it 
+async function createBookingWithPersonAndExistingCar() {    
+    
+    // Create person without associating them to a booking
+    try {
+        const Person = Parse.Object.extend("Person");
+        const thisPerson = new Person();
+
+        thisPerson.set("phonenumber", "99887766");
+        thisPerson.set("address", "Jagtvej 122");
+        thisPerson.set("driverlicenseno", "55321");
+        thisPerson.set("fullname", "Georg Jensen");
+        
+        const result = await thisPerson.save();
+        console.log("Person created", result);
+    } catch (error) {
+        console.error("Error while creating Person: ", error)
+    }
+    
+    try {
+        // Finding person objectid
+        const personquery = new Parse.Query("Person")
+        personquery.equalTo("fullname", "Georg Jensen")
+        const carquery = new Parse.Query("Car")
+        carquery.equalTo("licenseplateno", "cc093")
+
+        try {
+        let temp = await personquery.find();
+        var personobjectid = JSON.parse(JSON.stringify(temp))
+        console.log("Person object id" + personobjectid[0].objectId)
+        var personPointer = {
+            __type: "Pointer",
+            className: "Person",
+            objectId: personobjectid[0].objectId,
+        };
+        // Finding car objectid
+        
+
+        let temp1 = await carquery.find();
+        var carobjectid = JSON.parse(JSON.stringify(temp1))
+        console.log("Car object id:" + carobjectid[0].objectId)
+        var carPointer = {
+            __type: "Pointer",
+            className: "Car",
+            objectId: carobjectid[0].objectId,
+        };
+        } catch (error) {
+            console.error("Here is one" + error)
+        }
+        // Creating new booking object
+        const Booking = Parse.Object.extend("Booking");
+        const thisBooking = new Booking();
+        
+        // Setting properties
+        thisBooking.set("bookingid", "6");
+        thisBooking.set("pickupdate", new Date());
+        thisBooking.set("dropoffdate", new Date());
+        thisBooking.set("dropofflocation", "Nordhavn");
+        thisBooking.set("pickuplocation", "Nordhavn");
+        thisBooking.set("status", "Delivered");
+        thisBooking.set("fullname", personPointer);
+        thisBooking.set("licenseplateno", carPointer);
+
+        try {
+            const result = await thisBooking.save();
+        console.log("Booking created", result);
+        
+        // Finding newly created booking objectid
+        const bookingquery = new Parse.Query("Booking")
+        bookingquery.equalTo("bookingid", "6")
+        let temp2 = await bookingquery.find();
+        var bookingobjectid = JSON.parse(JSON.stringify(temp2))
+        console.log("Booking object id" + bookingobjectid[0].objectId)
+        var bookingPointer = {
+            __type: "Pointer",
+            className: "Booking",
+            objectId: bookingobjectid[0].objectId,
+        };
+
+        } catch (error) {
+            
+        }
+        
+    } catch (error) {
+        console.error("Error while creating Booking:1 ", error);
+    }
+        const updatePersonQuery = new Parse.Query("Person");
+        const personQuery = new Parse.Query("Person");
+
+        const updateCarQuery = new Parse.Query("Car");
+        const carQuery = new Parse.Query("Car");
+
+     try {
+        
+            // Updating person booking pointer to newly created booking
+        personQuery.equalTo("fullname", "Georg Jensen")
+        let temp1 = await personQuery.find();
+        var personobjectid = JSON.parse(JSON.stringify(temp1))
+        console.log("Person object id " + personobjectid[0].objectId)
+        const personObject  = await updatePersonQuery.get(personobjectid[0].objectId)
+        personObject.set("bookings", bookingPointer);
+
+
+        // Updating car booking pointer to newly created booking
+        carQuery.equalTo("licenseplateno", "cc093");
+        let temp2 = await carQuery.find();
+        var carobjectid = JSON.parse(JSON.stringify(temp2))
+        console.log("Car object id " + carobjectid[0].objectId)
+        const carObject = await updateCarQuery.get(carobjectid[0].objectId)
+        carObject.set("bookings", bookingPointer)
+
+        try {
+        const updatedPerson = await personObject.save();
+        console.log("Updated person" + updatedPerson)
+        console.log(updatedPerson.get("bookings"));
+
+        const updatedCar = await carObject.save();
+        console.log("Updated car" + updatedCar)
+        console.log(updatedCar.get("bookings"));
+        
+        } catch (error) {
+            
+        }
+        } catch (error) {
+            console.error("Error whilst updating" + error)
+        }
 }
 
 
@@ -90,7 +414,7 @@ export default async function createCar(props) {
     query.include("phonenumber")
     query.include("group")
     query.equalTo("bookingid", props)
-
+    
     
     let queryResult = await query.find();
     
@@ -153,3 +477,86 @@ export default async function createCar(props) {
       console.log("Error while retrieving essential booking info" + error);
     }
   }
+
+/* update* api calls are update operations, updating a specified object of a given class.  
+*/
+
+// Update the booking for a given person 
+async function updatePersonBooking() {
+    const updatePersonQuery = new Parse.Query("Person");
+    const bookingQuery = new Parse.Query("Booking")
+    const personQuery = new Parse.Query("Person")
+        
+    try {
+        // Finding newly created booking objectid
+        bookingQuery.equalTo("bookingid", "5")
+        let temp = await bookingQuery.find();
+        var bookingobjectid = JSON.parse(JSON.stringify(temp))
+        console.log("Booking object id " + bookingobjectid[0].objectId)
+        var bookingPointer = {
+            __type: "Pointer",
+            className: "Booking",
+            objectId: bookingobjectid[0].objectId,
+        };
+        
+        personQuery.equalTo("fullname", "Donald Duck")
+        let temp1 = await personQuery.find();
+        var personobjectid = JSON.parse(JSON.stringify(temp1))
+        console.log("Person object id " + personobjectid[0].objectId)
+        const personObject  = await updatePersonQuery.get(personobjectid[0].objectId)
+        personObject.set("bookings", bookingPointer);
+
+        try {
+        const updatedPerson = await personObject.save();
+        console.log("Updated person" + updatedPerson)
+        console.log(updatedPerson.get("bookings"));
+        } catch (error) {
+            console.error("trouble1" + error)
+        }
+
+        
+    } catch (error) {
+        console.error("trouble" + error)
+    }
+}
+
+// Update the booking for a given car
+async function updateCarBooking(props) {
+    const updateCarQuery = new Parse.Query("Car");
+    const bookingquery = new Parse.Query("Booking")
+    const carquery = new Parse.Query("Car")
+        
+    try {
+        // Finding newly created booking objectid
+        bookingquery.equalTo("bookingid", "5")
+        let temp = await bookingquery.find();
+        var bookingobjectid = JSON.parse(JSON.stringify(temp))
+        console.log("Booking object id " + bookingobjectid[0].objectId)
+        var bookingPointer = {
+            __type: "Pointer",
+            className: "Booking",
+            objectId: bookingobjectid[0].objectId,
+        };
+
+        carquery.equalTo("licenseplateno", "cc093")
+        let temp1 = await carquery.find();
+        var carobjectid = JSON.parse(JSON.stringify(temp1))
+        console.log("Car object id " + carobjectid[0].objectId)
+        
+        
+        const carObject  = await updateCarQuery.get(carobjectid[0].objectId)
+        
+        carObject.set("bookings", bookingPointer);
+        try {
+        const updatedCar = await carObject.save();
+        console.log("Updated car" + updatedCar)
+        console.log(updatedCar.get("bookings"));
+        } catch (error) {
+            console.error("trouble1" + error)
+        }
+
+        
+    } catch (error) {
+        console.error("trouble" + error)
+    }
+}
