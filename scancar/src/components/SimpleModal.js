@@ -178,7 +178,7 @@ export default function SimpleModal(props) {
                         <option value="F">F</option>
                       </select>
                     </p>
-                    <p>
+                    <p id="licenseplateform">
                       <label>Plate #</label>
                       <input type="text"/>
                     </p>
@@ -186,9 +186,8 @@ export default function SimpleModal(props) {
                         ""
                       ) : (
                       <p>
-                        <label>Status</label>
                         <select name="status" id="status" defaultValue={props.o.carStatus}>
-                          <option value="Awaiting Transfer">Awaiting transfer</option>
+                          <option value="Awaiting Transfer">Delivered</option>
                           <option value="Ready">Ready</option>
                           <option value="Picked-up">Picked up</option>
                           <option value="Returned">Returned</option>

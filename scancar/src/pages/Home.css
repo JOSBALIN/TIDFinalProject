@@ -38,7 +38,7 @@
 }
 
 /* input field styles for basic and advanced filters */
-#filtersmodule input {
+#filtersmodule input, #advfiltersmodule input {
   height: 20px;
   outline: none;
   width: auto;
@@ -52,19 +52,7 @@
   padding-right:16px;
 }
 
-#advfiltersmodule input {
-  height: 20px;
-  outline: none;
-  width: auto;
-  max-width: 96px;
-  min-width: 30px;
-  background: #d6d6d6;
-  border-radius: 20px;
-  border-style: solid;
-  border-color: white;
-  padding-left:10px;
-  padding-right:10px;
-}
+
 
 #filtersmodule {
   padding-left: 2% !important;

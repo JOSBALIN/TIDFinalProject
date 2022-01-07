@@ -77,15 +77,13 @@ function Home() {
           {visible && (
             <div className="module" id="advfiltersmodule">
                 <div className="row">
+                  
                   <div className="column">
+                  <h2>Car information</h2>
                       <form id="advfilterform">
                         <p>
                           <label>License Plate</label>
                           <input type="text" name="License Plate" />
-                        </p>
-                        <p>
-                          <label>Customer ID</label>
-                          <input type="text" name="Customer ID" />
                         </p>
                         <p>
                           <label>Driver's License</label>

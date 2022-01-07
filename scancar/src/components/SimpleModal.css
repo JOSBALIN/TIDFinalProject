@@ -131,6 +131,10 @@ select:focus{
     cursor: pointer;
   }
 
+  #licenseplateform{
+    display: none;
+  }
+
   #buttonDiv{
       margin: auto;
       height: auto;

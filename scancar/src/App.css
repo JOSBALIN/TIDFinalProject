@@ -5,7 +5,8 @@
 /* Styling "canvas", gray background upon which modules are hosted */
 .canvas {
   background: #ebebeb;
-  padding-bottom: 20% !important;
+  padding-bottom: 10% !important;
+  max-width: 1200px;
   margin-top: 75px;
   max-width: 1400;
   height: 100%;
