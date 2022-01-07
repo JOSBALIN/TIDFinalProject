@@ -8,7 +8,7 @@ import { Chart }            from 'react-chartjs-2'
 
 /* State details for Doughnut chart */
 const state = {
-  labels: ['Available', 'Rented', 'Unavailable'],
+  labels: ['Rented', 'Available', 'Maintenance'],
   datasets: [
     {
       label: 'Rainfall',
@@ -22,7 +22,7 @@ const state = {
       '#77ad61',
       '#c99a4f',
       ],
-      data: [65, 59, 80],
+      data: [63, 27, 20],
       hoverOffset:4,
       cutout: 75,
     }
@@ -35,34 +35,40 @@ const data = {
   labels: labels,
   datasets: [
     {
-      label: 'Ready',
+      label: 'A',
       maxBarThickness:32,
-      data: [11, 22, 33, 12, 31, 68, 11],
+      data: [5, 6, 4, 4, 7, 5, 5],
       backgroundColor: '#99DF7C',
     },
     {
-      label: 'Rented',
+      label: 'B',
       maxBarThickness:32,
-      data: [11, 22, 33, 55, 77, 16, 21],
+      data: [4, 3, 3, 1, 1, 4, 6],
       backgroundColor: '#60BEA8',
     },
     {
-      label: 'Returned',
+      label: 'C',
       maxBarThickness:32,
-      data: [22, 34, 14, 33, 22, 11, 22],
+      data: [7, 5, 6, 5, 8, 9, 6],
       backgroundColor: '#409ad6',
     },
     {
-      label: 'Transfer',
+      label: 'D',
       maxBarThickness:32,
-      data: [22, 34, 66, 33, 22, 11, 22],
-      backgroundColor: '#cc9f37',
+      data: [4, 6, 8, 7, 8, 4, 5],
+      backgroundColor: '#3e7fc9',
     },
     {
-      label: 'Unavailable',
+      label: 'E',
       maxBarThickness:32,
-      data: [22, 34, 66, 33, 22, 11, 22],
-      backgroundColor: '#FBBF60',
+      data: [3, 3, 2, 4, 2, 1, 0],
+      backgroundColor: '#3838b0',
+    },
+    {
+      label: 'F',
+      maxBarThickness:32,
+      data: [4, 5, 5, 3, 4, 3, 3],
+      backgroundColor: '#6438b0',
     },
   ]
 };

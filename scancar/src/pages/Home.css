@@ -41,21 +41,21 @@
 #filtersmodule input {
   height: 20px;
   outline: none;
-  width: auto !important;
+  width: auto;
   max-width: 144px;
   min-width: 30px;
   background: #d6d6d6;
   border-radius: 20px;
   border-style: solid;
   border-color: white;
-  padding-left:15px;
-  padding-right:15px;
+  padding-left:16px;
+  padding-right:16px;
 }
 
 #advfiltersmodule input {
   height: 20px;
   outline: none;
-  width: auto !important;
+  width: auto;
   max-width: 96px;
   min-width: 30px;
   background: #d6d6d6;
@@ -121,6 +121,11 @@ h1:hover, h2:hover, h3:hover, h4:hover{
     white-space: nowrap;
     color:white;
     padding: 4px 8px 4px 8px;
+    text-transform: none;
 }
 
+#newBooking:hover{
+    filter: brightness(110%);
+    cursor: pointer;
+}
 
