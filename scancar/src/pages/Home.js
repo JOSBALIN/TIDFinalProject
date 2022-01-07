@@ -112,7 +112,7 @@ function Home() {
                       <label htmlFor="pickupTime">Pick-up time:</label>
 
                       <input type="time" id="pickupTime" name="appt"
-                            min="08:00" max="18:00" required/>
+                            min="07:00" max="21:00" required/>
                       </div>
                       <div className="column">
                         Location
@@ -136,7 +136,7 @@ function Home() {
                          <label htmlFor="returnTime">Return time:</label>
 
                         <input type="time" id="returnTime" name="appt"
-                              min="08:00" max="18:00" required/>
+                              min="07:00" max="21:00" required/>
                       </div>
                       <div className="column">
                         Location

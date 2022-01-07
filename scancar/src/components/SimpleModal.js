@@ -142,11 +142,11 @@ export default function SimpleModal(props) {
                     <p>
                       <label>Time</label>
                       <input type="time" className="time" name="appt" defaultValue={props.o.pickupTime}
-                        min="08:00" max="18:00" required/>
+                        min="07:00" max="21:00" required/>
                     </p>
                     <p>
                       <input type="time" className="time" name="appt" defaultValue={props.o.returnTime}
-                        min="08:00" max="18:00" required/>
+                        min="07:00" max="21:00" required/>
                     </p>
                   </div>
                   <div className="column">
