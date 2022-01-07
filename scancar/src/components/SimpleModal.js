@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import Modal from "@material-ui/core/Modal";
 import "./SimpleModal.css";
 import EditIcon from "@mui/icons-material/Edit";
-import { getSpecificBooking } from "../api";
+import { getSpecificBooking, getAllCars, createBookingWithPersonAndExistingCar } from "../api";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -44,6 +44,13 @@ export default function SimpleModal(props) {
     );
   }
 
+
+  function alertNoCar(props) {
+    window.alert(
+      "Unfortunately there is no car available in car group " + {props}
+    );
+  }
+
   function ModalButton() {
     if (isNew) {
       return (
@@ -69,7 +76,23 @@ export default function SimpleModal(props) {
     setListOfBookings(allBookings); 
   }, [])
 
+  const [listOfCars, setListOfCars] = React.useState([]); 
+    
+  React.useEffect(async() => { 
+    const allCars = await getAllCars();
+    console.log(allCars);
+    setListOfCars(allCars); 
+  }, [])
 
+  function getCarInCarGroup(props){
+  for (let i = 0; i < props.listOfCars.length; i++) {
+    let currentCar = props.listOfCars[i];
+      if (currentCar.carGroup.localeCompare(props.o.carGroup) == 0) {
+        return currentCar
+      }
+    }
+  return null
+}
 
   return (
 
@@ -203,13 +226,21 @@ export default function SimpleModal(props) {
           <div id="buttonDiv">
             <button className = "modalButton" id="cancelButton" onClick={handleClose}>Cancel</button>
             {isNew ? (
-              ""
+              <p onClick={
+                
+                createBookingWithPersonAndExistingCar()
+
+              } id="deleteButton">
+              CLICK TO CREATE BOOKING
+            </p>
             ) : (
               <p onClick={alertDelete} id="deleteButton">
                 Delete booking
               </p>
             )}
-            <button className = "modalButton" id="confirmButton">{isNew ? "Confirm" : "Edit"}</button>
+            <button className = "modalButton" id="confirmButton" 
+            >
+            {isNew ? "Confirm" : "Edit"}</button>
           </div>
         </div>
       </Modal>
