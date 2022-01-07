@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./parkingLotSpot.css";
 
 /**
  * @params props.label, the label for the button (CarGroup)

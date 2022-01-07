@@ -3,8 +3,8 @@ import * as React from "react";
 import "./Home.css";
 import "../App.css";
 import { getAllBookingInfo } from "../api";
-import CheckBoxes from "../components/checkboxes";
-import GridTable from "../components/gridtable";
+import CheckBoxes from "../components/bookingoverview/checkboxes";
+import GridTable from "../components/bookingoverview/gridtable";
 import "reactjs-popup/dist/index.css";
 import SimpleModal from "../components/SimpleModal";
 

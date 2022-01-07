@@ -1,9 +1,6 @@
-import "./parkingLotSpot.js";
 import "./caroverviewgrid.css";
-import "./CarPrem.css";
+import "../CarPrem.css";
 import ParkingLotSpot from "./parkingLotSpot.js";
-import { StayCurrentLandscapeTwoTone } from "@mui/icons-material";
-import { render } from "@testing-library/react";
 
 
 let parkingSpots = new Array(42);

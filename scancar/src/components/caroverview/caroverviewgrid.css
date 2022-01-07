@@ -11,32 +11,23 @@
 
 .grid-item-1 {
   grid-area: header;
-  background-color: white;
-  padding: 8px 8px 16px 16px;
+}
+
+.grid-item-2, .grid-item-3, .grid-item-1{
   margin-top: 16px;
   margin-left: 16px;
   margin-right: 16px;
+  padding: 8px 8px 8px 8px;
   border-radius: 0.5em;
+  background-color: white;
 }
 
 .grid-item-2 {
   grid-area: sidebar;
-  background-color: white;
-  padding: 8px 8px 8px 8px;
-  margin-top: 100px;
-  margin-left: 16px;
-  margin-right: 10px;
-  border-radius: 0.5em;
 }
 
 .grid-item-3 {
   grid-area: content;
-  background-color: white;
-  padding: 8px 8px 16px 16px;
-  margin-top: 100px;
-  margin-left: 10px;
-  margin-right: 16px;
-  border-radius: 0.5em;
 }
 
 .small-grid-box-container-horizontal {
@@ -75,7 +66,7 @@ h3 {
 }
 
 .Ready h3{
-  color: black;
+  color: #424242;
 }
 
 .Returned{
@@ -83,5 +74,5 @@ h3 {
 }
 
 .Returned h3{
-  color: black;
+  color: #424242;
 }

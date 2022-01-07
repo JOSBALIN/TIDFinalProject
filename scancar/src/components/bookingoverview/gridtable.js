@@ -1,13 +1,10 @@
-import * as React from "react";
-import { DataGrid, GridRowsProp, GridColDef, GridCellParams, MuiEvent, GridApi, GridCellValue } from "@mui/x-data-grid";
-import SimpleModal from "./SimpleModal";
+import { DataGrid} from "@mui/x-data-grid";
+import SimpleModal from "../SimpleModal";
 import { makeStyles } from "@mui/styles";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { getAllBookingInfo } from "../api";
 
-import "./SimpleModal.css"
+import "../SimpleModal.css"
 import "./gridtable.css"
-import { NoEncryption } from "@mui/icons-material";
 
 function alertDelete() {
   window.confirm("Are you sure you want to delete this entry?\nThis cannot be undone");

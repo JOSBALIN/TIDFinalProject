@@ -1,8 +1,8 @@
 import * as React from 'react';
 import "../components/CarPrem.css"
 import { getAllCars } from "../api";
-import BasicTableOverview from '../components/tableoverview';
-import LotOverview from "../components/caroverview";
+import BasicTableOverview from '../components/caroverview/tableoverview';
+import LotOverview from "../components/caroverview/caroverview";
 
 function Home() {
     const [listOfCars, setListOfCars] = React.useState([]); 

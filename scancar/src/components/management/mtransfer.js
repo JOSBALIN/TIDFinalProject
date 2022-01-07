@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./managementmodules.css";
 import "./mtransfer.css";
-import DatePicker from "./datepicker/date-picker";
+import DatePicker from "../datepicker/date-picker";
 import CounterButton from "./counter-button";
 
 
