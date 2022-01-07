@@ -492,14 +492,15 @@ async function createBookingWithPersonAndExistingCar(props) {
   }
 
   export async function getAllBookingInfo() {
+    let query = new Parse.Query("Booking");
     try {
-      let query = new Parse.Query("Booking");
       query.include("licenseplateno")
       query.include("driverlicenseno")
       query.include("address")
       query.include("phonenumber")
       query.include("fullname")
       query.include("group")
+      
       let queryResult = await query.find();
       
       const allBookingInfoList = queryResult.map((booking) => {return {
@@ -565,8 +566,9 @@ async function updatePersonBooking(props) {
 // Update the booking for a existing given car
 async function updateCarBooking(props) {
     const updateCarQuery = new Parse.Query("Car");
-    const bookingquery = new Parse.Query("Booking")
     const carquery = new Parse.Query("Car")
+    const updateBookingQuery = new Parse.Query("Booking");
+    const bookingquery = new Parse.Query("Booking")
         
     try {
         // Finding newly created booking objectid
@@ -579,24 +581,39 @@ async function updateCarBooking(props) {
             className: "Booking",
             objectId: bookingobjectid[0].objectId,
         };
-
+        
         carquery.equalTo("licenseplateno", props.licenseplateno)
         let temp1 = await carquery.find();
         var carobjectid = JSON.parse(JSON.stringify(temp1))
         console.log("Car object id " + carobjectid[0].objectId)
-        
-        
         const carObject  = await updateCarQuery.get(carobjectid[0].objectId)
+        var carPointer = {
+            __type: "Pointer",
+            className: "Car",
+            objectId: carobjectid[0].objectId,
+        };
+        bookingquery.equalTo("bookingid", props.bookingid)
+        let temp2 = await bookingquery.find();
+        var bookingobjectid = JSON.parse(JSON.stringify(temp2))
+        console.log("Booking object id " + bookingobjectid[0].objectId)
+        const bookingObject  = await updateBookingQuery.get(bookingobjectid[0].objectId)
         
+        bookingObject.set("licenseplateno", carPointer)
         carObject.set("bookings", bookingPointer);
+        
         try {
         const updatedCar = await carObject.save();
+        const updatedBooking = await bookingObject.save();
         console.log("Updated car" + updatedCar)
         console.log(updatedCar.get("bookings"));
+        console.log("Updated booking" + updatedBooking)
+        console.log(updatedBooking.get("licenseplateno"));
         } catch (error) {
-            console.error("Error finding car object " + error)
+            console.error("problem " + error)
         }
+
+        
     } catch (error) {
-        console.error("Error updating booking for car " + error)
+        console.error("problem " + error)
     }
 }
