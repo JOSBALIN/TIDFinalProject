@@ -28,11 +28,6 @@ function Home() {
 
   return (
     <div className="Background">
-      <div className="navbar">
-        <h1>ScanCar</h1>
-      </div>
-
-      <div>
         <div className="canvas">
           <div className="moduletitle" id="bookingOverview">
             <h2>Booking Overview</h2>
@@ -158,8 +153,6 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
-
   );
 }
 
