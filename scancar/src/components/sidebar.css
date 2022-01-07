@@ -1,0 +1,37 @@
+.sidenav {
+    width: 240px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    padding: 8px 0;
+    margin-top: 62px;
+  }
+  
+  .sidenav a {
+    padding: 12px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFFFFF;
+    display: block;
+    
+  }
+
+  
+  .sidenav li {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: 0.015em;
+    background: #2F7464;
+    height: 48px;
+    border-radius: 3px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    list-style-type: none;  
+  }
+  
+  .sidenav li:hover{
+    background-color: #265c4f;
+  }

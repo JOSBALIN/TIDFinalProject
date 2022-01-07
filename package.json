@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@mui/icons-material": "^5.2.5",
+    "@mui/material": "^5.2.6",
+    "@mui/styles": "^5.2.3",
+    "@mui/x-data-grid": "^5.2.1",
+    "@types/react-router": "^5.1.17",
+    "components": "^0.1.0",
+    "react-chartjs-2": "^4.0.0"
+  }
+}

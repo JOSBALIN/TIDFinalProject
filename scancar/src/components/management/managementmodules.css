@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+/* modules, styling rules for each "box of content", based on design guide */
+.module {
+    background-color: white;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 0px 16px 0px !important;
+    border-radius: 1em;
+    font-family: Lato;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 22px;
+  } 
+
+  
+  /* Sub-title for modules */
+  .moduletitle h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 30em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+    padding: 0%;
+  }
+  
+  /* Sub-sub-title for modules */
+  .moduletitle h3 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
+    color: white;
+    text-align: center;
+    text-transform: none !important;
+  }
+
+
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+
+
+  #chartDiv{
+    align-content: center;
+  }
+
+.chartExplanation{
+  font-family: Lato;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+}
+
+  #barChart, #doughnutChart{
+    padding-top:16px;
+  }
+
+#barChart{
+  padding-right:16px;
+  float:right;
+  width:60%;
+  margin-right:0;
+  margin-left:auto;
+}
+
+#doughnutChart{
+  display:inline-block;
+  width:30%
+}

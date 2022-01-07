@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+
+/* Styling "canvas", gray background upon which modules are hosted */
+.canvas {
+  background: #ebebeb;
+  padding-bottom: 10% !important;
+  max-width: 1200px;
+  margin-top: 75px;
+  max-width: 1400;
+  height: 100%;
+  width: 60%;
+  min-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+}
+
+
+/* modules, styling rules for each "box of content", based on design guide */
+.module {
+  background-color: white;
+  margin: auto;
+  height: auto;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 8px 8px 16px 16px;
+  border-radius: 1em;
+  font-family: Lato;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+}

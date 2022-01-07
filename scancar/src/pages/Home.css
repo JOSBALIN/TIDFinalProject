@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+
+/* establish "line by line" layout for input fields */
+#filterform {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: fit-content;
+  grid-gap: 16px;
+}
+
+#advfilterform {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#timepickform {
+  display: grid;
+  grid-template-rows: max-content;
+  grid-gap: 16px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.canvas{
+  padding-bottom:20% !important;
+}
+
+/* input field styles for basic and advanced filters */
+#filtersmodule input, #advfiltersmodule input {
+  height: 20px;
+  outline: none;
+  width: auto;
+  max-width: 144px;
+  min-width: 30px;
+  background: #d6d6d6;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: white;
+  padding-left:16px;
+  padding-right:16px;
+}
+
+
+
+#filtersmodule {
+  padding-left: 2% !important;
+  padding-right: 2% !important;
+  padding-top: 2% !important;
+}
+
+#advfiltersmodule {
+  padding-left: 2% !important;
+}
+
+#listmodule {
+  padding-top: 2% !important;
+  padding-left: 2% !important;
+  padding-right: 2% !important;
+}
+
+
+
+#filtersmodule input:focus,
+#advfiltersmodule input:focus {
+  background: #ebebeb;
+  border-color: #3b917d;
+  border-width: 2px;
+}
+
+/* "Filter bookings" styling */
+#filtersmodule h3{
+    color:black;
+    text-align: left;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: none;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover{
+  cursor:default;
+}
+
+/* The advanced filters button/clickable text */
+#advfilters {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 14px;
+    line-height: 12px;
+    background: none;
+    border: none;
+    color:black
+}
+
+#advfilters:hover {
+  cursor:pointer;
+  filter:invert(20%)
+}
+
+
+#newBooking{
+    background: #3B917D;
+    border-radius: 20px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    height: fit-content;
+    width:fit-content;
+    text-align: center;
+    white-space: nowrap;
+    color:white;
+    padding: 4px 8px 4px 8px;
+    text-transform: none;
+}
+
+#newBooking:hover{
+    filter: brightness(110%);
+    cursor: pointer;
+}
+
