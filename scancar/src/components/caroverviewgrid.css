@@ -75,13 +75,13 @@ h3 {
 }
 
 .Ready h3{
-  color: #55B52C;
+  color: black;
 }
 
-.Maintenance{
+.Returned{
   background-color: #FBBF60;
 }
 
-.Maintenance h3{
-  color: #DB8906;
+.Returned h3{
+  color: black;
 }
