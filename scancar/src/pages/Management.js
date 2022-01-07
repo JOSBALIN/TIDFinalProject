@@ -1,11 +1,8 @@
 import * as React from 'react';
 import FleetStatus from "../components/fleetstatus";
 import CarTransfer from '../components/mtransfer';
-
-import "../components/managementmodules.css";
 import "../App.css";
 
-import { Link } from 'react-router-dom';
 
 
 
@@ -18,7 +15,7 @@ export default function Management() {
       <div>
         <div className="canvas">
           <div className="moduletitle" id="management">
-            <h2>Management</h2> 
+            <h2>Car Management</h2> 
           </div> 
           <div>
             <FleetStatus/>
