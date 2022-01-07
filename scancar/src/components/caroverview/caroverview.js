@@ -3,6 +3,7 @@ import "../CarPrem.css";
 import ParkingLotSpot from "./parkingLotSpot.js";
 
 
+// Defining parking spots
 let parkingSpots = new Array(42);
 
 for (let i = 1; i <= 42; i++) {

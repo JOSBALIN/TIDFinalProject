@@ -25,7 +25,9 @@ function Home() {
             <div className="row">
               <div className="column">
                 <div className="module" id="overview">
+                  <div className="moduletitle">
                   <h2>Overview</h2>
+                  </div>
                   <BasicTableOverview listOfCars={listOfCars} />
                 </div>
               </div>

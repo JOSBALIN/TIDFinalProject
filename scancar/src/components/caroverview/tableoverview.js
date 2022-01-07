@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import "./tableoverview.css"
-import "../CarPrem.css"
+import "../CarPrem.css";
 
 
 export default function BasicTableOverview(props) {
