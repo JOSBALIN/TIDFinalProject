@@ -2,29 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
 
-
-/* Top bar */
-.navbar {
-  overflow: hidden;
-  background-color: #505050;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-  height: 60px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
-/* ScanCar topbar headline styling*/
-.navbar h1 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  color: white;
-  padding-left: 4%;
-  font-size: 300%;
-}
-
 /* Styling "canvas", gray background upon which modules are hosted */
 .canvas {
   background: #ebebeb;

@@ -28,11 +28,6 @@ function Home() {
 
   return (
     <div className="Background">
-      <div className="navbar">
-        <h1>ScanCar</h1>
-      </div>
-
-      <div>
         <div className="canvas">
           <div className="moduletitle" id="bookingOverview">
             <h2>Booking Overview</h2>
@@ -40,7 +35,7 @@ function Home() {
           <div className="module" id="filtersmodule">
             <div className="row">
               <div className="column">
-                <h3>Filter bookings</h3>
+                <h3>Filter Bookings</h3>
               </div>
               <div>
                 <SimpleModal o={emptyRecord} isNew={true} isOpen={false}/>
@@ -111,7 +106,7 @@ function Home() {
                       <div className="column">
                       <label htmlFor="pickupTime">Pick-up time:</label>
 
-                      <input type="time" id="pickupTime" name="appt"
+                      <input type="time" step="3600000" id="pickupTime" name="appt"
                             min="07:00" max="21:00" required/>
                       </div>
                       <div className="column">
@@ -135,7 +130,7 @@ function Home() {
                       <div className="column">
                          <label htmlFor="returnTime">Return time:</label>
 
-                        <input type="time" id="returnTime" name="appt"
+                        <input type="time" step="3600000" id="returnTime" name="appt"
                               min="07:00" max="21:00" required/>
                       </div>
                       <div className="column">
@@ -158,8 +153,6 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
-
   );
 }
 

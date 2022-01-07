@@ -124,7 +124,7 @@ export default function SimpleModal(props) {
                 <h4>Pick-up & return</h4>
               </div>
               <div className="column" id="cartype">
-                <h4>Car type</h4>
+                <h4>Car information</h4>
               </div>
             </div>
             <div>
@@ -141,11 +141,11 @@ export default function SimpleModal(props) {
                   <div className="column">
                     <p>
                       <label>Time</label>
-                      <input type="time" className="time" name="appt" defaultValue={props.o.pickupTime}
+                      <input type="time" step="3600000" className="time" name="appt" defaultValue={props.o.pickupTime}
                         min="07:00" max="21:00" required/>
                     </p>
                     <p>
-                      <input type="time" className="time" name="appt" defaultValue={props.o.returnTime}
+                      <input type="time" step="3600000" className="time" name="appt" defaultValue={props.o.returnTime}
                         min="07:00" max="21:00" required/>
                     </p>
                   </div>
@@ -166,7 +166,7 @@ export default function SimpleModal(props) {
                       </select>
                     </p>
                   </div>
-                  <div className="column">
+                  <div className="column" id="carinformation">
                     <p>
                       <label>Group</label>
                       <select name="location" id="location">
