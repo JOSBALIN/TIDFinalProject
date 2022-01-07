@@ -15,6 +15,7 @@
     transform: translate(-50%, -50%);
 }
 
+
 /* Big title at top of "module page" */
 .modalTitle {
     padding-top: 0.05em;
@@ -40,10 +41,19 @@
       display: inline-block;
   }
 
+  #customerInformationTop {
+    padding-left: 2%;
+  }
+
+  #cartype {
+    padding-left: 8% !important;
+  }
+
 #bookinginformation{
   display: grid;
   grid-template-columns: 112px 112px 112px 112px;
   grid-gap: 16px;
+  padding-left: 2% !important;
 }
 
 
@@ -88,10 +98,10 @@ select:focus{
   border-width: 2px;
   }
 
-  #customerInformationTop h3, h4{
-    font-family: "Lato";
-    font-style: normal;
-  }
+#customerInformationTop h3, h4{
+  font-family: "Lato";
+  font-style: normal;
+}
   
   #cancelButton{
     background: #F9A010;

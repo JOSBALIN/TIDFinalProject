@@ -66,6 +66,22 @@
   padding-right:10px;
 }
 
+#filtersmodule {
+  padding-left: 2% !important;
+  padding-right: 2% !important;
+  padding-top: 2% !important;
+}
+
+#advfiltersmodule {
+  padding-left: 2% !important;
+}
+
+#listmodule {
+  padding-top: 2% !important;
+  padding-left: 2% !important;
+  padding-right: 2% !important;
+}
+
 
 
 #filtersmodule input:focus,
@@ -84,6 +100,7 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
+    text-transform: none;
 }
 
 h1:hover, h2:hover, h3:hover, h4:hover{
