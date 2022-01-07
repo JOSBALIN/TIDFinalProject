@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+.MuiDataGrid-row{
+    
+}
+
+.deleteButton{
+    border:none;
+    background-color: inherit;
+    color:black;
+}
+
+
+.deleteButton:hover{
+    background-color: inherit;
+    cursor:pointer;
+}
+
+
+
+
+
+
+.MuiDataGrid-columnHeader{
+grid: none;
+color:black;
+font-family: Lato;
+font-size: 14px;
+font-weight:bolder;
+}

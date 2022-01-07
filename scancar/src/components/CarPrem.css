@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+/* Big title at top of "module page" */
+.moduletitle {
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  height: 10%;
+  background-color: #3b917d;
+  border-radius: 1em 1em 0px 0px;
+}
+
+/* Sub-title for modules */
+.moduletitle h2 {
+  font-family: Montserrat, sans-serif;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+}
+
+/* Sub-sub-title for modules */
+.module h3 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+/* What's the purpose of this?? */
+.canvas label,
+input {
+  display: block;
+}
+
+/* Styling "canvas", gray background upon which modules are hosted */
+.canvas {
+  background: #ebebeb;
+  padding-bottom: 90%;
+  margin-top: 75px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+}
+
+/* modules, styling rules for each "box of content", based on design guide */
+.module {
+  background-color: white;
+  margin: auto;
+  height: auto;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 8px 8px 16px 16px;
+  border-radius: 1em;
+  font-family: Lato;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+
+.flexbox-container{
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+#overviewmodule {
+  float: left;
+  width: 100;
+}
+
+#parkingmodule {
+  background-color: red;
+  margin-left: 350px;
+  height: 500%;
+  width: auto;
+}
+
+.headingsready {
+  display: flex;
+  font-weight: bold;
+  background-color: green;
+}
+
+.headingsreturned {
+  display: flex;
+  font-weight: bold;
+  background-color: orangered;
+}
