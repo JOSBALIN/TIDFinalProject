@@ -1,8 +1,6 @@
 import * as React from 'react';
 import "../components/CarPrem.css"
 import { getAllCars } from "../api";
-import { Link } from 'react-router-dom';
-import { render } from '@testing-library/react';
 import BasicTableOverview from '../components/tableoverview';
 import LotOverview from "../components/caroverview";
 
