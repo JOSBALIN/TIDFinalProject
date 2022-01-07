@@ -17,7 +17,7 @@
 .bottomButton{
   background: #3B917D;
   align-self:right;
-  right:0;
+  display: block;
   margin-right:7%;
   display:inline;
   font-family: "Lato";
@@ -28,8 +28,12 @@
   border-radius: 20px;
   height:40px;
   width:120px;
+  margin-left:16px;
 }
-
+.bottomButton:hover{
+filter: brightness(110%);
+cursor: pointer;
+}
 
   /* For calendar */
   .sdp {
@@ -46,6 +50,7 @@
     box-shadow: var(--shadow);
     background-color: #ffffff;
     padding: 0.75rem;
+    height:280px;
   }
   
 
