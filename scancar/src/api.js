@@ -238,7 +238,7 @@ async function createBookingWithExistingPersonAndExistingCar(props) {
 
 // Create a new person and new booking, then associate new person with new booking and existin car with new booking
 // then update the new person's and existing car's booking pointer to the newly created booking
-async function createBookingWithPersonAndExistingCar(props) {    
+export async function createBookingWithPersonAndExistingCar(props) {    
     
     // Create new person object without associating them to a booking
     try {
