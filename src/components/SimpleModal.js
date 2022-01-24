@@ -46,7 +46,7 @@ export default function SimpleModal(props) {
 
   function alertConfirm() {
     window.confirm(
-      "Booking succesfully created! \n (press esc to close window)"
+      "Booking succesfully created! \n(press esc to close window)"
     );
   }
 
