@@ -44,6 +44,11 @@ export default function SimpleModal(props) {
     );
   }
 
+  function alertConfirm() {
+    window.confirm(
+      "Booking succesfully created!"
+    );
+  }
 
   function alertNoCar(props) {
     window.alert(
@@ -231,16 +236,16 @@ export default function SimpleModal(props) {
                 createBookingWithPersonAndExistingCar()
 
               } id="deleteButton">
-              CLICK TO CREATE BOOKING
+              {/* CLICK TO CREATE BOOKING */}
             </p>
             ) : (
               <p onClick={alertDelete} id="deleteButton">
                 Delete booking
               </p>
             )}
-            <button className = "modalButton" id="confirmButton" 
-            >
-            {isNew ? "Confirm" : "Edit"}</button>
+            <button className = "modalButton" id="confirmButton" onClick={alertConfirm} >
+              Confirm
+            </button>
           </div>
         </div>
       </Modal>
