@@ -46,7 +46,7 @@ export default function SimpleModal(props) {
 
   function alertConfirm() {
     window.confirm(
-      "Booking succesfully created!"
+      "Booking succesfully created! \n (press esc to close window)"
     );
   }
 
@@ -231,7 +231,7 @@ export default function SimpleModal(props) {
           <div id="buttonDiv">
             <button className = "modalButton" id="cancelButton" onClick={handleClose}>Cancel</button>
             {isNew ? (
-              <p onClick={
+              <p onClick={ 
                 
                 createBookingWithPersonAndExistingCar()
 
@@ -239,7 +239,7 @@ export default function SimpleModal(props) {
               {/* CLICK TO CREATE BOOKING */}
             </p>
             ) : (
-              <p onClick={alertDelete} id="deleteButton">
+              <p classname = "modalButton" id="deleteButton" onClick={alertDelete} >
                 Delete booking
               </p>
             )}
